@@ -81,6 +81,42 @@ if (resultsBody) {
     `).join("");
   };
 
+  const renderLanguageResults = () => {
+    const languageBody = document.querySelector("#language-results-body");
+    if (!languageBody) return;
+    const valid = results
+      .filter((item) => ["python", "node", "ruby", "php"].every((key) => {
+        const metric = item.scores?.[key];
+        return metric && typeof metric.solved === "number" && typeof metric.total === "number";
+      }))
+      .sort((a, b) => {
+        const rateA = a.scores.overall ? a.scores.overall.solved / a.scores.overall.total : 0;
+        const rateB = b.scores.overall ? b.scores.overall.solved / b.scores.overall.total : 0;
+        return rateB - rateA;
+      });
+
+    if (!valid.length) {
+      languageBody.innerHTML = `<tr class="empty-row"><td colspan="6">Waiting for official model result data.</td></tr>`;
+      return;
+    }
+
+    const cell = (metric) => {
+      const rate = (metric.solved / metric.total) * 100;
+      return `<strong>${rate.toFixed(1)}%</strong><small>${metric.solved} / ${metric.total}</small>`;
+    };
+
+    languageBody.innerHTML = valid.map((item, index) => `
+      <tr>
+        <td>${index + 1}</td>
+        <td><strong>${item.model}</strong>${item.agent ? `<br><small>${item.agent}</small>` : ""}</td>
+        <td class="language-score">${cell(item.scores.python)}</td>
+        <td class="language-score">${cell(item.scores.node)}</td>
+        <td class="language-score">${cell(item.scores.ruby)}</td>
+        <td class="language-score">${cell(item.scores.php)}</td>
+      </tr>
+    `).join("");
+  };
+
   fetch(document.body.dataset.results || "../data/lite-results.json")
     .then((response) => {
       if (!response.ok) throw new Error("Unable to load results");
@@ -89,8 +125,12 @@ if (resultsBody) {
     .then((data) => {
       results = Array.isArray(data) ? data : [];
       renderResults();
+      renderLanguageResults();
     })
-    .catch(renderResults);
+    .catch(() => {
+      renderResults();
+      renderLanguageResults();
+    });
 
   resultButtons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -139,6 +179,9 @@ if (instanceBody) {
     })
     .then((data) => {
       instances = data;
+      document.querySelectorAll("[data-task-count]").forEach((node) => {
+        node.textContent = data.length ? String(data.length) : "—";
+      });
       const repositorySource = document.body.dataset.language
         ? data.filter((item) => item.language === document.body.dataset.language)
         : data;

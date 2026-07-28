@@ -62,13 +62,7 @@
       <div class="leaderboard-shell reveal">
         <div class="leaderboard-toolbar">
           <span>Bird-Critic 1.5 Lite · 100</span>
-          <div class="language-filters" aria-label="Leaderboard view">
-            <button class="filter-button active" type="button" data-result-filter="overall">Overall</button>
-            <button class="filter-button" type="button" data-result-filter="python">Python</button>
-            <button class="filter-button" type="button" data-result-filter="node">Node.js</button>
-            <button class="filter-button" type="button" data-result-filter="ruby">Ruby</button>
-            <button class="filter-button" type="button" data-result-filter="php">PHP</button>
-          </div>
+          <span>Overall · executable pass rate</span>
         </div>
         <table class="leaderboard">
           <thead>
@@ -82,6 +76,34 @@
           </thead>
           <tbody id="results-body">
             <tr class="empty-row"><td colspan="5">Waiting for official model result data.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="results-section" id="language-results">
+      <div class="results-head reveal">
+        <div><span class="kicker">Language breakdown</span><h2>Pass rate by language</h2></div>
+        <p>The same Lite submissions are evaluated across four fixed subsets: Python 25, Node.js 28, Ruby 20, and PHP 27.</p>
+      </div>
+      <div class="leaderboard-shell reveal">
+        <div class="leaderboard-toolbar">
+          <span>Bird-Critic 1.5 Lite · language view</span>
+          <span>Each cell shows pass rate and solved / total</span>
+        </div>
+        <table class="leaderboard language-breakdown">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Model / Agent</th>
+              <th>Python · 25</th>
+              <th>Node.js · 28</th>
+              <th>Ruby · 20</th>
+              <th>PHP · 27</th>
+            </tr>
+          </thead>
+          <tbody id="language-results-body">
+            <tr class="empty-row"><td colspan="6">Waiting for official model result data.</td></tr>
           </tbody>
         </table>
       </div>

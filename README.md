@@ -7,12 +7,18 @@ Static multi-page website for Bird-Critic 1.5. It is designed to publish directl
 | Route | Purpose | Status |
 | --- | --- | --- |
 | `/` | Main release hub | Ready |
-| `/lite/` | Lite leaderboard and 100-instance browser | Ready for result data |
+| `/lite/` | Lite overall leaderboard, four-language pass table, and 100-instance browser | Ready for result data |
 | `/full/` | Full 300-instance release | Release template |
-| `/languages/python/` | Python track | Ready for result data |
-| `/languages/node/` | Node.js track | Ready for result data |
-| `/languages/ruby/` | Ruby track | Ready for result data |
-| `/languages/php/` | PHP track | Ready for result data |
+| `/languages/python/` | Independent rolling Python track | Ready for track data |
+| `/languages/node/` | Independent rolling Node.js track | Ready for track data |
+| `/languages/ruby/` | Independent rolling Ruby track | Ready for track data |
+| `/languages/php/` | Independent rolling PHP track | Ready for track data |
+
+Lite, Full, and the four language tracks are separate products:
+
+- **Lite** is a fixed 100-instance evaluation.
+- **Full** is a fixed 300-instance evaluation.
+- **Language tracks** are independent, continuously updated task pools. They do not inherit tasks or results from Lite or Full.
 
 ## Preview locally
 
@@ -71,11 +77,30 @@ Edit [`data/lite-results.json`](data/lite-results.json). The website computes su
 ]
 ```
 
-Use the exact totals above. The same file powers the Lite leaderboard and all four language-track leaderboards.
+Use the exact totals above. This file powers both Lite tables: the overall leaderboard and the four-language pass-rate breakdown.
 
 ## Publish Full results
 
 Edit [`data/full-results.json`](data/full-results.json) using the same structure. Set `overall.total` to `300` and use the final official totals for each language.
+
+## Update an independent language track
+
+Each rolling language track has its own task and result files:
+
+```text
+data/tracks/python-tasks.json
+data/tracks/python-results.json
+data/tracks/node-tasks.json
+data/tracks/node-results.json
+data/tracks/ruby-tasks.json
+data/tracks/ruby-results.json
+data/tracks/php-tasks.json
+data/tracks/php-results.json
+```
+
+These files are deliberately separate from `lite-instances.json`, `lite-results.json`, and `full-results.json`. Adding or removing a track task automatically updates the published task count on that language page.
+
+Track result files use the same model record format. Store the track score under its language key—for example, `scores.python` for the Python track.
 
 ## Update the instance list
 
