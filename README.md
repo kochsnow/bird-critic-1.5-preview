@@ -85,22 +85,25 @@ Edit [`data/full-results.json`](data/full-results.json) using the same structure
 
 ## Update an independent language track
 
-Each rolling language track has its own task and result files:
+Each rolling language track is a self-contained ownership directory:
 
 ```text
-data/tracks/python-tasks.json
-data/tracks/python-results.json
-data/tracks/node-tasks.json
-data/tracks/node-results.json
-data/tracks/ruby-tasks.json
-data/tracks/ruby-results.json
-data/tracks/php-tasks.json
-data/tracks/php-results.json
+languages/
+├── python/
+│   ├── index.html
+│   ├── tasks.json
+│   ├── results.json
+│   └── README.md
+├── node/
+├── ruby/
+└── php/
 ```
 
-These files are deliberately separate from `lite-instances.json`, `lite-results.json`, and `full-results.json`. Adding or removing a track task automatically updates the published task count on that language page.
+Each language owner can change their page copy, task catalog, and result data without editing another track. These files are deliberately separate from `lite-instances.json`, `lite-results.json`, and `full-results.json`. Adding or removing a task automatically updates the published task count on that language page.
 
 Track result files use the same model record format. Store the track score under its language key—for example, `scores.python` for the Python track.
+
+See [`languages/README.md`](languages/README.md) for the ownership workflow. A ready-to-fill CODEOWNERS template is included at [`.github/CODEOWNERS.example`](.github/CODEOWNERS.example).
 
 ## Update the instance list
 

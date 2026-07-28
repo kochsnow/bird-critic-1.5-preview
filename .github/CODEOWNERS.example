@@ -1,0 +1,13 @@
+# Replace the placeholder handles, then rename this file to CODEOWNERS.
+# Each language team reviews changes to its own self-contained page directory.
+
+/languages/python/  @python-owner
+/languages/node/    @node-owner
+/languages/ruby/    @ruby-owner
+/languages/php/     @php-owner
+
+# Core maintainers own shared navigation, styles, scripts, Lite, and Full.
+/assets/            @core-owner
+/lite/              @core-owner
+/full/              @core-owner
+/index.html          @core-owner
