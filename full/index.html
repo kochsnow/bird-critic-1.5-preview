@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bird-Critic 1.5 Full — the upcoming 300-instance real-world code repair benchmark.">
+  <meta name="theme-color" content="#f3f1e9">
+  <meta property="og:title" content="Bird-Critic 1.5 Full">
+  <meta property="og:description" content="The complete 300-instance evaluation for real-world LLM code repair.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../assets/og.png">
+  <title>Bird-Critic 1.5 Full — 300-instance evaluation</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <script defer src="../assets/app.js"></script>
+</head>
+<body class="inner" data-page="full" data-depth="1" data-results="../data/full-results.json">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="../" aria-label="Bird-Critic 1.5 home">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span></span>
+      <span>BIRD—CRITIC</span><b>1.5</b>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span><span class="sr-only">Menu</span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+      <a href="../lite/">Lite</a>
+      <a href="../full/" aria-current="page">Full</a>
+      <a href="#leaderboard">Leaderboard</a>
+      <a href="../#tracks">Language tracks</a>
+      <a class="nav-cta" href="https://github.com/bird-bench" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="reveal">
+        <div class="page-eyebrow">Edition 02 · Full evaluation</div>
+        <h1>300 instances.<br>The full picture.</h1>
+      </div>
+      <div class="reveal">
+        <p class="page-intro">The complete Bird-Critic 1.5 release is designed for robust model comparison, ecosystem-level analysis, and a closer look at where coding agents still fail.</p>
+        <span class="page-status soon">Release in preparation</span>
+      </div>
+    </section>
+    <hr class="page-rule">
+
+    <section class="metric-grid reveal" aria-label="Full benchmark metrics">
+      <div class="metric"><strong>300</strong><span>Full instances</span></div>
+      <div class="metric"><strong>4</strong><span>Language ecosystems</span></div>
+      <div class="metric"><strong>1.5</strong><span>Benchmark generation</span></div>
+      <div class="metric"><strong>0/1</strong><span>Executable reward</span></div>
+    </section>
+
+    <section class="coming-panel">
+      <div class="coming-panel-inner reveal">
+        <span class="kicker kicker-light">Full release</span>
+        <h2>A deeper evaluation is approaching.</h2>
+        <p>The Full edition will publish 300 instances, official model results, complete task composition, and language-level breakdowns on this page. Its stable URL is already in place for future citations and announcements.</p>
+        <a class="button button-primary" href="../lite/">View Lite results <span>→</span></a>
+        <span class="coming-number" aria-hidden="true">300</span>
+      </div>
+    </section>
+
+    <section class="results-section" id="leaderboard">
+      <div class="results-head reveal">
+        <div><span class="kicker">Evaluation results</span><h2>Full leaderboard</h2></div>
+        <p>This table is wired for publication. Add the official entries to <code>data/full-results.json</code> when the 300-instance evaluation is complete.</p>
+      </div>
+      <div class="leaderboard-shell reveal">
+        <div class="leaderboard-toolbar">
+          <span>Bird-Critic 1.5 Full · 300</span>
+          <div class="language-filters" aria-label="Leaderboard view">
+            <button class="filter-button active" type="button" data-result-filter="overall">Overall</button>
+            <button class="filter-button" type="button" data-result-filter="python">Python</button>
+            <button class="filter-button" type="button" data-result-filter="node">Node.js</button>
+            <button class="filter-button" type="button" data-result-filter="ruby">Ruby</button>
+            <button class="filter-button" type="button" data-result-filter="php">PHP</button>
+          </div>
+        </div>
+        <table class="leaderboard">
+          <thead><tr><th>Rank</th><th>Model / Agent</th><th>Success Rate</th><th>Resolved</th><th>Release</th></tr></thead>
+          <tbody id="results-body"><tr class="empty-row"><td colspan="5">Full evaluation results will be released here.</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="../">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span></span>
+      <span>BIRD—CRITIC</span><b>1.5</b>
+    </a>
+    <p>Full edition · 300 repair instances.</p>
+    <div><a href="../lite/">Lite</a><a href="../#tracks">Language tracks</a></div>
+    <small>© <span data-year></span> Bird-Critic Team</small>
+  </footer>
+</body>
+</html>

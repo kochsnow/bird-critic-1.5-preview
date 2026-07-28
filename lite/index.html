@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bird-Critic 1.5 Lite — results and task composition for the 100-instance multi-language code repair benchmark.">
+  <meta name="theme-color" content="#f3f1e9">
+  <meta property="og:title" content="Bird-Critic 1.5 Lite">
+  <meta property="og:description" content="100 real-world repair instances across Python, Node.js, Ruby, and PHP.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../assets/og.png">
+  <title>Bird-Critic 1.5 Lite — 100-instance evaluation</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <script defer src="../assets/app.js"></script>
+</head>
+<body class="inner" data-page="lite" data-depth="1" data-results="../data/lite-results.json" data-instances="../data/lite-instances.json">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="../" aria-label="Bird-Critic 1.5 home">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span></span>
+      <span>BIRD—CRITIC</span><b>1.5</b>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span><span class="sr-only">Menu</span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+      <a href="../lite/" aria-current="page">Lite</a>
+      <a href="../full/">Full</a>
+      <a href="#leaderboard">Leaderboard</a>
+      <a href="#instances">Instances</a>
+      <a class="nav-cta" href="https://github.com/bird-bench" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="reveal">
+        <div class="page-eyebrow">Edition 01 · Lite evaluation</div>
+        <h1>100 instances.<br>Zero shortcuts.</h1>
+      </div>
+      <div class="reveal">
+        <p class="page-intro">A compact, multi-ecosystem test of whether coding agents can diagnose and repair real production issues—not merely generate plausible patches.</p>
+        <span class="page-status">Instance set released</span>
+      </div>
+    </section>
+    <hr class="page-rule">
+
+    <section class="metric-grid reveal" aria-label="Lite benchmark metrics">
+      <div class="metric"><strong>100</strong><span>Curated instances</span></div>
+      <div class="metric"><strong>4</strong><span>Language ecosystems</span></div>
+      <div class="metric"><strong>11</strong><span>Repositories &amp; plugins</span></div>
+      <div class="metric"><strong>0/1</strong><span>Executable reward</span></div>
+    </section>
+
+    <section class="results-section" id="leaderboard">
+      <div class="results-head reveal">
+        <div><span class="kicker">Evaluation results</span><h2>Lite leaderboard</h2></div>
+        <p>Success Rate is the percentage of instances solved under the official executable verification protocol. Add model results to <code>data/lite-results.json</code> to publish them here.</p>
+      </div>
+      <div class="leaderboard-shell reveal">
+        <div class="leaderboard-toolbar">
+          <span>Bird-Critic 1.5 Lite · 100</span>
+          <div class="language-filters" aria-label="Leaderboard view">
+            <button class="filter-button active" type="button" data-result-filter="overall">Overall</button>
+            <button class="filter-button" type="button" data-result-filter="python">Python</button>
+            <button class="filter-button" type="button" data-result-filter="node">Node.js</button>
+            <button class="filter-button" type="button" data-result-filter="ruby">Ruby</button>
+            <button class="filter-button" type="button" data-result-filter="php">PHP</button>
+          </div>
+        </div>
+        <table class="leaderboard">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Model / Agent</th>
+              <th>Success Rate</th>
+              <th>Resolved</th>
+              <th>Release</th>
+            </tr>
+          </thead>
+          <tbody id="results-body">
+            <tr class="empty-row"><td colspan="5">Waiting for official model result data.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="results-section">
+      <div class="results-head reveal">
+        <div><span class="kicker">Task composition</span><h2>Balanced across ecosystems</h2></div>
+        <p>The Lite set combines 25 Python tasks, 28 Node.js tasks across core and plugins, 20 Ruby database tasks, and 27 PHP tasks.</p>
+      </div>
+      <div class="split-chart reveal" aria-label="Instance distribution by language">
+        <div class="split-segment split-python"><strong>25</strong><span>Python · 25%</span></div>
+        <div class="split-segment split-node"><strong>28</strong><span>Node.js · 28%</span></div>
+        <div class="split-segment split-ruby"><strong>20</strong><span>Ruby · 20%</span></div>
+        <div class="split-segment split-php"><strong>27</strong><span>PHP · 27%</span></div>
+      </div>
+    </section>
+
+    <section class="results-section" id="instances">
+      <div class="results-head reveal">
+        <div><span class="kicker">Official split</span><h2>Browse all 100 instances</h2></div>
+        <p>Search by repository or pull request, and filter the exact task list used for the Bird-Critic 1.5 Lite evaluation.</p>
+      </div>
+      <div class="instance-layout">
+        <aside class="instance-sidebar reveal">
+          <h3>Filter instances</h3>
+          <label for="language-filter">Language</label>
+          <select id="language-filter">
+            <option value="">All languages</option>
+            <option value="Python">Python</option>
+            <option value="Node.js">Node.js</option>
+            <option value="Ruby">Ruby</option>
+            <option value="PHP">PHP</option>
+          </select>
+          <label for="repo-filter">Repository</label>
+          <select id="repo-filter"><option value="">All repositories</option></select>
+          <label for="instance-search">Search</label>
+          <input id="instance-search" type="search" placeholder="PR or repository…" autocomplete="off">
+          <div class="instance-count" id="instance-count">Loading instances…</div>
+        </aside>
+        <div class="instance-table-wrap reveal">
+          <table class="instance-table">
+            <thead><tr><th>#</th><th>Language</th><th>Repository</th><th>Pull request</th></tr></thead>
+            <tbody id="instance-body"><tr class="empty-row"><td colspan="4">Loading…</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="results-section">
+      <div class="results-head reveal">
+        <div><span class="kicker">Reproduce</span><h2>Run the benchmark</h2></div>
+        <p>Bird-Critic 1.5 runs through Harbor. Choose an agent and provider model, then execute the Lite suite in its isolated task environments.</p>
+      </div>
+      <div class="quickstart reveal">
+        <button class="copy-button" type="button" data-copy-target="#quickstart-code">Copy</button>
+        <pre id="quickstart-code">export MODEL="openai/&lt;model&gt;"
+
+uv run harbor run \
+  -p "datasets/&lt;lite-dataset&gt;" \
+  -a opencode \
+  -m "$MODEL" \
+  -n 4 \
+  --job-name "birdcritic15-lite"</pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="../">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span></span>
+      <span>BIRD—CRITIC</span><b>1.5</b>
+    </a>
+    <p>Lite edition · 100 verified repair instances.</p>
+    <div><a href="../full/">Full</a><a href="../#tracks">Language tracks</a></div>
+    <small>© <span data-year></span> Bird-Critic Team</small>
+  </footer>
+</body>
+</html>
