@@ -2,6 +2,11 @@
 
 Static multi-page website for Bird-Critic 1.5. It is designed to publish directly on GitHub Pages without a build step.
 
+The visual system follows the Bird-Critic 1.0 family: the original cube-bird
+mark, pale green mastheads, cream navigation, academic-blue headings, and
+compact benchmark tables. Brand assets are reused from the
+[Bird-Critic 1.0 website](https://github.com/bird-bench/bird-critic.github.io).
+
 ## Site map
 
 | Route | Purpose | Status |
@@ -31,6 +36,13 @@ python3 -m http.server 8000
 Then open `http://localhost:8000`.
 
 Do not open `index.html` directly from Finder: the instance and result JSON files are loaded over HTTP.
+
+Run the static checks before pushing:
+
+```bash
+node scripts/validate-site.mjs
+node --check assets/app.js
+```
 
 ## Publish on GitHub Pages
 
@@ -121,7 +133,7 @@ The official Lite split is stored in [`data/lite-instances.json`](data/lite-inst
 
 ## Before the public launch
 
-- Replace the temporary `https://github.com/bird-bench` links with the final code repository.
+- Replace the preview-repository links if the final public code repository changes.
 - Add the paper and dataset links once their public URLs are available.
 - Fill `data/lite-results.json` with the official result rows.
 - Confirm the release date and citation text.

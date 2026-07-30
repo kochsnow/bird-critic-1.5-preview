@@ -8,8 +8,9 @@
   <meta property="og:title" content="Bird-Critic 1.5">
   <meta property="og:description" content="Real repositories. Reproducible environments. Verifiable repairs.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/og.png">
+  <meta property="og:image" content="assets/og-family.png">
   <title>Bird-Critic 1.5 — Real-world code repair benchmark</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="stylesheet" href="assets/styles.css">
   <script defer src="assets/app.js"></script>
 </head>
@@ -31,66 +32,30 @@
       <a href="full/">Full</a>
       <a href="#tracks">Language tracks</a>
       <a href="#method">Method</a>
-      <a class="nav-cta" href="https://github.com/bird-bench" target="_blank" rel="noreferrer">GitHub ↗</a>
+      <a class="nav-cta" href="https://github.com/kochsnow/bird-critic-1.5-preview" target="_blank" rel="noreferrer">GitHub ↗</a>
     </nav>
   </header>
 
   <main id="main">
     <section class="hero">
-      <div class="hero-glow" aria-hidden="true"></div>
       <div class="hero-copy reveal">
-        <div class="eyebrow"><span class="pulse"></span> The next flight of BIRD-Critic</div>
-        <h1>Can agents repair<br><em>what users actually break?</em></h1>
-        <p class="hero-lead">Bird-Critic 1.5 evaluates LLM agents on real pull requests across production codebases—inside reproducible environments with executable, test-driven verification.</p>
+        <img class="hero-project-logo" src="assets/bird-critic-1-logo.png" alt="Bird-Critic cube bird">
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="eyebrow"><span class="pulse"></span> A benchmark in the BIRD family</div>
+        <h1>BIRD-CRITIC <em>1.5</em></h1>
+        <p class="hero-question">Can LLM agents fix user issues in real-world codebases?</p>
+        <p class="hero-lead">A multi-ecosystem benchmark built from real pull requests, reproducible environments, and executable test-driven verification.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="lite/">Explore Lite results <span>→</span></a>
-          <a class="button button-ghost" href="#editions">View all editions</a>
+          <a class="button button-ghost" href="https://github.com/kochsnow/bird-critic-1.5-preview" target="_blank" rel="noreferrer">Code</a>
+          <a class="button button-ghost" href="#editions">All editions</a>
         </div>
         <div class="hero-note">
           <span>Now releasing</span>
           <strong>Lite · 100 instances</strong>
         </div>
-      </div>
-
-      <div class="hero-visual reveal" aria-label="Bird-Critic evaluation pipeline">
-        <div class="terminal">
-          <div class="terminal-bar">
-            <div class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></div>
-            <span>bird-critic / evaluation</span>
-            <span class="terminal-status">LIVE</span>
-          </div>
-          <div class="terminal-body">
-            <div class="flight-path" aria-hidden="true">
-              <span class="flight-dot dot-a"></span>
-              <span class="flight-dot dot-b"></span>
-              <span class="flight-dot dot-c"></span>
-            </div>
-            <div class="pipeline-row">
-              <span class="step-number">01</span>
-              <div><b>REAL ISSUE</b><small>Production PR · user-reported bug</small></div>
-              <span class="status-chip neutral">INPUT</span>
-            </div>
-            <div class="pipeline-line"></div>
-            <div class="pipeline-row">
-              <span class="step-number">02</span>
-              <div><b>AGENT REPAIR</b><small>Inspect · reason · edit · test</small></div>
-              <span class="status-chip running">RUNNING</span>
-            </div>
-            <div class="pipeline-line"></div>
-            <div class="pipeline-row">
-              <span class="step-number">03</span>
-              <div><b>VERIFICATION</b><small>Executable tests in a clean container</small></div>
-              <span class="status-chip pass">PASS</span>
-            </div>
-            <div class="terminal-command">
-              <span>$</span> harbor run -p birdcritic15_lite <i class="cursor"></i>
-            </div>
-          </div>
-        </div>
-        <div class="orbit-tag tag-python">Python</div>
-        <div class="orbit-tag tag-node">Node.js</div>
-        <div class="orbit-tag tag-ruby">Ruby</div>
-        <div class="orbit-tag tag-php">PHP</div>
       </div>
     </section>
 
@@ -99,6 +64,36 @@
       <div><strong>4</strong><span>rolling language tracks</span></div>
       <div><strong>300</strong><span>Full instances · next</span></div>
       <div><strong>1</strong><span>executable protocol</span></div>
+    </section>
+
+    <section class="section home-overview" id="about">
+      <article class="family-panel reveal">
+        <div class="panel-heading"><h2>Hi! BIRD-CRITIC 1.5</h2></div>
+        <div class="panel-body">
+          <p><strong>BIRD-CRITIC 1.5</strong> extends the BIRD-Critic research line from SQL diagnostics to repository-level code debugging. It asks whether LLM agents can inspect, edit, and verify fixes for realistic user issues across mature software systems.</p>
+          <p>The benchmark separates two fixed evaluation editions from four independently maintained language tracks:</p>
+          <ul class="family-list">
+            <li><strong>Lite:</strong> a fixed 100-instance multi-language evaluation for fast and comparable testing.</li>
+            <li><strong>Full:</strong> an upcoming fixed 300-instance benchmark for deeper model analysis.</li>
+            <li><strong>Language tracks:</strong> continuously updated Python, Node.js, Ruby, and PHP task pools.</li>
+          </ul>
+          <div class="resource-buttons">
+            <a class="family-button" href="lite/">Lite Results</a>
+            <a class="family-button" href="full/">Full Preview</a>
+            <a class="family-button family-button-teal" href="#tracks">Language Tracks</a>
+            <a class="family-button" href="https://github.com/kochsnow/bird-critic-1.5-preview" target="_blank" rel="noreferrer">Code</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="family-panel reveal" id="news">
+        <div class="panel-heading"><h2>News</h2></div>
+        <div class="panel-body news-list">
+          <p><span class="news-date">Jul. 2026</span> The Bird-Critic 1.5 website preview and independently maintainable language pages are released.</p>
+          <p><span class="news-date">Coming next</span> Official Lite model results will be published across the overall and four-language leaderboards.</p>
+          <p><span class="news-date">In preparation</span> Bird-Critic 1.5 Full will release 300 fixed evaluation instances.</p>
+        </div>
+      </article>
     </section>
 
     <section class="section editions" id="editions">
@@ -196,6 +191,15 @@
         <div class="release-ring ring-two" aria-hidden="true"></div>
       </div>
     </section>
+
+    <section class="section citation-section" id="citation">
+      <div class="family-panel reveal">
+        <div class="panel-heading"><h2>Citation</h2></div>
+        <div class="panel-body">
+          <p>The official Bird-Critic 1.5 citation will be added with the paper release. Until then, please link to this project page and the public benchmark repository.</p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -204,7 +208,7 @@
       <span>BIRD—CRITIC</span><b>1.5</b>
     </a>
     <p>Real repositories. Reproducible environments. Verifiable repairs.</p>
-    <div><a href="https://github.com/bird-bench" target="_blank" rel="noreferrer">GitHub</a><a href="https://bird-critic.github.io/" target="_blank" rel="noreferrer">Bird-Critic 1.0</a></div>
+    <div><a href="https://github.com/kochsnow/bird-critic-1.5-preview" target="_blank" rel="noreferrer">GitHub</a><a href="https://bird-critic.github.io/" target="_blank" rel="noreferrer">Bird-Critic 1.0</a></div>
     <small>© <span data-year></span> Bird-Critic Team</small>
   </footer>
 </body>
