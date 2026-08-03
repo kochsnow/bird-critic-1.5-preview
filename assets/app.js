@@ -117,7 +117,7 @@ if (resultsBody) {
     `).join("");
   };
 
-  fetch(document.body.dataset.results || "../data/lite-results.json")
+  fetch(document.body.dataset.results || "../data/lite-results.json", { cache: "no-store" })
     .then((response) => {
       if (!response.ok) throw new Error("Unable to load results");
       return response.json();
@@ -172,7 +172,7 @@ if (instanceBody) {
     count.textContent = `${filtered.length} / ${instances.length} instances`;
   };
 
-  fetch(document.body.dataset.instances || "../data/lite-instances.json")
+  fetch(document.body.dataset.instances || "../data/lite-instances.json", { cache: "no-store" })
     .then((response) => {
       if (!response.ok) throw new Error("Unable to load instance data");
       return response.json();
