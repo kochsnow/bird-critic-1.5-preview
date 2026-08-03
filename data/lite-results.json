@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "model": "Sonnet 4.6 (v3)",
+    "agent": "OpenHands",
+    "date": "2026-08-03",
+    "scores": {
+      "overall": { "solved": 62, "total": 100 },
+      "python": { "solved": 14, "total": 25 },
+      "node": { "solved": 12, "total": 28 },
+      "ruby": { "solved": 18, "total": 20 },
+      "php": { "solved": 18, "total": 27 }
+    }
+  },
+  {
+    "model": "Qwen 397B (v3)",
+    "agent": "OpenHands",
+    "date": "2026-08-03",
+    "scores": {
+      "overall": { "solved": 58, "total": 100 },
+      "python": { "solved": 18, "total": 25 },
+      "node": { "solved": 14, "total": 28 },
+      "ruby": { "solved": 11, "total": 20 },
+      "php": { "solved": 15, "total": 27 }
+    }
+  }
+]

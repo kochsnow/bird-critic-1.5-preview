@@ -57,22 +57,22 @@
 
     <section class="results-section" id="leaderboard">
       <div class="results-head reveal">
-        <div><span class="kicker">Evaluation results</span><h2>Lite leaderboard</h2></div>
-        <p>Success Rate is the percentage of instances solved under the official executable verification protocol. Add model results to <code>data/lite-results.json</code> to publish them here.</p>
+        <div><span class="kicker">Preliminary evaluation results</span><h2>Lite leaderboard</h2></div>
+        <p>Success Rate is the percentage of instances solved under the executable verification protocol. The current Lite submissions use the OpenHands harness.</p>
       </div>
       <div class="leaderboard-shell reveal">
         <div class="leaderboard-toolbar">
           <span>Bird-Critic 1.5 Lite · 100</span>
-          <span>Overall · executable pass rate</span>
+          <span>OpenHands harness · executable pass rate</span>
         </div>
         <table class="leaderboard">
           <thead>
             <tr>
               <th>Rank</th>
-              <th>Model / Agent</th>
+              <th>Model / Harness</th>
               <th>Success Rate</th>
               <th>Resolved</th>
-              <th>Release</th>
+              <th>Evaluated</th>
             </tr>
           </thead>
           <tbody id="results-body">
@@ -90,13 +90,13 @@
       <div class="leaderboard-shell reveal">
         <div class="leaderboard-toolbar">
           <span>Bird-Critic 1.5 Lite · language view</span>
-          <span>Each cell shows pass rate and solved / total</span>
+          <span>OpenHands harness · pass rate and solved / total</span>
         </div>
         <table class="leaderboard language-breakdown">
           <thead>
             <tr>
               <th>Rank</th>
-              <th>Model / Agent</th>
+              <th>Model / Harness</th>
               <th>Python · 25</th>
               <th>Node.js · 28</th>
               <th>Ruby · 20</th>
@@ -156,19 +156,16 @@
 
     <section class="results-section">
       <div class="results-head reveal">
-        <div><span class="kicker">Reproduce</span><h2>Run the benchmark</h2></div>
-        <p>Bird-Critic 1.5 runs through Harbor. Choose an agent and provider model, then execute the Lite suite in its isolated task environments.</p>
+        <div><span class="kicker">Reproduce</span><h2>OpenHands evaluation harness</h2></div>
+        <p>The current Lite leaderboard is evaluated with OpenHands. The exact pinned harness version, model-provider settings, and concurrency configuration will be published with the official release.</p>
       </div>
       <div class="quickstart reveal">
         <button class="copy-button" type="button" data-copy-target="#quickstart-code">Copy</button>
-        <pre id="quickstart-code">export MODEL="openai/&lt;model&gt;"
+        <pre id="quickstart-code">HARNESS="OpenHands"
+SUITE="Bird-Critic 1.5 Lite"
+INSTANCES=100
 
-uv run harbor run \
-  -p "datasets/&lt;lite-dataset&gt;" \
-  -a opencode \
-  -m "$MODEL" \
-  -n 4 \
-  --job-name "birdcritic15-lite"</pre>
+# Reproduction command and pinned configuration: coming with release.</pre>
       </div>
     </section>
   </main>
