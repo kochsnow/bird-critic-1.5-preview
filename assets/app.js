@@ -53,6 +53,7 @@ if (resultsBody) {
   let results = [];
   let activeView = document.body.dataset.resultView || "overall";
   const resultButtons = [...document.querySelectorAll("[data-result-filter]")];
+  const formatRate = (rate) => Number.isInteger(rate) ? rate.toFixed(1) : rate.toFixed(2);
   resultButtons.forEach((item) => item.classList.toggle("active", item.dataset.resultFilter === activeView));
 
   const renderResults = () => {
@@ -70,15 +71,18 @@ if (resultsBody) {
       return;
     }
 
-    resultsBody.innerHTML = rows.map((item, index) => `
-      <tr>
-        <td>${index + 1}</td>
-        <td><strong>${item.model}</strong>${item.agent ? `<br><small>${item.agent}</small>` : ""}</td>
-        <td class="score">${item.rate.toFixed(1)}% <span class="score-bar"><i style="width:${item.rate}%"></i></span></td>
-        <td>${item.metric.solved} / ${item.metric.total}</td>
-        <td>${item.date || "—"}</td>
-      </tr>
-    `).join("");
+    resultsBody.innerHTML = rows.map((item, index) => {
+      const detail = [item.agent, item.split].filter(Boolean).join(" · ");
+      return `
+        <tr>
+          <td>${index + 1}</td>
+          <td><strong>${item.model}</strong>${detail ? `<br><small>${detail}</small>` : ""}</td>
+          <td class="score">${formatRate(item.rate)}% <span class="score-bar"><i style="width:${item.rate}%"></i></span></td>
+          <td>${item.metric.solved} / ${item.metric.total}</td>
+          <td>${item.date || "—"}</td>
+        </tr>
+      `;
+    }).join("");
   };
 
   const renderLanguageResults = () => {
@@ -102,19 +106,22 @@ if (resultsBody) {
 
     const cell = (metric) => {
       const rate = (metric.solved / metric.total) * 100;
-      return `<strong>${rate.toFixed(1)}%</strong><small>${metric.solved} / ${metric.total}</small>`;
+      return `<strong>${formatRate(rate)}%</strong><small>${metric.solved} / ${metric.total}</small>`;
     };
 
-    languageBody.innerHTML = valid.map((item, index) => `
-      <tr>
-        <td>${index + 1}</td>
-        <td><strong>${item.model}</strong>${item.agent ? `<br><small>${item.agent}</small>` : ""}</td>
-        <td class="language-score">${cell(item.scores.python)}</td>
-        <td class="language-score">${cell(item.scores.node)}</td>
-        <td class="language-score">${cell(item.scores.ruby)}</td>
-        <td class="language-score">${cell(item.scores.php)}</td>
-      </tr>
-    `).join("");
+    languageBody.innerHTML = valid.map((item, index) => {
+      const detail = [item.agent, item.split].filter(Boolean).join(" · ");
+      return `
+        <tr>
+          <td>${index + 1}</td>
+          <td><strong>${item.model}</strong>${detail ? `<br><small>${detail}</small>` : ""}</td>
+          <td class="language-score">${cell(item.scores.python)}</td>
+          <td class="language-score">${cell(item.scores.node)}</td>
+          <td class="language-score">${cell(item.scores.ruby)}</td>
+          <td class="language-score">${cell(item.scores.php)}</td>
+        </tr>
+      `;
+    }).join("");
   };
 
   fetch(document.body.dataset.results || "../data/lite-results.json", { cache: "no-store" })

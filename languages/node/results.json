@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "model": "gpt-oss-120b",
+    "agent": "OpenCode",
+    "split": "Lite / Base Split",
+    "date": "2026-08-03",
+    "scores": {
+      "node": { "solved": 7, "total": 59 }
+    }
+  }
+]
