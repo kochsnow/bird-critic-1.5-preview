@@ -11,10 +11,10 @@
   <meta property="og:image" content="../../assets/og-family.png">
   <title>Bird-Critic 1.5 Python Track</title>
   <link rel="icon" href="../../assets/favicon.png" type="image/png">
-  <link rel="stylesheet" href="../../assets/styles.css">
-  <script defer src="../../assets/app.js?v=20260803-2"></script>
+  <link rel="stylesheet" href="../../assets/styles.css?v=20260803-3">
+  <script defer src="../../assets/app.js?v=20260803-3"></script>
 </head>
-<body class="inner" data-page="python" data-depth="2" data-language="Python" data-result-view="python" data-results="results.json" data-instances="tasks.json">
+<body class="inner" data-page="python" data-depth="2" data-language="Python" data-show-dataset="true" data-result-view="python" data-results="results.json" data-instances="tasks.json">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="scroll-progress" aria-hidden="true"></div>
 
@@ -49,8 +49,8 @@
     <hr class="page-rule">
 
     <section class="metric-grid reveal" aria-label="Python track metrics">
-      <div class="metric"><strong data-task-count>—</strong><span>Published tasks</span></div>
-      <div class="metric"><strong>60</strong><span>Lite / Base jobs</span></div>
+      <div class="metric"><strong data-task-count>—</strong><span>Published instances</span></div>
+      <div class="metric"><strong>6</strong><span>Repositories</span></div>
       <div class="metric"><strong>PY</strong><span>Language track</span></div>
       <div class="metric"><strong>0/1</strong><span>Executable reward</span></div>
     </section>
@@ -74,14 +74,14 @@
 
     <section class="results-section" id="instances">
       <div class="results-head reveal">
-        <div><span class="kicker">Rolling task pool</span><h2>Current Python tasks</h2></div>
-        <p>This catalog is updated independently as new Python tasks are published. The displayed count always reflects the current data file.</p>
+        <div><span class="kicker">Published dataset</span><h2>Browse all 60 Python instances</h2></div>
+        <p>Search by repository or pull request, and filter the exact task list published from <code>birdcritic15_full_python</code>.</p>
       </div>
       <div class="instance-layout">
         <aside class="instance-sidebar reveal">
           <h3>Filter instances</h3>
-          <label for="language-filter">Language</label>
-          <select id="language-filter"><option value="Python">Python</option></select>
+          <label for="language-filter">Dataset</label>
+          <select id="language-filter"><option value="">All datasets</option><option value="birdcritic15_full_python">Python · Full dataset</option></select>
           <label for="repo-filter">Repository</label>
           <select id="repo-filter"><option value="">All repositories</option></select>
           <label for="instance-search">Search</label>
@@ -90,7 +90,7 @@
         </aside>
         <div class="instance-table-wrap reveal">
           <table class="instance-table">
-            <thead><tr><th>#</th><th>Language</th><th>Repository</th><th>Pull request</th></tr></thead>
+            <thead><tr><th>#</th><th>Dataset</th><th>Repository</th><th>Pull request</th></tr></thead>
             <tbody id="instance-body"><tr class="empty-row"><td colspan="4">Loading…</td></tr></tbody>
           </table>
         </div>

@@ -113,6 +113,13 @@ languages/
 
 Each language owner can change their page copy, task catalog, and result data without editing another track. These files are deliberately separate from `lite-instances.json`, `lite-results.json`, and `full-results.json`. Adding or removing a task automatically updates the published task count on that language page.
 
+To rebuild the published Python, Node.js, and PHP instance catalogs directly
+from the local benchmark datasets, run:
+
+```bash
+node scripts/sync-language-tasks.mjs
+```
+
 Track result files use the same model record format. Store the track score under its language key—for example, `scores.python` for the Python track.
 
 See [`languages/README.md`](languages/README.md) for the ownership workflow. A ready-to-fill CODEOWNERS template is included at [`.github/CODEOWNERS.example`](.github/CODEOWNERS.example).

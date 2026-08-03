@@ -155,15 +155,19 @@ if (instanceBody) {
   const searchInput = document.querySelector("#instance-search");
   const count = document.querySelector("#instance-count");
   let instances = [];
+  const showDataset = document.body.dataset.showDataset === "true";
 
   const normalizedLanguage = (name) => name === "Node.js" ? "node-js" : name.toLowerCase();
 
   const render = () => {
-    const language = languageFilter.value;
+    const classification = languageFilter.value;
     const repo = repoFilter.value;
     const query = searchInput.value.trim().toLowerCase();
     const filtered = instances.filter((item) => {
-      return (!language || item.language === language)
+      const classificationMatches = showDataset
+        ? (!classification || item.suite === classification)
+        : (!classification || item.language === classification);
+      return classificationMatches
         && (!repo || item.repository === repo)
         && (!query || item.instance.toLowerCase().includes(query) || item.repository.toLowerCase().includes(query));
     });
@@ -171,7 +175,9 @@ if (instanceBody) {
     instanceBody.innerHTML = filtered.map((item, index) => `
       <tr>
         <td>${String(index + 1).padStart(3, "0")}</td>
-        <td><span class="language-pill ${normalizedLanguage(item.language)}">${item.language}</span></td>
+        <td>${showDataset
+          ? `<span class="language-pill dataset" title="${item.suite}">${item.dataset_label || item.suite}</span>`
+          : `<span class="language-pill ${normalizedLanguage(item.language)}">${item.language}</span>`}</td>
         <td>${item.repository}</td>
         <td>${item.pull_request}</td>
       </tr>
@@ -198,7 +204,7 @@ if (instanceBody) {
         option.textContent = repo;
         repoFilter.append(option);
       });
-      if (document.body.dataset.language) {
+      if (document.body.dataset.language && !showDataset) {
         languageFilter.value = document.body.dataset.language;
       }
       render();

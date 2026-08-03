@@ -394,6 +394,7 @@ code, pre { font-family: var(--mono); }
 .language-pill.node-js { color: #51640c; background: #e9f5bf; }
 .language-pill.ruby { color: #7f2433; background: #ffe0dc; }
 .language-pill.php { color: #423a77; background: #e8e4ff; }
+.language-pill.dataset { color: var(--bird-blue); background: var(--bird-green); white-space: nowrap; }
 
 .quickstart { padding: 24px; color: #dceaf3; background: #243e55; border-radius: 5px; }
 .quickstart pre { margin: 0; overflow-x: auto; font-size: 11px; line-height: 1.75; }
