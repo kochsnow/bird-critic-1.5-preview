@@ -24,6 +24,18 @@
     }
   },
   {
+    "model": "DeepSeek-V4-flash-0731",
+    "agent": "OpenHands",
+    "date": "2026-08-04",
+    "scores": {
+      "overall": { "solved": 57, "total": 100 },
+      "python": { "solved": 16, "total": 25 },
+      "node": { "solved": 9, "total": 28 },
+      "ruby": { "solved": 16, "total": 20 },
+      "php": { "solved": 16, "total": 27 }
+    }
+  },
+  {
     "model": "gpt-5.4",
     "agent": "OpenHands",
     "date": "2026-08-03",
