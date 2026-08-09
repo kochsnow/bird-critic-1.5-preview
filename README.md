@@ -14,10 +14,10 @@ compact benchmark tables. Brand assets are reused from the
 | `/` | Main release hub | Ready |
 | `/lite/` | Lite overall leaderboard, four-language pass table, and 100-instance browser | Ready for result data |
 | `/full/` | Full 300-instance leaderboard, Extension 200 diagnostic, and instance browser | Preliminary result published |
-| `/languages/python/` | Independent rolling Python track | Ready for track data |
-| `/languages/node/` | Independent rolling Node.js track | Ready for track data |
+| `/languages/python/` | Independent rolling Python track | Preliminary Base result published |
+| `/languages/node/` | Independent rolling Node.js track | Preliminary Base result published |
 | `/languages/ruby/` | Independent rolling Ruby track | Ready for track data |
-| `/languages/php/` | Independent rolling PHP track | Ready for track data |
+| `/languages/php/` | Independent rolling PHP track | Preliminary Base result published |
 
 Lite, Full, and the four language tracks are separate products:
 
