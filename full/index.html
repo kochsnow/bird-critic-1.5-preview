@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Bird-Critic 1.5 Full — the upcoming 300-instance real-world code repair benchmark.">
+  <meta name="description" content="Bird-Critic 1.5 Full — preliminary results and all 300 real-world code repair instances.">
   <meta name="theme-color" content="#f3f1e9">
   <meta property="og:title" content="Bird-Critic 1.5 Full">
   <meta property="og:description" content="The complete 300-instance evaluation for real-world LLM code repair.">
@@ -11,10 +11,10 @@
   <meta property="og:image" content="../assets/og-family.png">
   <title>Bird-Critic 1.5 Full — 300-instance evaluation</title>
   <link rel="icon" href="../assets/favicon.png" type="image/png">
-  <link rel="stylesheet" href="../assets/styles.css">
-  <script defer src="../assets/app.js?v=20260803"></script>
+  <link rel="stylesheet" href="../assets/styles.css?v=20260809">
+  <script defer src="../assets/app.js?v=20260809"></script>
 </head>
-<body class="inner" data-page="full" data-depth="1" data-results="../data/full-results.json">
+<body class="inner" data-page="full" data-depth="1" data-results="../data/full-results.json" data-extension-results="../data/full-extension-results.json" data-instances="../data/full-instances.json">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="scroll-progress" aria-hidden="true"></div>
 
@@ -30,7 +30,7 @@
       <a href="../lite/">Lite</a>
       <a href="../full/" aria-current="page">Full</a>
       <a href="#leaderboard">Leaderboard</a>
-      <a href="../#tracks">Language tracks</a>
+      <a href="#instances">Instances</a>
       <a class="nav-cta" href="https://github.com/kochsnow/bird-critic-1.5-preview" target="_blank" rel="noreferrer">GitHub ↗</a>
     </nav>
   </header>
@@ -42,37 +42,37 @@
         <h1>300 instances.<br>The full picture.</h1>
       </div>
       <div class="reveal">
-        <p class="page-intro">The complete Bird-Critic 1.5 release is designed for robust model comparison, ecosystem-level analysis, and a closer look at where coding agents still fail.</p>
-        <span class="page-status soon">Release in preparation</span>
+        <p class="page-intro">Full combines the fixed Lite 100 with 200 new extension tasks for robust model comparison, ecosystem-level analysis, and a closer look at where coding agents still fail.</p>
+        <span class="page-status">Preliminary results released</span>
       </div>
     </section>
     <hr class="page-rule">
 
     <section class="metric-grid reveal" aria-label="Full benchmark metrics">
-      <div class="metric"><strong>300</strong><span>Full instances</span></div>
+      <div class="metric"><strong data-task-count>300</strong><span>Full instances</span></div>
+      <div class="metric"><strong>200</strong><span>New extension tasks</span></div>
+      <div class="metric"><strong>100</strong><span>Lite foundation</span></div>
       <div class="metric"><strong>4</strong><span>Language ecosystems</span></div>
-      <div class="metric"><strong>1.5</strong><span>Benchmark generation</span></div>
-      <div class="metric"><strong>0/1</strong><span>Executable reward</span></div>
     </section>
 
     <section class="coming-panel">
       <div class="coming-panel-inner reveal">
-        <span class="kicker kicker-light">Full release</span>
-        <h2>A deeper evaluation is approaching.</h2>
-        <p>The Full edition will publish 300 instances, official model results, complete task composition, and language-level breakdowns on this page. Its stable URL is already in place for future citations and announcements.</p>
-        <a class="button button-primary" href="../lite/">View Lite results <span>→</span></a>
+        <span class="kicker kicker-light">Full composition</span>
+        <h2>100 Lite + 200 Extension = 300 Full.</h2>
+        <p>The official Full score aggregates both fixed subsets when the model, OpenHands harness, and evaluation configuration match. The new 200-task result is also shown separately below so its harder distribution remains visible.</p>
+        <a class="button button-primary" href="#extension-results">Inspect Extension 200 <span>→</span></a>
         <span class="coming-number" aria-hidden="true">300</span>
       </div>
     </section>
 
     <section class="results-section" id="leaderboard">
       <div class="results-head reveal">
-        <div><span class="kicker">Evaluation results</span><h2>Full leaderboard</h2></div>
-        <p>This table is wired for publication. Add the official entries to <code>data/full-results.json</code> when the 300-instance evaluation is complete.</p>
+        <div><span class="kicker">Official Full 300</span><h2>Full leaderboard</h2></div>
+        <p>The preliminary Full score combines the same model's Lite 100 result with its Extension 200 result. Rates are recomputed from solved counts over the full 300-task denominator.</p>
       </div>
       <div class="leaderboard-shell reveal">
         <div class="leaderboard-toolbar">
-          <span>Bird-Critic 1.5 Full · 300</span>
+          <span>Bird-Critic 1.5 Full · 300 instances</span>
           <div class="language-filters" aria-label="Leaderboard view">
             <button class="filter-button active" type="button" data-result-filter="overall">Overall</button>
             <button class="filter-button" type="button" data-result-filter="python">Python</button>
@@ -83,8 +83,72 @@
         </div>
         <table class="leaderboard">
           <thead><tr><th>Rank</th><th>Model / Agent</th><th>Success Rate</th><th>Resolved</th><th>Release</th></tr></thead>
-          <tbody id="results-body"><tr class="empty-row"><td colspan="5">Full evaluation results will be released here.</td></tr></tbody>
+          <tbody id="results-body"><tr class="empty-row"><td colspan="5">Loading Full results…</td></tr></tbody>
         </table>
+      </div>
+    </section>
+
+    <section class="results-section" id="extension-results">
+      <div class="results-head reveal">
+        <div><span class="kicker">New-task diagnostic</span><h2>Extension 200 results</h2></div>
+        <p>This diagnostic table reports only the 200 newly added tasks. It is preserved for transparency and should not be cited as the official Full 300 score.</p>
+      </div>
+      <div class="leaderboard-shell reveal">
+        <div class="leaderboard-toolbar"><span>Extension only · 200 instances</span></div>
+        <table class="leaderboard language-breakdown">
+          <thead><tr><th>Rank</th><th>Model / Agent</th><th>Python · 50</th><th>Node.js · 18</th><th>Ruby · 84</th><th>PHP · 48</th><th>Overall · 200</th></tr></thead>
+          <tbody id="extension-results-body"><tr class="empty-row"><td colspan="7">Loading Extension results…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="results-section">
+      <div class="results-head reveal">
+        <div><span class="kicker">Task composition</span><h2>Full distribution by ecosystem</h2></div>
+        <p>The 300-instance split contains 75 Python, 46 Node.js, 104 Ruby, and 75 PHP tasks across the Lite foundation and the Extension release.</p>
+      </div>
+      <div class="split-chart reveal" aria-label="Full instance distribution by language">
+        <div class="split-segment split-python"><strong>75</strong><span>Python · 25%</span></div>
+        <div class="split-segment split-node"><strong>46</strong><span>Node.js · 15.3%</span></div>
+        <div class="split-segment split-ruby"><strong>104</strong><span>Ruby · 34.7%</span></div>
+        <div class="split-segment split-php"><strong>75</strong><span>PHP · 25%</span></div>
+      </div>
+    </section>
+
+    <section class="results-section" id="instances">
+      <div class="results-head reveal">
+        <div><span class="kicker">Official split</span><h2>Browse all 300 instances</h2></div>
+        <p>Search the exact Full task list and filter by language, source split, repository, or pull request.</p>
+      </div>
+      <div class="instance-layout">
+        <aside class="instance-sidebar reveal">
+          <h3>Filter instances</h3>
+          <label for="language-filter">Language</label>
+          <select id="language-filter">
+            <option value="">All languages</option>
+            <option value="Python">Python</option>
+            <option value="Node.js">Node.js</option>
+            <option value="Ruby">Ruby</option>
+            <option value="PHP">PHP</option>
+          </select>
+          <label for="split-filter">Source split</label>
+          <select id="split-filter">
+            <option value="">All splits</option>
+            <option value="Lite 100">Lite 100</option>
+            <option value="Extension 200">Extension 200</option>
+          </select>
+          <label for="repo-filter">Repository</label>
+          <select id="repo-filter"><option value="">All repositories</option></select>
+          <label for="instance-search">Search</label>
+          <input id="instance-search" type="search" placeholder="PR or repository…" autocomplete="off">
+          <div class="instance-count" id="instance-count">Loading instances…</div>
+        </aside>
+        <div class="instance-table-wrap reveal">
+          <table class="instance-table">
+            <thead><tr><th>#</th><th>Language</th><th>Repository</th><th>Pull request</th></tr></thead>
+            <tbody id="instance-body"><tr class="empty-row"><td colspan="4">Loading…</td></tr></tbody>
+          </table>
+        </div>
       </div>
     </section>
   </main>
@@ -94,8 +158,8 @@
       <span class="brand-mark" aria-hidden="true"><span></span><span></span></span>
       <span>BIRD—CRITIC</span><b>1.5</b>
     </a>
-    <p>Full edition · 300 repair instances.</p>
-    <div><a href="../lite/">Lite</a><a href="../#tracks">Language tracks</a></div>
+    <p>Full edition · 100 Lite + 200 Extension.</p>
+    <div><a href="../lite/">Lite</a><a href="#instances">Instances</a></div>
     <small>© <span data-year></span> Bird-Critic Team</small>
   </footer>
 </body>

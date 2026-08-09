@@ -1,0 +1,15 @@
+[
+  {
+    "model": "DeepSeek-V4-flash-0731",
+    "agent": "OpenHands",
+    "split": "Extension 200 only",
+    "date": "2026-08-09",
+    "scores": {
+      "overall": { "solved": 43, "total": 200 },
+      "python": { "solved": 5, "total": 50 },
+      "node": { "solved": 4, "total": 18 },
+      "ruby": { "solved": 12, "total": 84 },
+      "php": { "solved": 22, "total": 48 }
+    }
+  }
+]

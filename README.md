@@ -13,7 +13,7 @@ compact benchmark tables. Brand assets are reused from the
 | --- | --- | --- |
 | `/` | Main release hub | Ready |
 | `/lite/` | Lite overall leaderboard, four-language pass table, and 100-instance browser | Ready for result data |
-| `/full/` | Full 300-instance release | Release template |
+| `/full/` | Full 300-instance leaderboard, Extension 200 diagnostic, and instance browser | Preliminary result published |
 | `/languages/python/` | Independent rolling Python track | Ready for track data |
 | `/languages/node/` | Independent rolling Node.js track | Ready for track data |
 | `/languages/ruby/` | Independent rolling Ruby track | Ready for track data |
@@ -93,7 +93,23 @@ Use the exact totals above. This file powers both Lite tables: the overall leade
 
 ## Publish Full results
 
-Edit [`data/full-results.json`](data/full-results.json) using the same structure. Set `overall.total` to `300` and use the final official totals for each language.
+Full is composed of the fixed Lite 100 plus the new Extension 200. When a model is evaluated with the same harness and configuration on both subsets, add the solved counts and publish the aggregate in [`data/full-results.json`](data/full-results.json):
+
+- Overall: 300
+- Python: 75 (25 Lite + 50 Extension)
+- Node.js: 46 (28 Lite + 18 Extension)
+- Ruby: 104 (20 Lite + 84 Extension)
+- PHP: 75 (27 Lite + 48 Extension)
+
+Keep the new-task-only scores in [`data/full-extension-results.json`](data/full-extension-results.json). The Full page labels this as a diagnostic result so it cannot be confused with the official 300-instance denominator.
+
+The selected Extension task paths are recorded in [`data/full-extension-paths.txt`](data/full-extension-paths.txt). Rebuild and validate the combined 300-instance browser with:
+
+```bash
+node scripts/sync-full-instances.mjs
+```
+
+The generated [`data/full-instances.json`](data/full-instances.json) retains a `split` field (`Lite 100` or `Extension 200`) so visitors can browse either subset independently.
 
 ## Update an independent language track
 
@@ -143,4 +159,5 @@ The official Lite split is stored in [`data/lite-instances.json`](data/lite-inst
 - Replace the preview-repository links if the final public code repository changes.
 - Add the paper and dataset links once their public URLs are available.
 - Fill `data/lite-results.json` with the official result rows.
+- Confirm every Full aggregate uses the same model, harness, and evaluation configuration across Lite and Extension.
 - Confirm the release date and citation text.

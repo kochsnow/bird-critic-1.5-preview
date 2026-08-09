@@ -148,9 +148,50 @@ if (resultsBody) {
   });
 }
 
+const extensionResultsBody = document.querySelector("#extension-results-body");
+if (extensionResultsBody) {
+  const formatExtensionRate = (metric) => {
+    const rate = (metric.solved / metric.total) * 100;
+    const formatted = Number.isInteger(rate) ? rate.toFixed(1) : rate.toFixed(2);
+    return `<strong>${formatted}%</strong><small>${metric.solved} / ${metric.total}</small>`;
+  };
+
+  fetch(document.body.dataset.extensionResults, { cache: "no-store" })
+    .then((response) => {
+      if (!response.ok) throw new Error("Unable to load extension results");
+      return response.json();
+    })
+    .then((data) => {
+      const results = (Array.isArray(data) ? data : [])
+        .filter((item) => ["python", "node", "ruby", "php", "overall"].every((key) => item.scores?.[key]))
+        .sort((a, b) => (b.scores.overall.solved / b.scores.overall.total) - (a.scores.overall.solved / a.scores.overall.total));
+
+      if (!results.length) throw new Error("No extension results");
+
+      extensionResultsBody.innerHTML = results.map((item, index) => {
+        const detail = [item.agent, item.split].filter(Boolean).join(" · ");
+        return `
+          <tr>
+            <td>${index + 1}</td>
+            <td><strong>${item.model}</strong>${detail ? `<br><small>${detail}</small>` : ""}</td>
+            <td class="language-score">${formatExtensionRate(item.scores.python)}</td>
+            <td class="language-score">${formatExtensionRate(item.scores.node)}</td>
+            <td class="language-score">${formatExtensionRate(item.scores.ruby)}</td>
+            <td class="language-score">${formatExtensionRate(item.scores.php)}</td>
+            <td class="language-score">${formatExtensionRate(item.scores.overall)}</td>
+          </tr>
+        `;
+      }).join("");
+    })
+    .catch(() => {
+      extensionResultsBody.innerHTML = `<tr class="empty-row"><td colspan="7">Extension result data could not be loaded.</td></tr>`;
+    });
+}
+
 const instanceBody = document.querySelector("#instance-body");
 if (instanceBody) {
   const languageFilter = document.querySelector("#language-filter");
+  const splitFilter = document.querySelector("#split-filter");
   const repoFilter = document.querySelector("#repo-filter");
   const searchInput = document.querySelector("#instance-search");
   const count = document.querySelector("#instance-count");
@@ -161,6 +202,7 @@ if (instanceBody) {
 
   const render = () => {
     const classification = languageFilter.value;
+    const split = splitFilter?.value || "";
     const repo = repoFilter.value;
     const query = searchInput.value.trim().toLowerCase();
     const filtered = instances.filter((item) => {
@@ -168,6 +210,7 @@ if (instanceBody) {
         ? (!classification || item.suite === classification)
         : (!classification || item.language === classification);
       return classificationMatches
+        && (!split || item.split === split)
         && (!repo || item.repository === repo)
         && (!query || item.instance.toLowerCase().includes(query) || item.repository.toLowerCase().includes(query));
     });
@@ -213,7 +256,7 @@ if (instanceBody) {
       instanceBody.innerHTML = `<tr class="empty-row"><td colspan="4">Instance data could not be loaded.</td></tr>`;
     });
 
-  [languageFilter, repoFilter, searchInput].forEach((control) => {
+  [languageFilter, splitFilter, repoFilter, searchInput].filter(Boolean).forEach((control) => {
     control.addEventListener(control === searchInput ? "input" : "change", render);
   });
 }
