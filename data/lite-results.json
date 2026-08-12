@@ -48,6 +48,18 @@
     }
   },
   {
+    "model": "Qwen3-Coder-480B-A35B",
+    "agent": "OpenHands",
+    "date": "2026-08-12",
+    "scores": {
+      "overall": { "solved": 45, "total": 100 },
+      "python": { "solved": 13, "total": 25 },
+      "node": { "solved": 6, "total": 28 },
+      "ruby": { "solved": 12, "total": 20 },
+      "php": { "solved": 14, "total": 27 }
+    }
+  },
+  {
     "model": "Qwen3.5-35B",
     "agent": "OpenHands",
     "date": "2026-08-03",

@@ -11,5 +11,18 @@
       "ruby": { "solved": 12, "total": 84 },
       "php": { "solved": 22, "total": 48 }
     }
+  },
+  {
+    "model": "Qwen3-Coder-480B-A35B",
+    "agent": "OpenHands",
+    "split": "Extension 200 only",
+    "date": "2026-08-12",
+    "scores": {
+      "overall": { "solved": 38, "total": 200 },
+      "python": { "solved": 7, "total": 50 },
+      "node": { "solved": 0, "total": 18 },
+      "ruby": { "solved": 10, "total": 84 },
+      "php": { "solved": 21, "total": 48 }
+    }
   }
 ]
