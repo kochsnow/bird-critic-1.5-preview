@@ -1,1 +1,542 @@
-[]
+[
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#35353",
+    "instance": "discourse_discourse-35353",
+    "difficulty_tier": "Tier2"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#35356",
+    "instance": "discourse_discourse-35356",
+    "difficulty_tier": "Tier3"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#35987",
+    "instance": "discourse_discourse-35987",
+    "difficulty_tier": "Tier3"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36138",
+    "instance": "discourse_discourse-36138",
+    "difficulty_tier": "Tier3"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36168",
+    "instance": "discourse_discourse-36168",
+    "difficulty_tier": "Tier1"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36239",
+    "instance": "discourse_discourse-36239",
+    "difficulty_tier": "Tier3"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36242",
+    "instance": "discourse_discourse-36242",
+    "difficulty_tier": "Tier2"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36255",
+    "instance": "discourse_discourse-36255",
+    "difficulty_tier": "Tier1"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36258",
+    "instance": "discourse_discourse-36258",
+    "difficulty_tier": "Tier1"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36277",
+    "instance": "discourse_discourse-36277",
+    "difficulty_tier": "Tier1"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36347",
+    "instance": "discourse_discourse-36347",
+    "difficulty_tier": "Tier3"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36416",
+    "instance": "discourse_discourse-36416",
+    "difficulty_tier": "Tier1"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36459",
+    "instance": "discourse_discourse-36459",
+    "difficulty_tier": "Tier1"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36481",
+    "instance": "discourse_discourse-36481",
+    "difficulty_tier": "Tier3"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36528",
+    "instance": "discourse_discourse-36528",
+    "difficulty_tier": "Tier2"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36529",
+    "instance": "discourse_discourse-36529",
+    "difficulty_tier": "Tier3"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36577",
+    "instance": "discourse_discourse-36577",
+    "difficulty_tier": "Tier1"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36610",
+    "instance": "discourse_discourse-36610",
+    "difficulty_tier": "Tier1"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36712",
+    "instance": "discourse_discourse-36712",
+    "difficulty_tier": "Tier2"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36749",
+    "instance": "discourse_discourse-36749",
+    "difficulty_tier": "Tier1"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36773",
+    "instance": "discourse_discourse-36773",
+    "difficulty_tier": "Tier1"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36778",
+    "instance": "discourse_discourse-36778",
+    "difficulty_tier": "Tier3"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36842",
+    "instance": "discourse_discourse-36842",
+    "difficulty_tier": "Tier2"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36870",
+    "instance": "discourse_discourse-36870",
+    "difficulty_tier": "Tier3"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36871",
+    "instance": "discourse_discourse-36871",
+    "difficulty_tier": "Tier1"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36878",
+    "instance": "discourse_discourse-36878",
+    "difficulty_tier": "Tier2"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36881",
+    "instance": "discourse_discourse-36881",
+    "difficulty_tier": "Tier2"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36885",
+    "instance": "discourse_discourse-36885",
+    "difficulty_tier": "Tier1"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36887",
+    "instance": "discourse_discourse-36887",
+    "difficulty_tier": "Tier2"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36949",
+    "instance": "discourse_discourse-36949",
+    "difficulty_tier": "Tier2"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#36987",
+    "instance": "discourse_discourse-36987",
+    "difficulty_tier": "Tier2"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#37004",
+    "instance": "discourse_discourse-37004",
+    "difficulty_tier": "Tier2"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#37031",
+    "instance": "discourse_discourse-37031",
+    "difficulty_tier": "Tier2"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#37037",
+    "instance": "discourse_discourse-37037",
+    "difficulty_tier": "Tier2"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#37063",
+    "instance": "discourse_discourse-37063",
+    "difficulty_tier": "Tier2"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#37310",
+    "instance": "discourse_discourse-37310",
+    "difficulty_tier": "Tier3"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#37377",
+    "instance": "discourse_discourse-37377",
+    "difficulty_tier": "Tier2"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#37627",
+    "instance": "discourse_discourse-37627",
+    "difficulty_tier": "Tier1"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#37785",
+    "instance": "discourse_discourse-37785",
+    "difficulty_tier": "Tier1"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#37878",
+    "instance": "discourse_discourse-37878",
+    "difficulty_tier": "Tier3"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#37891",
+    "instance": "discourse_discourse-37891",
+    "difficulty_tier": "Tier2"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#37929",
+    "instance": "discourse_discourse-37929",
+    "difficulty_tier": "Tier2"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#37976",
+    "instance": "discourse_discourse-37976",
+    "difficulty_tier": "Tier3"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#37978",
+    "instance": "discourse_discourse-37978",
+    "difficulty_tier": "Tier2"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#37989",
+    "instance": "discourse_discourse-37989",
+    "difficulty_tier": "Tier2"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#38013",
+    "instance": "discourse_discourse-38013",
+    "difficulty_tier": "Tier2"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#38023",
+    "instance": "discourse_discourse-38023",
+    "difficulty_tier": "Tier2"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#38106",
+    "instance": "discourse_discourse-38106",
+    "difficulty_tier": "Tier1"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#38334",
+    "instance": "discourse_discourse-38334",
+    "difficulty_tier": "Tier1"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse",
+    "pull_request": "#38446",
+    "instance": "discourse_discourse-38446",
+    "difficulty_tier": "Tier1"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse-activity-pub",
+    "pull_request": "#194",
+    "instance": "discourse-activity-pub_discourse-activity-pub-194",
+    "difficulty_tier": "Tier1"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse-activity-pub",
+    "pull_request": "#203",
+    "instance": "discourse-activity-pub_discourse-activity-pub-203",
+    "difficulty_tier": "Tier1"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse-activity-pub",
+    "pull_request": "#230",
+    "instance": "discourse-activity-pub_discourse-activity-pub-230",
+    "difficulty_tier": "Tier2"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse-assign",
+    "pull_request": "#592",
+    "instance": "discourse-assign_discourse-assign-592",
+    "difficulty_tier": "Tier2"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse-assign",
+    "pull_request": "#617",
+    "instance": "discourse-assign_discourse-assign-617",
+    "difficulty_tier": "Tier3"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse-assign",
+    "pull_request": "#620",
+    "instance": "discourse-assign_discourse-assign-620",
+    "difficulty_tier": "Tier3"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse-calendar",
+    "pull_request": "#688",
+    "instance": "discourse-calendar_discourse-calendar-688",
+    "difficulty_tier": "Tier3"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse-calendar",
+    "pull_request": "#726",
+    "instance": "discourse-calendar_discourse-calendar-726",
+    "difficulty_tier": "Tier2"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse-data-explorer",
+    "pull_request": "#312",
+    "instance": "discourse-data-explorer_discourse-data-explorer-312",
+    "difficulty_tier": "Tier1"
+  },
+  {
+    "suite": "birdcritic15_lite_ruby_DB",
+    "dataset_label": "Ruby · Lite / Base Split",
+    "language": "Ruby",
+    "repository": "discourse/discourse-solved",
+    "pull_request": "#372",
+    "instance": "discourse-solved_discourse-solved-372",
+    "difficulty_tier": "Tier3"
+  }
+]

@@ -16,7 +16,7 @@ compact benchmark tables. Brand assets are reused from the
 | `/full/` | Full 300-instance leaderboard, Extension 200 diagnostic, and instance browser | Preliminary result published |
 | `/languages/python/` | Independent rolling Python track | Preliminary Base result published |
 | `/languages/node/` | Independent rolling Node.js track | Preliminary Base result published |
-| `/languages/ruby/` | Independent rolling Ruby track | Ready for track data |
+| `/languages/ruby/` | Independent rolling Ruby track | Preliminary Base result published |
 | `/languages/php/` | Independent rolling PHP track | Preliminary Base result published |
 
 Lite, Full, and the four language tracks are separate products:
@@ -134,6 +134,12 @@ from the local benchmark datasets, run:
 
 ```bash
 node scripts/sync-language-tasks.mjs
+```
+
+The Ruby catalog and its OpenCode evaluation are synchronized from the Harbor dataset and job outputs. Pass their local directories explicitly:
+
+```bash
+node scripts/sync-ruby-track.mjs /path/to/birdcritic15_lite_ruby_DB /path/to/unified_60
 ```
 
 Track result files use the same model record format. Store the track score under its language key—for example, `scores.python` for the Python track.

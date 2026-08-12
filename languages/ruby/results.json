@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "model": "gpt-5.5-2026-04-23 (low)",
+    "agent": "OpenCode",
+    "split": "Lite / Base Split",
+    "date": "2026-07-03",
+    "scores": {
+      "ruby": {
+        "solved": 19,
+        "total": 60
+      }
+    }
+  }
+]

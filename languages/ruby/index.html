@@ -11,10 +11,10 @@
   <meta property="og:image" content="../../assets/og-family.png">
   <title>Bird-Critic 1.5 Ruby Track</title>
   <link rel="icon" href="../../assets/favicon.png" type="image/png">
-  <link rel="stylesheet" href="../../assets/styles.css">
-  <script defer src="../../assets/app.js?v=20260803"></script>
+  <link rel="stylesheet" href="../../assets/styles.css?v=20260812">
+  <script defer src="../../assets/app.js?v=20260812"></script>
 </head>
-<body class="inner" data-page="ruby" data-depth="2" data-language="Ruby" data-result-view="ruby" data-results="results.json" data-instances="tasks.json">
+<body class="inner" data-page="ruby" data-depth="2" data-language="Ruby" data-show-dataset="true" data-result-view="ruby" data-results="results.json" data-instances="tasks.json">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="scroll-progress" aria-hidden="true"></div>
 
@@ -43,45 +43,45 @@
       </div>
       <div class="reveal">
         <p class="page-intro">A continuously updated task pool for evaluating agents on real-world Ruby repair. This track has its own instances, results, and release cadence—independent from Lite and Full.</p>
-        <span class="page-status">Rolling task pool</span>
+        <span class="page-status">Preliminary Lite / Base Split result</span>
       </div>
     </section>
     <hr class="page-rule">
 
     <section class="metric-grid reveal" aria-label="Ruby track metrics">
-      <div class="metric"><strong data-task-count>—</strong><span>Published tasks</span></div>
-      <div class="metric"><strong>Rolling</strong><span>Update cadence</span></div>
+      <div class="metric"><strong data-task-count>60</strong><span>Published instances</span></div>
+      <div class="metric"><strong>6</strong><span>Repositories</span></div>
       <div class="metric"><strong>RB</strong><span>Language track</span></div>
       <div class="metric"><strong>0/1</strong><span>Executable reward</span></div>
     </section>
 
     <section class="results-section" id="results">
       <div class="results-head reveal">
-        <div><span class="kicker">Track results</span><h2>Ruby leaderboard</h2></div>
-        <p>Results on this page use the independent Ruby task pool and do not inherit scores or instances from Lite or Full.</p>
+        <div><span class="kicker">Lite / Base Split results</span><h2>Ruby leaderboard</h2></div>
+        <p>The preliminary Ruby baseline contains 60 jobs from Discourse core and five plugins. It was evaluated with OpenCode using gpt-5.5 at low reasoning effort.</p>
       </div>
       <div class="leaderboard-shell reveal">
         <div class="leaderboard-toolbar">
-          <span>Bird-Critic 1.5 · Ruby</span>
-          <div class="language-filters"><button class="filter-button active" type="button" data-result-filter="ruby">Ruby only</button></div>
+          <span>Bird-Critic 1.5 · Ruby · Lite</span>
+          <div class="language-filters"><button class="filter-button active" type="button" data-result-filter="ruby">Lite / Base Split</button></div>
         </div>
         <table class="leaderboard">
           <thead><tr><th>Rank</th><th>Model / Agent</th><th>Success Rate</th><th>Resolved</th><th>Release</th></tr></thead>
-          <tbody id="results-body"><tr class="empty-row"><td colspan="5">Waiting for official Ruby result data.</td></tr></tbody>
+          <tbody id="results-body"><tr class="empty-row"><td colspan="5">Loading preliminary Ruby results…</td></tr></tbody>
         </table>
       </div>
     </section>
 
     <section class="results-section" id="instances">
       <div class="results-head reveal">
-        <div><span class="kicker">Rolling task pool</span><h2>Current Ruby tasks</h2></div>
-        <p>This catalog is updated independently as new Ruby tasks are published. The displayed count always reflects the current data file.</p>
+        <div><span class="kicker">Published dataset</span><h2>Browse all 60 Ruby instances</h2></div>
+        <p>Search by repository or pull request across Discourse core and its plugin ecosystem from <code>birdcritic15_lite_ruby_DB</code>.</p>
       </div>
       <div class="instance-layout">
         <aside class="instance-sidebar reveal">
           <h3>Filter instances</h3>
-          <label for="language-filter">Language</label>
-          <select id="language-filter"><option value="Ruby">Ruby</option></select>
+          <label for="language-filter">Dataset</label>
+          <select id="language-filter"><option value="">All datasets</option><option value="birdcritic15_lite_ruby_DB">Ruby · Lite / Base Split</option></select>
           <label for="repo-filter">Repository</label>
           <select id="repo-filter"><option value="">All repositories</option></select>
           <label for="instance-search">Search</label>
