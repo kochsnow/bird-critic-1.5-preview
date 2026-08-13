@@ -14,6 +14,7 @@ compact benchmark tables. Brand assets are reused from the
 | `/` | Main release hub | Ready |
 | `/lite/` | Lite overall leaderboard, four-language pass table, and 100-instance browser | Ready for result data |
 | `/full/` | Full 300-instance leaderboard, Extension 200 diagnostic, and instance browser | Preliminary result published |
+| `/report/` | Formatted living technical report with raw Markdown access | Draft v0.1 published |
 | `/languages/python/` | Independent rolling Python track | Preliminary Base result published |
 | `/languages/node/` | Independent rolling Node.js track | Preliminary Base result published |
 | `/languages/ruby/` | Independent rolling Ruby track | Preliminary Base result published |
@@ -36,6 +37,7 @@ python3 -m http.server 8000
 Then open `http://localhost:8000`.
 
 Do not open `index.html` directly from Finder: the instance and result JSON files are loaded over HTTP.
+The technical report page also loads its Markdown source over HTTP.
 
 Run the static checks before pushing:
 
