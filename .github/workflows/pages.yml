@@ -30,7 +30,7 @@ jobs:
       - name: Prepare static site
         run: |
           mkdir _site
-          cp -R assets data full languages lite report index.html BIRDCRITIC_1_5_TECHNICAL_REPORT_DRAFT_V1.md _site/
+          cp -R assets data full languages lite report index.html BIRDCRITIC_1_5_TECHNICAL_REPORT_DRAFT_V1.md CITATION.bib CITATION.cff _site/
           touch _site/.nojekyll
 
       - name: Upload static site

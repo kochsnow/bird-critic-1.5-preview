@@ -273,6 +273,14 @@ code, pre { font-family: var(--mono); }
 .ring-one { width: 370px; height: 370px; right: -90px; bottom: -190px; }
 .ring-two { width: 220px; height: 220px; right: -15px; bottom: -105px; }
 .citation-section { padding-top: 0; }
+.citation-content > p { margin-top: 0; }
+.citation-text-row { margin: 16px 0; padding: 19px; background: var(--bird-sky); border-left: 4px solid var(--bird-purple); border-radius: 0 5px 5px 0; }
+.citation-text-row blockquote { margin: 0 0 12px; color: var(--bird-blue-dark); font-size: 14px; line-height: 1.65; }
+.citation-text-row .copy-button { float: none; }
+.citation-bibtex { margin-top: 14px; }
+.citation-bibtex summary { color: var(--bird-blue); font-weight: 700; cursor: pointer; }
+.citation-bibtex .quickstart { margin-top: 10px; }
+.citation-links { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 16px; font-size: 12px; font-weight: 700; }
 
 .site-footer {
   max-width: var(--max); margin: auto; padding: 36px 24px 48px;

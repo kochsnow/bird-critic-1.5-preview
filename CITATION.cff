@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+message: "If you use Bird-Critic 1.5, please cite the technical report below."
+title: "Bird-Critic 1.5"
+type: dataset
+version: "1.5-preview"
+date-released: 2026-08-13
+url: "https://kochsnow.github.io/bird-critic-1.5-preview/"
+repository-code: "https://github.com/kochsnow/bird-critic-1.5-preview"
+authors:
+  - family-names: Huang
+    given-names: Yongfeng
+  - family-names: Li
+    given-names: Xiaolong
+  - family-names: Xu
+    given-names: Zixi
+  - family-names: Luo
+    given-names: Ziyue
+  - family-names: Wu
+    given-names: Yue
+  - family-names: Chen
+    given-names: Binshang
+  - family-names: Li
+    given-names: JinYang
+preferred-citation:
+  type: report
+  title: "Bird-Critic 1.5: An Executable Benchmark for Repairing Database-Backed Applications"
+  authors:
+    - family-names: Huang
+      given-names: Yongfeng
+    - family-names: Li
+      given-names: Xiaolong
+    - family-names: Xu
+      given-names: Zixi
+    - family-names: Luo
+      given-names: Ziyue
+    - family-names: Wu
+      given-names: Yue
+    - family-names: Chen
+      given-names: Binshang
+    - family-names: Li
+      given-names: JinYang
+  institution:
+    name: "The Chinese University of Hong Kong and The University of Hong Kong"
+  year: 2026
+  month: 8
+  version: "Draft v0.1"
+  url: "https://kochsnow.github.io/bird-critic-1.5-preview/report/"

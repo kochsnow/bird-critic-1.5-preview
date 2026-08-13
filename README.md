@@ -39,6 +39,8 @@ Then open `http://localhost:8000`.
 Do not open `index.html` directly from Finder: the instance and result JSON files are loaded over HTTP.
 The technical report page also loads its Markdown source over HTTP.
 
+The preferred Draft v0.1 citation is published in [`CITATION.cff`](CITATION.cff) and [`CITATION.bib`](CITATION.bib). After these files reach the default GitHub branch, GitHub exposes its native **Cite this repository** interface.
+
 Run the static checks before pushing:
 
 ```bash
