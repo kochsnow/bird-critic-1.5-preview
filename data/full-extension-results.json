@@ -1,5 +1,31 @@
 [
   {
+    "model": "claude-sonnet-4-6",
+    "agent": "OpenHands",
+    "split": "Extension 200 only",
+    "date": "2026-08-18",
+    "scores": {
+      "overall": { "solved": 55, "total": 200 },
+      "python": { "solved": 9, "total": 50 },
+      "node": { "solved": 1, "total": 18 },
+      "ruby": { "solved": 24, "total": 84 },
+      "php": { "solved": 21, "total": 48 }
+    }
+  },
+  {
+    "model": "gpt-5.4",
+    "agent": "OpenHands",
+    "split": "Extension 200 only",
+    "date": "2026-08-18",
+    "scores": {
+      "overall": { "solved": 47, "total": 200 },
+      "python": { "solved": 6, "total": 50 },
+      "node": { "solved": 1, "total": 18 },
+      "ruby": { "solved": 18, "total": 84 },
+      "php": { "solved": 22, "total": 48 }
+    }
+  },
+  {
     "model": "DeepSeek-V4-flash-0731",
     "agent": "OpenHands",
     "split": "Extension 200 only",

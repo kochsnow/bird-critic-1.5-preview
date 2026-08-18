@@ -148,7 +148,7 @@ bird-critic-1.5-*/
 
 ### 4.1 Protocol
 
-The current leaderboard reports executions using the OpenHands harness and the executable pass rate described above. Lite 100 has broader preliminary model coverage, while only two matching agents currently have results for all 300 tasks. Full results combine each agent's Lite 100 and Extension 200 solved counts under a matching evaluation setup.
+The current leaderboard reports executions using the OpenHands harness and the executable pass rate described above. Lite 100 has broader preliminary model coverage, while four matching agents currently have results for all 300 tasks. Full results combine each agent's Lite 100 and Extension 200 solved counts under a matching evaluation setup.
 
 The exact pinned OpenHands revision, provider parameters, token or cost budget, retry policy, concurrency, and failure-handling rules must accompany the final release before the results should be treated as a fully reproducible model comparison. The numbers below are therefore release baselines, not definitive model rankings.
 
@@ -169,16 +169,18 @@ These results show that the Lite set is neither uniformly solved nor uniformly i
 
 | Model / agent | Lite 100 | Extension 200 | Full 300 |
 |---|---:|---:|---:|
+| claude-sonnet-4-6 | 62 / 100 | 55 / 200 | 117 / 300 (39.0%) |
 | DeepSeek-V4-flash-0731 | 57 / 100 | 43 / 200 | 100 / 300 (33.33%) |
+| gpt-5.4 | 52 / 100 | 47 / 200 | 99 / 300 (33.0%) |
 | Qwen3-Coder-480B-A35B | 45 / 100 | 38 / 200 | 83 / 300 (27.67%) |
 
-Both reported agents have substantially lower success rates on Extension 200 than on Lite 100: 21.5% for DeepSeek-V4-flash-0731 and 19.0% for Qwen3-Coder-480B-A35B. This establishes that the added set is harder for these two evaluated configurations. It does not establish a general cause for the difference. Repository mix, language composition, task selection, environment reliability, and verifier design may all contribute and require further analysis.
+All four reported agents have substantially lower success rates on Extension 200 than on Lite 100: 27.5% for claude-sonnet-4-6, 23.5% for gpt-5.4, 21.5% for DeepSeek-V4-flash-0731, and 19.0% for Qwen3-Coder-480B-A35B. This establishes that the added set is harder for these four evaluated configurations. It does not establish a general cause for the difference. Repository mix, language composition, task selection, environment reliability, and verifier design may all contribute and require further analysis.
 
 ## 5. Limitations
 
 Bird-Critic 1.5 has several current limitations:
 
-1. **Limited baseline coverage.** Lite contains six reported agents, but Full currently contains only two complete results.
+1. **Limited baseline coverage.** Lite contains six reported agents, but Full currently contains only four complete results.
 2. **Incomplete evaluation disclosure.** The final report must pin and publish all harness and provider settings required for exact reruns.
 3. **Verifier-bounded correctness.** Passing a task means passing its released verifier. Oracle/nop discrimination does not prove exhaustive behavioral coverage.
 4. **Uneven ecosystem distribution.** Full 300 is not balanced across languages or repositories, so aggregate scores inherit its task mix.
