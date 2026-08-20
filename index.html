@@ -11,7 +11,7 @@
   <meta property="og:image" content="assets/og-family.png">
   <title>Bird-Critic 1.5 — Real-world code repair benchmark</title>
   <link rel="icon" href="assets/favicon.png" type="image/png">
-  <link rel="stylesheet" href="assets/styles.css?v=20260813">
+  <link rel="stylesheet" href="assets/styles.css?v=20260820">
   <script defer src="assets/app.js?v=20260803"></script>
 </head>
 <body data-page="home" data-depth="0">
@@ -50,6 +50,7 @@
         <p class="hero-lead">A multi-ecosystem benchmark built from real pull requests, reproducible environments, and executable test-driven verification.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="lite/">Explore Lite results <span>→</span></a>
+          <a class="button button-ghost" href="#editions">Get datasets</a>
           <a class="button button-ghost" href="report/">Read technical report</a>
           <a class="button button-ghost" href="https://github.com/kochsnow/bird-critic-1.5-preview" target="_blank" rel="noreferrer">Code</a>
           <a class="button button-ghost" href="#editions">All editions</a>
@@ -82,8 +83,10 @@
           <div class="resource-buttons">
             <a class="family-button" href="lite/">Lite Results</a>
             <a class="family-button" href="full/">Full Results</a>
+            <a class="family-button family-button-teal" href="https://huggingface.co/datasets/kochsnow/bird-critic-1.5-lite-100" target="_blank" rel="noreferrer">Lite Dataset ↗</a>
+            <a class="family-button family-button-teal" href="https://huggingface.co/datasets/kochsnow/bird-critic-1.5-full-300" target="_blank" rel="noreferrer">Full Dataset ↗</a>
             <a class="family-button" href="report/">Technical Report</a>
-            <a class="family-button family-button-teal" href="#tracks">Language Tracks</a>
+            <a class="family-button" href="#tracks">Language Tracks</a>
             <a class="family-button" href="https://github.com/kochsnow/bird-critic-1.5-preview" target="_blank" rel="noreferrer">Code</a>
           </div>
         </div>
@@ -92,6 +95,7 @@
       <article class="family-panel reveal" id="news">
         <div class="panel-heading"><h2>News</h2></div>
         <div class="panel-body news-list">
+          <p><span class="news-date">Aug. 2026</span> The official Lite 100 and Full 300 dataset packages are publicly available on Hugging Face.</p>
           <p><span class="news-date">Aug. 2026</span> Technical Report Draft v0.1 is available as a formatted web document and raw Markdown.</p>
           <p><span class="news-date">Aug. 2026</span> Bird-Critic 1.5 Full publishes its 300-instance catalog and preliminary results for four OpenHands model evaluations.</p>
           <p><span class="news-date">Aug. 2026</span> The Lite leaderboard is updated with six OpenHands model evaluations.</p>
@@ -112,7 +116,7 @@
 
       <div class="edition-grid">
         <article class="edition-card edition-live reveal">
-          <div class="card-topline"><span class="live-label">Available now</span><span>01</span></div>
+          <div class="card-topline"><span class="live-label">Dataset released</span><span>01</span></div>
           <div class="edition-symbol">L</div>
           <h3>Bird-Critic 1.5 Lite</h3>
           <p>A curated 100-instance evaluation across Python, Node.js, Ruby, and PHP. Built for fast, comparable agent evaluation.</p>
@@ -120,11 +124,14 @@
             <span><b>100</b> instances</span>
             <span><b>4</b> languages</span>
           </div>
-          <a class="text-link" href="lite/">Open Lite results <span>↗</span></a>
+          <div class="edition-links">
+            <a class="text-link" href="lite/">Open Lite results <span>↗</span></a>
+            <a class="text-link" href="https://huggingface.co/datasets/kochsnow/bird-critic-1.5-lite-100" target="_blank" rel="noreferrer">Get Lite dataset <span>↗</span></a>
+          </div>
         </article>
 
         <article class="edition-card edition-live reveal">
-          <div class="card-topline"><span class="live-label">Preliminary results</span><span>02</span></div>
+          <div class="card-topline"><span class="live-label">Dataset released</span><span>02</span></div>
           <div class="edition-symbol">F</div>
           <h3>Bird-Critic 1.5 Full</h3>
           <p>The complete 300-instance release for robust model comparison and deeper failure-mode analysis.</p>
@@ -132,7 +139,10 @@
             <span><b>300</b> instances</span>
             <span><b>Full</b> coverage</span>
           </div>
-          <a class="text-link" href="full/">Open Full results <span>↗</span></a>
+          <div class="edition-links">
+            <a class="text-link" href="full/">Open Full results <span>↗</span></a>
+            <a class="text-link" href="https://huggingface.co/datasets/kochsnow/bird-critic-1.5-full-300" target="_blank" rel="noreferrer">Get Full dataset <span>↗</span></a>
+          </div>
         </article>
       </div>
     </section>

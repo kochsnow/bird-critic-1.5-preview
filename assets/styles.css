@@ -221,6 +221,8 @@ code, pre { font-family: var(--mono); }
   border-top: 1px solid var(--line); color: var(--bird-blue); font-size: 13px; font-weight: 700;
 }
 .text-link:hover { color: var(--bird-coral); }
+.edition-links { margin-top: auto; }
+.edition-links .text-link { margin-top: 0; }
 
 .tracks { padding-top: 30px; }
 .track-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }

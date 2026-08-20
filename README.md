@@ -12,8 +12,8 @@ compact benchmark tables. Brand assets are reused from the
 | Route | Purpose | Status |
 | --- | --- | --- |
 | `/` | Main release hub | Ready |
-| `/lite/` | Lite overall leaderboard, four-language pass table, and 100-instance browser | Ready for result data |
-| `/full/` | Full 300-instance leaderboard, Extension 200 diagnostic, and instance browser | Preliminary result published |
+| `/lite/` | Lite overall leaderboard, four-language pass table, and 100-instance browser | Dataset and results published |
+| `/full/` | Full 300-instance leaderboard, Extension 200 diagnostic, and instance browser | Dataset and preliminary results published |
 | `/report/` | Formatted living technical report with raw Markdown access | Draft v0.1 published |
 | `/languages/python/` | Independent rolling Python track | Preliminary Base result published |
 | `/languages/node/` | Independent rolling Node.js track | Preliminary Base result published |
@@ -25,6 +25,11 @@ Lite, Full, and the four language tracks are separate products:
 - **Lite** is a fixed 100-instance evaluation.
 - **Full** is a fixed 300-instance evaluation.
 - **Language tracks** are independent, continuously updated task pools. They do not inherit tasks or results from Lite or Full.
+
+## Public datasets
+
+- [Bird-Critic 1.5 Lite 100](https://huggingface.co/datasets/kochsnow/bird-critic-1.5-lite-100)
+- [Bird-Critic 1.5 Full 300](https://huggingface.co/datasets/kochsnow/bird-critic-1.5-full-300) — Lite 100 plus Extension 200
 
 ## Preview locally
 
@@ -164,10 +169,8 @@ The official Lite split is stored in [`data/lite-instances.json`](data/lite-inst
 }
 ```
 
-## Before the public launch
+## Remaining release checklist
 
 - Replace the preview-repository links if the final public code repository changes.
-- Add the paper and dataset links once their public URLs are available.
-- Fill `data/lite-results.json` with the official result rows.
 - Confirm every Full aggregate uses the same model, harness, and evaluation configuration across Lite and Extension.
 - Confirm the release date and citation text.

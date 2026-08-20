@@ -11,7 +11,7 @@
   <meta property="og:image" content="../assets/og-family.png">
   <title>Bird-Critic 1.5 Full — 300-instance evaluation</title>
   <link rel="icon" href="../assets/favicon.png" type="image/png">
-  <link rel="stylesheet" href="../assets/styles.css?v=20260809">
+  <link rel="stylesheet" href="../assets/styles.css?v=20260820">
   <script defer src="../assets/app.js?v=20260809"></script>
 </head>
 <body class="inner" data-page="full" data-depth="1" data-results="../data/full-results.json" data-extension-results="../data/full-extension-results.json" data-instances="../data/full-instances.json">
@@ -31,7 +31,8 @@
       <a href="../full/" aria-current="page">Full</a>
       <a href="#leaderboard">Leaderboard</a>
       <a href="#instances">Instances</a>
-      <a class="nav-cta" href="https://github.com/kochsnow/bird-critic-1.5-preview" target="_blank" rel="noreferrer">GitHub ↗</a>
+      <a href="https://github.com/kochsnow/bird-critic-1.5-preview" target="_blank" rel="noreferrer">GitHub</a>
+      <a class="nav-cta" href="https://huggingface.co/datasets/kochsnow/bird-critic-1.5-full-300" target="_blank" rel="noreferrer">Dataset ↗</a>
     </nav>
   </header>
 
@@ -43,7 +44,7 @@
       </div>
       <div class="reveal">
         <p class="page-intro">Full combines the fixed Lite 100 with 200 new extension tasks for robust model comparison, ecosystem-level analysis, and a closer look at where coding agents still fail.</p>
-        <span class="page-status">Preliminary results released</span>
+        <span class="page-status">Public dataset + preliminary results</span>
       </div>
     </section>
     <hr class="page-rule">
@@ -60,7 +61,10 @@
         <span class="kicker kicker-light">Full composition</span>
         <h2>100 Lite + 200 Extension = 300 Full.</h2>
         <p>The official Full score aggregates both fixed subsets when the model, OpenHands harness, and evaluation configuration match. The new 200-task result is also shown separately below so its harder distribution remains visible.</p>
-        <a class="button button-primary" href="#extension-results">Inspect Extension 200 <span>→</span></a>
+        <div class="resource-buttons">
+          <a class="button button-primary" href="https://huggingface.co/datasets/kochsnow/bird-critic-1.5-full-300" target="_blank" rel="noreferrer">Open Full 300 dataset <span>↗</span></a>
+          <a class="button button-ghost" href="#extension-results">Inspect Extension 200 <span>→</span></a>
+        </div>
         <span class="coming-number" aria-hidden="true">300</span>
       </div>
     </section>
@@ -159,7 +163,7 @@
       <span>BIRD—CRITIC</span><b>1.5</b>
     </a>
     <p>Full edition · 100 Lite + 200 Extension.</p>
-    <div><a href="../lite/">Lite</a><a href="#instances">Instances</a></div>
+    <div><a href="https://huggingface.co/datasets/kochsnow/bird-critic-1.5-full-300" target="_blank" rel="noreferrer">Dataset</a><a href="../lite/">Lite</a><a href="#instances">Instances</a></div>
     <small>© <span data-year></span> Bird-Critic Team</small>
   </footer>
 </body>

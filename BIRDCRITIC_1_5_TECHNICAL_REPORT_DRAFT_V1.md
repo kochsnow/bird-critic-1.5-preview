@@ -131,7 +131,7 @@ The complete instance-level provenance, including repository and source pull-req
 
 ### 3.4 Release package
 
-The prepared Hugging Face release directories include:
+The public Hugging Face release packages include:
 
 ```text
 bird-critic-1.5-*/
@@ -142,7 +142,7 @@ bird-critic-1.5-*/
 └── tasks/
 ```
 
-`manifest.jsonl` provides one record per task, while the task directories contain the runnable artifacts. `RELEASE.json` records source-revision information and `SHA256SUMS` supports package integrity checks. At the time of this draft, the canonical Hugging Face repository identifiers and final dataset license statement remain publication checklist items.
+`manifest.jsonl` provides one record per task, while the task directories contain the runnable artifacts. `RELEASE.json` records source-revision information and `SHA256SUMS` supports package integrity checks. The canonical releases are [`kochsnow/bird-critic-1.5-lite-100`](https://huggingface.co/datasets/kochsnow/bird-critic-1.5-lite-100) and [`kochsnow/bird-critic-1.5-full-300`](https://huggingface.co/datasets/kochsnow/bird-critic-1.5-full-300).
 
 ## 4. Preliminary Agent Evaluation
 
@@ -194,22 +194,22 @@ A future task-level database audit can strengthen the final limitation: expected
 
 Bird-Critic 1.5 turns historical repairs from database-backed open-source applications into executable agent tasks across Python, Node.js, Ruby, and PHP. Its main contribution is the released benchmark artifact: fixed Lite 100 and Full 300 editions, Harbor-compatible task packaging, instance-level provenance, executable verification, and preliminary agent baselines.
 
-The immediate release sequence is deliberately modest:
+The current public release includes the first two artifact milestones, with reproducibility and analysis as the next priorities:
 
-1. publish this technical report with the benchmark website;
-2. publish the Lite 100 and Full 300 dataset packages with checksums, license information, and canonical identifiers;
-3. publish exact evaluation configurations and reproducibility instructions;
-4. expand baseline coverage and add task-level quality analysis without changing the membership of the fixed editions.
+1. **Published:** this technical report with the benchmark website;
+2. **Published:** the Lite 100 and Full 300 dataset packages with checksums, release metadata, and canonical identifiers;
+3. **Next:** publish exact evaluation configurations and reproducibility instructions;
+4. **Next:** expand baseline coverage and add task-level quality analysis without changing the membership of the fixed editions.
 
 The present results support Bird-Critic 1.5 as a usable preliminary benchmark. They do not yet support broad claims about model capability or complete database correctness. Keeping that boundary explicit is part of making the release inspectable and useful to the community.
 
 ## Artifact References
 
-- [Bird-Critic 1.5 preview website](https://kochsnow.github.io/bird-critic-1.5-preview/)
+- [Bird-Critic 1.5 project website](https://kochsnow.github.io/bird-critic-1.5-preview/)
 - [Website source repository](https://github.com/kochsnow/bird-critic-1.5-preview)
 - [Lite 100 instance manifest](data/lite-instances.json)
 - [Full 300 instance manifest](data/full-instances.json)
 - [Lite 100 preliminary results](data/lite-results.json)
 - [Full 300 preliminary results](data/full-results.json)
-- **Hugging Face Lite 100:** TODO — insert canonical release URL
-- **Hugging Face Full 300:** TODO — insert canonical release URL
+- [Hugging Face Lite 100 dataset](https://huggingface.co/datasets/kochsnow/bird-critic-1.5-lite-100)
+- [Hugging Face Full 300 dataset](https://huggingface.co/datasets/kochsnow/bird-critic-1.5-full-300)

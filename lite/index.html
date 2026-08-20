@@ -11,7 +11,7 @@
   <meta property="og:image" content="../assets/og-family.png">
   <title>Bird-Critic 1.5 Lite — 100-instance evaluation</title>
   <link rel="icon" href="../assets/favicon.png" type="image/png">
-  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../assets/styles.css?v=20260820">
   <script defer src="../assets/app.js?v=20260803"></script>
 </head>
 <body class="inner" data-page="lite" data-depth="1" data-results="../data/lite-results.json" data-instances="../data/lite-instances.json">
@@ -31,7 +31,8 @@
       <a href="../full/">Full</a>
       <a href="#leaderboard">Leaderboard</a>
       <a href="#instances">Instances</a>
-      <a class="nav-cta" href="https://github.com/kochsnow/bird-critic-1.5-preview" target="_blank" rel="noreferrer">GitHub ↗</a>
+      <a href="https://github.com/kochsnow/bird-critic-1.5-preview" target="_blank" rel="noreferrer">GitHub</a>
+      <a class="nav-cta" href="https://huggingface.co/datasets/kochsnow/bird-critic-1.5-lite-100" target="_blank" rel="noreferrer">Dataset ↗</a>
     </nav>
   </header>
 
@@ -43,7 +44,7 @@
       </div>
       <div class="reveal">
         <p class="page-intro">A compact, multi-ecosystem test of whether coding agents can diagnose and repair real production issues—not merely generate plausible patches.</p>
-        <span class="page-status">Instance set released</span>
+        <span class="page-status">Public dataset released</span>
       </div>
     </section>
     <hr class="page-rule">
@@ -53,6 +54,16 @@
       <div class="metric"><strong>4</strong><span>Language ecosystems</span></div>
       <div class="metric"><strong>11</strong><span>Repositories &amp; plugins</span></div>
       <div class="metric"><strong>0/1</strong><span>Executable reward</span></div>
+    </section>
+
+    <section class="coming-panel">
+      <div class="coming-panel-inner reveal">
+        <span class="kicker">Official dataset</span>
+        <h2>Lite 100 is public on Hugging Face.</h2>
+        <p>Download the fixed 100-instance package, inspect its files and release metadata, and use the same task set reported by this leaderboard.</p>
+        <a class="button button-primary" href="https://huggingface.co/datasets/kochsnow/bird-critic-1.5-lite-100" target="_blank" rel="noreferrer">Open Lite 100 dataset <span>↗</span></a>
+        <span class="coming-number" aria-hidden="true">100</span>
+      </div>
     </section>
 
     <section class="results-section" id="leaderboard">
@@ -157,7 +168,7 @@
     <section class="results-section">
       <div class="results-head reveal">
         <div><span class="kicker">Reproduce</span><h2>OpenHands evaluation harness</h2></div>
-        <p>The current Lite leaderboard is evaluated with OpenHands. The exact pinned harness version, model-provider settings, and concurrency configuration will be published with the official release.</p>
+        <p>The current Lite leaderboard is evaluated with OpenHands. The exact pinned harness version, model-provider settings, and concurrency configuration will be added in a reproducibility update.</p>
       </div>
       <div class="quickstart reveal">
         <button class="copy-button" type="button" data-copy-target="#quickstart-code">Copy</button>
@@ -165,7 +176,7 @@
 SUITE="Bird-Critic 1.5 Lite"
 INSTANCES=100
 
-# Reproduction command and pinned configuration: coming with release.</pre>
+# Reproduction command and pinned configuration: coming in a reproducibility update.</pre>
       </div>
     </section>
   </main>
@@ -176,7 +187,7 @@ INSTANCES=100
       <span>BIRD—CRITIC</span><b>1.5</b>
     </a>
     <p>Lite edition · 100 verified repair instances.</p>
-    <div><a href="../full/">Full</a><a href="../#tracks">Language tracks</a></div>
+    <div><a href="https://huggingface.co/datasets/kochsnow/bird-critic-1.5-lite-100" target="_blank" rel="noreferrer">Dataset</a><a href="../full/">Full</a><a href="../#tracks">Language tracks</a></div>
     <small>© <span data-year></span> Bird-Critic Team</small>
   </footer>
 </body>
