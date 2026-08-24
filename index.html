@@ -1,245 +1,162 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Bird-Critic 1.5 — a multi-ecosystem benchmark for evaluating LLM agents on real-world code repair.">
-  <meta name="theme-color" content="#071a18">
-  <meta property="og:title" content="Bird-Critic 1.5">
-  <meta property="og:description" content="Real repositories. Reproducible environments. Verifiable repairs.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/og-family.png">
-  <title>Bird-Critic 1.5 — Real-world code repair benchmark</title>
-  <link rel="icon" href="assets/favicon.png" type="image/png">
-  <link rel="stylesheet" href="assets/styles.css?v=20260820">
-  <script defer src="assets/app.js?v=20260803"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BIRD CRITIC 1.5 — a functional benchmark for coding agents</title>
+  <meta name="description" content="BIRD CRITIC 1.5 judges coding agents by one thing: does the patch make a real, previously-failing test suite pass on a real user-filed bug — across Python, Ruby, PHP, and Node.js.">
+  <link rel="stylesheet" href="assets/page.css">
 </head>
-<body data-page="home" data-depth="0">
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div class="scroll-progress" aria-hidden="true"></div>
+<body>
 
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Bird-Critic 1.5 home">
-      <span class="brand-mark" aria-hidden="true"><span></span><span></span></span>
-      <span>BIRD—CRITIC</span>
-      <b>1.5</b>
-    </a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-      <span></span><span></span><span></span><span class="sr-only">Menu</span>
-    </button>
-    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-      <a href="lite/">Lite</a>
-      <a href="full/">Full</a>
-      <a href="#tracks">Language tracks</a>
-      <a href="report/">Report</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top">BIRD CRITIC 1.5</a>
+    <nav class="site-nav">
+      <a href="#leaderboard">Leaderboard</a>
       <a href="#method">Method</a>
-      <a class="nav-cta" href="https://github.com/kochsnow/bird-critic-1.5-preview" target="_blank" rel="noreferrer">GitHub ↗</a>
+      <a href="#examples">Examples</a>
+      <a href="report/">Report</a>
     </nav>
-  </header>
+    <a class="header-cta" href="https://github.com/kochsnow/bird-critic-1.5-preview" target="_blank" rel="noopener">View on GitHub</a>
+  </div>
+</header>
 
-  <main id="main">
-    <section class="hero">
-      <div class="hero-copy reveal">
-        <img class="hero-project-logo" src="assets/bird-critic-1-logo.png" alt="Bird-Critic cube bird">
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">BIRD-CRITIC family · from SQL diagnostics to real-world software engineering</p>
+      <h1>BIRD CRITIC 1.5</h1>
+      <p class="lead">In 2025, BIRD-CRITIC 1.0 introduced the first benchmark for LLMs' ability to diagnose and repair real-world SQL bugs, across MySQL, PostgreSQL, SQL Server, and Oracle. BIRD CRITIC 1.5 extends from SQL diagnostics to real-world software engineering in database-relevant tasks, across production Python, Ruby, PHP, and Node.js repositories.</p>
+      <div class="actions">
+        <a class="button primary" href="#leaderboard">View leaderboard</a>
+        <a class="button ghost" href="#examples">See example instances</a>
+        <a class="dataset-link" href="https://huggingface.co/datasets/kochsnow/bird-critic-1.5-lite-100" target="_blank" rel="noopener"><span aria-hidden="true">��</span> Lite dataset</a>
+        <a class="dataset-link" href="https://huggingface.co/datasets/kochsnow/bird-critic-1.5-full-300" target="_blank" rel="noopener"><span aria-hidden="true">��</span> Full dataset</a>
+      </div>
+      <div class="meta-line">
+        <span><strong>300</strong> instances</span>
+        <span><strong>4</strong> ecosystems</span>
+        <span><strong>2</strong> splits — Lite / Full</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="leaderboard">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Model Performance</span>
+        <h2>Leaderboard</h2>
+        <p>Solve rate: the percentage of tasks where the agent's patch made the failing tests pass.</p>
       </div>
 
-      <div class="hero-visual reveal">
-        <div class="eyebrow"><span class="pulse"></span> A benchmark in the BIRD family</div>
-        <h1>BIRD-CRITIC <em>1.5</em></h1>
-        <p class="hero-question">Can LLM agents fix user issues in real-world codebases?</p>
-        <p class="hero-lead">A multi-ecosystem benchmark built from real pull requests, reproducible environments, and executable test-driven verification.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="lite/">Explore Lite results <span>→</span></a>
-          <a class="button button-ghost" href="#editions">Get datasets</a>
-          <a class="button button-ghost" href="report/">Read technical report</a>
-          <a class="button button-ghost" href="https://github.com/kochsnow/bird-critic-1.5-preview" target="_blank" rel="noreferrer">Code</a>
-          <a class="button button-ghost" href="#editions">All editions</a>
-        </div>
-        <div class="hero-note">
-          <span>Latest release</span>
-          <strong>Full · 300 instances</strong>
-        </div>
-      </div>
-    </section>
-
-    <section class="signal-strip" aria-label="Benchmark summary">
-      <div><strong>100</strong><span>Lite instances</span></div>
-      <div><strong>4</strong><span>rolling language tracks</span></div>
-      <div><strong>300</strong><span>Full instances · available</span></div>
-      <div><strong>1</strong><span>executable protocol</span></div>
-    </section>
-
-    <section class="section home-overview" id="about">
-      <article class="family-panel reveal">
-        <div class="panel-heading"><h2>Hi! BIRD-CRITIC 1.5</h2></div>
-        <div class="panel-body">
-          <p><strong>BIRD-CRITIC 1.5</strong> extends the BIRD-Critic research line from SQL diagnostics to repository-level code debugging. It asks whether LLM agents can inspect, edit, and verify fixes for realistic user issues across mature software systems.</p>
-          <p>The benchmark separates two fixed evaluation editions from four independently maintained language tracks:</p>
-          <ul class="family-list">
-            <li><strong>Lite:</strong> a fixed 100-instance multi-language evaluation for fast and comparable testing.</li>
-            <li><strong>Full:</strong> a fixed 300-instance benchmark with preliminary results for deeper model analysis.</li>
-            <li><strong>Language tracks:</strong> continuously updated Python, Node.js, Ruby, and PHP task pools.</li>
-          </ul>
-          <div class="resource-buttons">
-            <a class="family-button" href="lite/">Lite Results</a>
-            <a class="family-button" href="full/">Full Results</a>
-            <a class="family-button family-button-teal" href="https://huggingface.co/datasets/kochsnow/bird-critic-1.5-lite-100" target="_blank" rel="noreferrer">Lite Dataset ↗</a>
-            <a class="family-button family-button-teal" href="https://huggingface.co/datasets/kochsnow/bird-critic-1.5-full-300" target="_blank" rel="noreferrer">Full Dataset ↗</a>
-            <a class="family-button" href="report/">Technical Report</a>
-            <a class="family-button" href="#tracks">Language Tracks</a>
-            <a class="family-button" href="https://github.com/kochsnow/bird-critic-1.5-preview" target="_blank" rel="noreferrer">Code</a>
+      <div class="board-toolbar">
+        <div class="segmented-group">
+          <span class="seg-label">Split</span>
+          <div class="segmented">
+            <button data-edition="lite" class="active">Lite</button>
+            <button data-edition="full">Full</button>
           </div>
         </div>
-      </article>
-
-      <article class="family-panel reveal" id="news">
-        <div class="panel-heading"><h2>News</h2></div>
-        <div class="panel-body news-list">
-          <p><span class="news-date">Aug. 2026</span> The official Lite 100 and Full 300 dataset packages are publicly available on Hugging Face.</p>
-          <p><span class="news-date">Aug. 2026</span> Technical Report Draft v0.1 is available as a formatted web document and raw Markdown.</p>
-          <p><span class="news-date">Aug. 2026</span> Bird-Critic 1.5 Full publishes its 300-instance catalog and preliminary results for four OpenHands model evaluations.</p>
-          <p><span class="news-date">Aug. 2026</span> The Lite leaderboard is updated with six OpenHands model evaluations.</p>
-          <p><span class="news-date">Aug. 2026</span> Preliminary Lite / Base Split results are released across all four language tracks, including Ruby on 60 Discourse tasks.</p>
-          <p><span class="news-date">Jul. 2026</span> The Bird-Critic 1.5 website preview and independently maintainable language pages are released.</p>
+        <div class="segmented-group">
+          <span class="seg-label">Rank by</span>
+          <div class="segmented">
+            <button data-lang="overall" class="active">Overall</button>
+            <button data-lang="python">Python</button>
+            <button data-lang="ruby">Ruby</button>
+            <button data-lang="php">PHP</button>
+            <button data-lang="node">Node.js</button>
+          </div>
         </div>
-      </article>
-    </section>
-
-    <section class="section editions" id="editions">
-      <div class="section-heading reveal">
-        <div>
-          <span class="kicker">Release map</span>
-          <h2>One benchmark.<br>Multiple flight paths.</h2>
-        </div>
-        <p>Lite and Full are fixed evaluation sets. The four language tracks are separate, continuously updated task pools with their own releases and results.</p>
-      </div>
-
-      <div class="edition-grid">
-        <article class="edition-card edition-live reveal">
-          <div class="card-topline"><span class="live-label">Dataset released</span><span>01</span></div>
-          <div class="edition-symbol">L</div>
-          <h3>Bird-Critic 1.5 Lite</h3>
-          <p>A curated 100-instance evaluation across Python, Node.js, Ruby, and PHP. Built for fast, comparable agent evaluation.</p>
-          <div class="edition-stats">
-            <span><b>100</b> instances</span>
-            <span><b>4</b> languages</span>
-          </div>
-          <div class="edition-links">
-            <a class="text-link" href="lite/">Open Lite results <span>↗</span></a>
-            <a class="text-link" href="https://huggingface.co/datasets/kochsnow/bird-critic-1.5-lite-100" target="_blank" rel="noreferrer">Get Lite dataset <span>↗</span></a>
-          </div>
-        </article>
-
-        <article class="edition-card edition-live reveal">
-          <div class="card-topline"><span class="live-label">Dataset released</span><span>02</span></div>
-          <div class="edition-symbol">F</div>
-          <h3>Bird-Critic 1.5 Full</h3>
-          <p>The complete 300-instance release for robust model comparison and deeper failure-mode analysis.</p>
-          <div class="edition-stats">
-            <span><b>300</b> instances</span>
-            <span><b>Full</b> coverage</span>
-          </div>
-          <div class="edition-links">
-            <a class="text-link" href="full/">Open Full results <span>↗</span></a>
-            <a class="text-link" href="https://huggingface.co/datasets/kochsnow/bird-critic-1.5-full-300" target="_blank" rel="noreferrer">Get Full dataset <span>↗</span></a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section tracks" id="tracks">
-      <div class="section-heading reveal">
-        <div>
-          <span class="kicker">Language tracks</span>
-          <h2>Follow the ecosystem<br>you care about.</h2>
-        </div>
-        <p>These tracks are independent from Lite and Full. Each has its own growing task pool, update cadence, leaderboard, and ecosystem-specific analysis.</p>
-      </div>
-
-      <div class="track-grid">
-        <a class="track-card reveal" href="languages/python/">
-          <span class="track-index">PY</span>
-          <div><h3>Python</h3><p>Lite / Base Split · preliminary result available</p></div>
-          <span class="track-arrow">↗</span>
-        </a>
-        <a class="track-card reveal" href="languages/node/">
-          <span class="track-index">JS</span>
-          <div><h3>Node.js</h3><p>Lite / Base Split · preliminary result available</p></div>
-          <span class="track-arrow">↗</span>
-        </a>
-        <a class="track-card reveal" href="languages/ruby/">
-          <span class="track-index">RB</span>
-          <div><h3>Ruby</h3><p>Lite / Base Split · preliminary result available</p></div>
-          <span class="track-arrow">↗</span>
-        </a>
-        <a class="track-card reveal" href="languages/php/">
-          <span class="track-index">PHP</span>
-          <div><h3>PHP</h3><p>Lite / Base Split · preliminary result available</p></div>
-          <span class="track-arrow">↗</span>
-        </a>
-      </div>
-    </section>
-
-    <section class="section method" id="method">
-      <div class="method-layout">
-        <div class="method-intro reveal">
-          <span class="kicker kicker-light">Evaluation method</span>
-          <h2>From issue to evidence.</h2>
-          <p>Every score is backed by an executable repair, not a textual judgment. Agents work in isolated environments and succeed only when the verifier confirms the behavior.</p>
-        </div>
-        <ol class="method-steps">
-          <li class="reveal"><span>01</span><div><h3>Source real repairs</h3><p>Instances are grounded in real pull requests from actively used open-source projects.</p></div></li>
-          <li class="reveal"><span>02</span><div><h3>Rebuild the environment</h3><p>Each task ships with a reproducible container, repository state, and dependency context.</p></div></li>
-          <li class="reveal"><span>03</span><div><h3>Let agents work</h3><p>Agents inspect the codebase, edit files, and run tools under a consistent protocol.</p></div></li>
-          <li class="reveal"><span>04</span><div><h3>Verify the repair</h3><p>Task-specific tests determine success with a clear binary reward.</p></div></li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="section release">
-      <div class="release-card reveal">
-        <span class="kicker">Current release</span>
-        <h2>Read the Bird-Critic 1.5 technical report.</h2>
-        <p>Inspect the benchmark construction process, release map, evaluation protocol, preliminary Lite and Full results, and current limitations.</p>
-        <a class="button button-dark" href="report/">Open Technical Report Draft v0.1 <span>→</span></a>
-        <div class="release-ring ring-one" aria-hidden="true"></div>
-        <div class="release-ring ring-two" aria-hidden="true"></div>
-      </div>
-    </section>
-
-    <section class="section citation-section" id="citation">
-      <div class="family-panel reveal">
-        <div class="panel-heading"><h2>Citation</h2></div>
-        <div class="panel-body citation-content">
-          <div class="citation-intro">
-            <div><span class="kicker">Technical Report Draft v0.1</span><p>Please cite this report when using Bird-Critic 1.5, its datasets, or leaderboard results.</p></div>
-            <button class="copy-button" type="button" data-copy-target="#citation-bibtex">Copy BibTeX</button>
-          </div>
-          <pre class="citation-code" id="citation-bibtex"><code>@techreport{huang2026birdcritic15,
-  title       = {Bird-Critic 1.5: An Executable Benchmark for Repairing Database-Backed Applications},
-  author      = {Huang, Yongfeng and Li, Xiaolong and Xu, Zixi and Luo, Ziyue and Wu, Yue and Chen, Binshang and Li, JinYang},
-  institution = {The Chinese University of Hong Kong and The University of Hong Kong},
-  year        = {2026},
-  month       = aug,
-  type        = {Technical Report Draft},
-  number      = {v0.1},
-  url         = {https://kochsnow.github.io/bird-critic-1.5-preview/report/},
-  note        = {Living technical report; not peer reviewed}
-}</code></pre>
-          <div class="citation-links"><a href="report/">Read technical report →</a><a href="CITATION.bib">BibTeX file</a></div>
+        <div class="segmented-group">
+          <span class="seg-label">Scaffold</span>
+          <select class="scaffold-select" id="scaffold-select">
+            <option value="openhands-sdk">openhands-sdk</option>
+            <option value="mini-swe-agent">mini-swe-agent — coming soon</option>
+            <option value="claude-code">claude code — coming soon</option>
+            <option value="codex">codex — coming soon</option>
+          </select>
         </div>
       </div>
-    </section>
-  </main>
 
-  <footer class="site-footer">
-    <a class="brand footer-brand" href="index.html">
-      <span class="brand-mark" aria-hidden="true"><span></span><span></span></span>
-      <span>BIRD—CRITIC</span><b>1.5</b>
-    </a>
-    <p>Real repositories. Reproducible environments. Verifiable repairs.</p>
-    <div><a href="report/">Report</a><a href="https://github.com/kochsnow/bird-critic-1.5-preview" target="_blank" rel="noreferrer">GitHub</a><a href="https://bird-critic.github.io/" target="_blank" rel="noreferrer">Bird-Critic 1.0</a></div>
-    <small>© <span data-year></span> Bird-Critic Team</small>
-  </footer>
+      <div class="board-table-wrap">
+        <table class="board">
+          <thead>
+            <tr>
+              <th style="width:52px">#</th>
+              <th>Model</th>
+              <th id="col-score">Solve rate</th>
+              <th>Solved / total</th>
+            </tr>
+          </thead>
+          <tbody id="board-body">
+            <tr><td colspan="4">Loading results…</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="board-footnote" id="board-caption"></p>
+    </div>
+  </section>
+
+  <section class="section" id="method">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Benchmark Construction</span>
+        <h2>Method</h2>
+        <p>Every instance starts as a real GitHub pull request from a production repository — then goes through a verification gate and a human-in-the-loop rewrite before it's allowed into the benchmark.</p>
+      </div>
+      <ol class="method-list">
+        <li>
+          <div class="method-step-body">
+            <h3>Filter ecosystems and collect real PRs</h3>
+            <p>We manually identify DB-related ecosystems and repositories, then collect merged pull requests from them — each one a real bug fix paired with the test that caught it, not a synthetic or LLM-authored task.</p>
+          </div>
+        </li>
+        <li>
+          <div class="method-step-body">
+            <h3>Convert to Harbor and verify it's a real test</h3>
+            <p>Each candidate is converted into a runnable Harbor task and put through a gate: applying the reference patch (oracle) must make the test suite pass, and doing nothing (nop) must leave it failing. Instances that don't clear this bar are dropped.</p>
+          </div>
+        </li>
+        <li>
+          <div class="method-step-body">
+            <h3>Rewrite the problem statement, then review it by hand</h3>
+            <p>Raw PR descriptions rarely name the exact files, classes, or interfaces an agent needs. We rewrite each instruction to spec-level detail — pinning down what the hidden test requires while withholding the actual implementation — and every rewrite goes through human quality review before it ships.</p>
+          </div>
+        </li>
+        <li>
+          <div class="method-step-body">
+            <h3>Measure difficulty without moving the goalposts</h3>
+            <p>Lite 100 and Full 300 are fixed releases. We re-run the same instances to measure discrimination and analyze failures; harder verified tasks belong in a future version rather than silently changing the published splits.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="examples">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Examples</span>
+        <h2>Four real bugs, one per ecosystem</h2>
+        <p>The real problem statement and diff from each fixing pull request, and how many of the four Extension-200 evaluation configurations solved it.</p>
+      </div>
+      <div id="examples-mount">
+        <p style="color:var(--faint); font-family:var(--mono); font-size:13px;">Loading case files…</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>BIRD CRITIC 1.5 — <a href="report/">Technical report</a> · <a href="https://bird-critic.github.io/" target="_blank" rel="noopener">BIRD-CRITIC 1.0</a></p>
+  </div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/page.js"></script>
 </body>
 </html>

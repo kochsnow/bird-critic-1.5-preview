@@ -1,0 +1,370 @@
+// Browser-compatible copy of the JSON files for direct file:// access.
+window.BIRD_CRITIC_DATA = {
+  "cases": {
+    "python": {
+      "language": "Python",
+      "code": "PY",
+      "repo": "frappe/hrms",
+      "pr": "#674",
+      "instance": "bird-critic-15-v4-frappe--hrms-674",
+      "title": "Filter tax salary components by company when building a salary slip",
+      "instruction_html": "<p>Frappe HRMS is a HR management system built on Frappe. The codebase is at <code>/workspace/repo</code>. Services and dependencies are pre-installed.</p><h4>Background</h4><p>Salary slips in multi-company HRMS setups must only apply tax components that are configured for the employee's company. Previously the company filter was ignored when resolving which salary components are tax components, so components from other companies could leak into the slip. A <code>get_tax_components</code> function must accept a company argument and return only the matching components.</p><h4>Required behaviour</h4><ul><li><code>get_tax_components(company)</code> returns only the <code>Salary Component</code> records whose <code>tax_components</code> list includes an entry for the given company.</li><li>When a salary slip is generated for a company that has no matching tax component, that component does not appear in the slip's deductions (e.g. <code>_Test TDS</code> is absent when the company does not match).</li><li>A component that is not variable-based-on-taxable-salary (<code>variable_based_on_taxable_salary == 0</code>) is not treated as a tax component regardless of the company filter.</li><li>After the company filter is correctly applied, <code>variable_based_on_taxable_salary</code> is <code>1</code> and the component's <code>accounts</code> list contains an entry for <code>_Test Company</code>.</li><li>The <code>'Salary Component'</code> doctype and the <code>'tax_components'</code> child-table field are both present and correctly structured in the implementation.</li></ul><h4>Must use</h4><p><code>get_tax_components</code>, <code>Salary Component</code>, <code>tax_components</code></p>",
+      "fix_summary": "The fix replaces a flat, company-blind scan over every tax-flagged Salary Component with a cached company → components map, built once via a query-builder join against Salary Component Account and rebuilt whenever a component is saved.",
+      "diff_file": "hrms/payroll/doctype/salary_slip/salary_slip.py",
+      "diff": " if not tax_components:\n-    tax_components = [\n-        d.name\n-        for d in frappe.get_all(\"Salary Component\", filters={\"variable_based_on_taxable_salary\": 1})\n-        if d.name not in self.other_deduction_components\n-    ]\n+    tax_components = self.get_tax_components()\n\n+def get_tax_components(self) -> list:\n+    tax_components = frappe.cache().get_value(\n+        \"tax_components\", self._fetch_company_wise_tax_components\n+    )\n+    default_tax_components = tax_components.get(\"default\", [])\n+    return tax_components.get(self.company, default_tax_components)\n+\n+def _fetch_company_wise_tax_components(self) -> dict:\n+    tax_components = {}\n+    sc = frappe.qb.DocType(\"Salary Component\")\n+    sca = frappe.qb.DocType(\"Salary Component Account\")\n+    components = (\n+        frappe.qb.from_(sc).left_join(sca).on(sca.parent == sc.name)\n+        .select(sc.name, sca.company)\n+        .where(sc.variable_based_on_taxable_salary == 1)\n+    ).run(as_dict=True)\n+    for component in components:\n+        key = component.company or \"default\"\n+        tax_components.setdefault(key, [])\n+        tax_components[key].append(component.name)\n+    return tax_components",
+      "solved_by": [],
+      "failed_by": [
+        "Claude-Sonnet-4-6",
+        "gpt-5.4",
+        "DeepSeek-V4-Flash-0731",
+        "Qwen3-Coder-480B"
+      ],
+      "solved_count": 0,
+      "total_count": 4,
+      "note": "Every agent we evaluated on the Full split missed this one — the instruction pins down what get_tax_components(company) must return, but none of the four patches produced a caching, company-keyed lookup that matched the hidden test's assertions exactly."
+    },
+    "php": {
+      "language": "PHP",
+      "code": "PHP",
+      "repo": "shopware/shopware",
+      "pr": "#13271",
+      "instance": "bird-lite-shopware--shopware-13271",
+      "title": "Custom fingerprint compare for shop-ID fingerprinting",
+      "instruction_html": "<p>Shopware tracks whether a shop has been moved or cloned by comparing fingerprints (small stamped values) stored at installation time. Small path changes caused by deployment tooling (e.g. <code>/var/www/mysite/releases/1</code> → <code>/releases/2</code>) currently trigger a full-score mismatch even though the paths are almost identical, prompting the system to suggest a shop-ID change. The fix introduces a <code>FingerprintCustomCompare</code> interface that lets individual fingerprint classes supply their own scoring logic instead of relying on simple equality.</p><p>The codebase is at <code>/workspace/project</code>.</p><h4>Required behaviour</h4><ul><li>A new interface <code>FingerprintCustomCompare</code> declares a single method <code>compare(?string $storedStamp): int</code> that returns a score between 0 (identical) and 100 (completely different).</li><li><code>InstallationPath</code> implements <code>FingerprintCustomCompare</code>. Its <code>compare(?string $storedStamp): int</code> method splits both paths on <code>/</code>, compares segments left-to-right, and — once a segment mismatch is found — counts that segment and all subsequent segments as failures. The returned score is <code>floor(100 / maxSegments) * numFailures</code>. Examples: only the last segment changed → 25; last half changed → 50; root segment differs → 100; completely different paths → 100.</li><li><code>FingerprintGenerator::matchFingerprints(array $fingerprints): FingerprintComparisonResult</code> must check whether a <code>Fingerprint</code> instance also implements <code>FingerprintCustomCompare</code>. When it does, call <code>compare($storedStamp)</code> and treat a returned score of 0 as a <code>FingerprintMatch</code> and any non-zero score as a <code>FingerprintMismatch</code> carrying that score. Fingerprints that do not implement <code>FingerprintCustomCompare</code> continue to use the existing equality-based matching logic.</li><li>The overall <code>FingerprintComparisonResult</code> score (the third constructor argument) is computed the same way regardless of whether custom comparison is used.</li></ul>",
+      "fix_summary": "A dedicated FingerprintCustomCompare interface lets InstallationPath score partial path matches segment-by-segment instead of an all-or-nothing string comparison, and FingerprintGenerator now checks for that interface before falling back to plain equality.",
+      "diff_file": "src/Core/Framework/App/ShopId/Fingerprint/InstallationPath.php",
+      "diff": " use Shopware\\Core\\Framework\\App\\ShopId\\Fingerprint;\n+use Shopware\\Core\\Framework\\App\\ShopId\\FingerprintCustomCompare;\n\n-readonly class InstallationPath implements Fingerprint\n+readonly class InstallationPath implements Fingerprint, FingerprintCustomCompare\n {\n     final public const IDENTIFIER = 'installation_path';\n\n+    public function compare(?string $storedStamp): int\n+    {\n+        if ($storedStamp === null) {\n+            return $this->getScore();\n+        }\n+        $newStamp = $this->getStamp();\n+        if ($storedStamp === $newStamp) {\n+            return 0;\n+        }\n+        $storedPathParts = explode('/', trim($storedStamp, '/'));\n+        $newPathParts = explode('/', trim($newStamp, '/'));\n+        $maxParts = max(\\count($storedPathParts), \\count($newPathParts));\n+        $results = [];\n+        for ($i = 0; $i < $maxParts; ++$i) {\n+            $storedPart = $storedPathParts[$i] ?? null;\n+            $newPart = $newPathParts[$i] ?? null;\n+            $previousResult = $results[$i - 1] ?? true;\n+            $results[$i] = $previousResult && $storedPart === $newPart;\n+        }\n+        $numFailures = \\count(array_filter($results, fn ($result) => $result === false));\n+        return (int) (100 / $maxParts) * $numFailures;\n+    }\n }",
+      "solved_by": [
+        "Claude-Sonnet-4-6"
+      ],
+      "failed_by": [
+        "gpt-5.4",
+        "DeepSeek-V4-Flash-0731",
+        "Qwen3-Coder-480B"
+      ],
+      "solved_count": 1,
+      "total_count": 4,
+      "note": "The three models that missed it either kept plain equality on InstallationPath or approximated a similarity score that didn't match the exact floor(100 / maxSegments) * numFailures formula the hidden tests assert on."
+    },
+    "node": {
+      "language": "Node.js",
+      "code": "JS",
+      "repo": "calcom/cal.diy",
+      "pr": "#21250",
+      "instance": "cal.diy-pr-21250",
+      "title": "Add a restriction schedule that narrows slot availability without expanding it",
+      "instruction_html": "<p>Team event types currently support a \"common schedule\" that replaces each host's individual availability. This PR introduces a complementary concept: a <strong>restriction schedule</strong> that only removes slots falling outside its defined hours — it never adds new slots. The restriction can optionally be evaluated in the booker's timezone rather than the host's. The feature is gated behind a <code>\"restriction-schedule\"</code> team feature flag.</p><p>The schema gains two new nullable fields on <code>EventType</code>: <code>restrictionScheduleId</code> (foreign key to <code>Schedule</code>) and <code>useBookerTimezone</code> (boolean, default <code>false</code>). The slot-generation function <code>_getAvailableSlots</code> in <code>packages/trpc/server/routers/viewer/slots/util.ts</code> and the booking guard <code>ensureAvailableUsers</code> in <code>packages/features/bookings/lib/handleNewBooking/ensureAvailableUsers.ts</code> both check these fields when the feature flag is enabled.</p><p>The graded surface is <code>apps/web/test/lib/getSchedule/restrictionSchedule.test.ts</code>.</p><h4>Required behaviour</h4><ul><li>When an event type has a <code>restrictionScheduleId</code> and the feature is enabled, <code>_getAvailableSlots</code> returns only slots that fall within the restriction schedule's allowed ranges.</li><li>Dates that lie entirely outside the restriction schedule are marked as disabled (<code>toHaveDateDisabled</code>).</li><li>Slots on dates that overlap with the restriction schedule match the expected UTC slot list (<code>toHaveTimeSlots</code>).</li><li>Multiple consecutive days outside the restriction schedule are each individually disabled.</li><li>When <code>useBookerTimezone</code> is <code>true</code> the restriction ranges are computed in the booker's timezone instead of the host's.</li><li><code>handleChildrenEventTypes</code> propagates <code>restrictionScheduleId</code> and <code>useBookerTimezone</code> to managed child event types (tested in <code>apps/web/test/lib/handleChildrenEventTypes.test.ts</code>).</li></ul><h4>Must use</h4><p><code>restrictionSchedule</code>, <code>restrictionScheduleId</code>, <code>schedule</code>, <code>useBookerTimezone</code></p>",
+      "fix_summary": "ensureAvailableUsers and _getAvailableSlots both load the restriction schedule and intersect its availability ranges into the host's, in either the host's or the booker's timezone, without ever adding slots the host didn't already offer.",
+      "diff_file": "packages/features/bookings/lib/handleNewBooking/ensureAvailableUsers.ts",
+      "diff": " if (eventType.restrictionScheduleId) {\n+  const restrictionSchedule = await prisma.schedule.findUnique({\n+    where: { id: eventType.restrictionScheduleId },\n+    select: { id: true, timeZone: true, userId: true, availability: { select: { days: true, startTime: true, endTime: true, date: true } }, user: { select: { defaultScheduleId: true, travelSchedules: true } } },\n+  });\n+\n+  if (!restrictionSchedule) {\n+    throw new Error(ErrorCode.RestrictionScheduleNotFound);\n+  }\n+\n+  const restrictionTimezone = eventType.useBookerTimezone\n+    ? input.timeZone\n+    : restrictionSchedule.timeZone!;\n+\n+  const restrictionAvailability = restrictionSchedule.availability.map((rule) => ({\n+    days: rule.days,\n+    startTime: rule.startTime,\n+    endTime: rule.endTime,\n+    date: rule.date,\n+  }));\n+\n+  const { dateRanges: restrictionRanges } = buildDateRanges({\n+    availability: restrictionAvailability,\n+    timeZone: restrictionTimezone,\n+    dateFrom: startDateTimeUtc,\n+    dateTo: endDateTimeUtc,\n+    travelSchedules,\n+  });\n }",
+      "solved_by": [
+        "gpt-5.4",
+        "DeepSeek-V4-Flash-0731"
+      ],
+      "failed_by": [
+        "Claude-Sonnet-4-6",
+        "Qwen3-Coder-480B"
+      ],
+      "solved_count": 2,
+      "total_count": 4,
+      "note": "The two models that missed it wired the restriction schedule into slot generation but not into ensureAvailableUsers's booking guard, so a booking request placed outside the restriction window still went through even though the calendar UI hid the slot."
+    },
+    "ruby": {
+      "language": "Ruby",
+      "code": "RB",
+      "repo": "solidusio/solidus",
+      "pr": "#6331",
+      "instance": "solidus-pr-6331",
+      "title": "Add configurable coupon code normalizer to SolidusPromotions",
+      "instruction_html": "<p>Solidus Promotions currently hardcodes lowercase normalization for coupon codes so <code>SAVE20</code>, <code>save20</code>, and <code>Save20</code> all resolve to the same promotion. This PR introduces <code>SolidusPromotions::CouponCodeNormalizer</code> — a callable class that centralises normalization — and a configuration hook so stores can swap in custom logic (e.g. a <code>CaseSensitiveNormalizer</code> that only strips whitespace).</p><p><code>SolidusPromotions::CouponCodeNormalizer</code> lives at <code>promotions/app/models/concerns/solidus_promotions/coupon_code_normalizer.rb</code>. All coupon code paths — <code>SolidusPromotions::Promotion</code>, <code>SolidusPromotions::PromotionCode</code>, <code>SolidusPromotions::PromotionHandler::Coupon</code>, and the order coupon_code accessor — delegate normalization to the configured class via <code>SolidusPromotions.configuration.coupon_code_normalizer_class</code>.</p><h4>Required behaviour</h4><ul><li><code>SolidusPromotions::CouponCodeNormalizer.call('10FFF')</code> returns <code>'10fff'</code>; it downcases and strips leading/trailing whitespace; it returns <code>nil</code> for <code>nil</code> input and <code>''</code> for empty or whitespace-only input.</li><li>When <code>SolidusPromotions.configuration.coupon_code_normalizer_class</code> is set to a <code>CaseSensitiveNormalizer</code> that only strips whitespace, <code>PromotionCode#value</code> stores the un-downcased value (e.g. <code>\"NewCoDe\"</code>).</li><li><code>SolidusPromotions::PromotionCode</code> uniqueness validation is enforced after normalization: two codes that normalise to the same string are invalid.</li><li><code>SolidusPromotions::Promotion.with_coupon_code</code> finds promotions case-insensitively by default (<code>\"10OFF\"</code>, <code>\"10OfF\"</code>, <code>\"10off\"</code> all match) and is case-sensitive when a <code>CaseSensitiveNormalizer</code> is configured.</li><li><code>Spree::Order#coupon_code=</code> normalizes the code on assignment using the configured normalizer class; reading <code>coupon_code</code> returns the normalized form under the default normalizer.</li><li><code>SolidusPromotions::PromotionHandler::Coupon</code> applies discounts successfully when the entered code matches after normalization.</li></ul><p>The codebase is at <code>/workspace/repo</code>; run specs from the <code>promotions/</code> submodule.</p>",
+      "fix_summary": "A single CouponCodeNormalizer.call(value) method replaces five separate inline .downcase.strip calls, and a coupon_code_normalizer_class config attribute lets every call site — promotion lookup, code validation, coupon application, order assignment — swap in a custom normalizer at once.",
+      "diff_file": "promotions/app/models/concerns/solidus_promotions/coupon_code_normalizer.rb",
+      "diff": "+module SolidusPromotions\n+  class CouponCodeNormalizer\n+    def self.call(value)\n+      value&.strip&.downcase\n+    end\n+  end\n+end\n\n def self.with_coupon_code(val)\n   joins(:codes).where(\n-    SolidusPromotions::PromotionCode.arel_table[:value].eq(val.downcase)\n+    SolidusPromotions::PromotionCode.arel_table[:value].eq(\n+      SolidusPromotions.config.coupon_code_normalizer_class.call(val)\n+    )\n   ).first\n end\n\n def normalize_code\n-  self.value = value.downcase.strip\n+  self.value = SolidusPromotions.config.coupon_code_normalizer_class.call(value)\n end",
+      "solved_by": [
+        "gpt-5.4",
+        "DeepSeek-V4-Flash-0731",
+        "Qwen3-Coder-480B"
+      ],
+      "failed_by": [
+        "Claude-Sonnet-4-6"
+      ],
+      "solved_count": 3,
+      "total_count": 4,
+      "note": "The model that missed it added a configurable normalizer class but left one or more call sites (order assignment or the promotion-code validator) still calling .downcase.strip directly, so custom normalizers configured by the test didn't take effect everywhere."
+    }
+  },
+  "full": [
+    {
+      "model": "Claude-Sonnet-4-6",
+      "agent": "openhands-sdk",
+      "date": "2026-08",
+      "scores": {
+        "overall": {
+          "solved": 117,
+          "total": 300
+        },
+        "python": {
+          "solved": 23,
+          "total": 75
+        },
+        "ruby": {
+          "solved": 42,
+          "total": 104
+        },
+        "php": {
+          "solved": 39,
+          "total": 75
+        },
+        "node": {
+          "solved": 13,
+          "total": 46
+        }
+      }
+    },
+    {
+      "model": "gpt-5.4",
+      "agent": "openhands-sdk",
+      "date": "2026-08",
+      "scores": {
+        "overall": {
+          "solved": 99,
+          "total": 300
+        },
+        "python": {
+          "solved": 23,
+          "total": 75
+        },
+        "ruby": {
+          "solved": 26,
+          "total": 104
+        },
+        "php": {
+          "solved": 39,
+          "total": 75
+        },
+        "node": {
+          "solved": 11,
+          "total": 46
+        }
+      }
+    },
+    {
+      "model": "DeepSeek-V4-Flash-0731",
+      "agent": "openhands-sdk",
+      "date": "2026-08",
+      "scores": {
+        "overall": {
+          "solved": 100,
+          "total": 300
+        },
+        "python": {
+          "solved": 21,
+          "total": 75
+        },
+        "ruby": {
+          "solved": 28,
+          "total": 104
+        },
+        "php": {
+          "solved": 38,
+          "total": 75
+        },
+        "node": {
+          "solved": 13,
+          "total": 46
+        }
+      }
+    },
+    {
+      "model": "Qwen3-Coder-480B-A35B",
+      "agent": "openhands-sdk",
+      "date": "2026-08",
+      "scores": {
+        "overall": {
+          "solved": 83,
+          "total": 300
+        },
+        "python": {
+          "solved": 20,
+          "total": 75
+        },
+        "ruby": {
+          "solved": 22,
+          "total": 104
+        },
+        "php": {
+          "solved": 35,
+          "total": 75
+        },
+        "node": {
+          "solved": 6,
+          "total": 46
+        }
+      }
+    }
+  ],
+  "lite": [
+    {
+      "model": "Claude-Sonnet-4-6",
+      "agent": "openhands-sdk",
+      "date": "2026-08",
+      "scores": {
+        "overall": {
+          "solved": 62,
+          "total": 100
+        },
+        "python": {
+          "solved": 14,
+          "total": 25
+        },
+        "ruby": {
+          "solved": 18,
+          "total": 20
+        },
+        "php": {
+          "solved": 18,
+          "total": 27
+        },
+        "node": {
+          "solved": 12,
+          "total": 28
+        }
+      }
+    },
+    {
+      "model": "Qwen3.5-397B-A17B",
+      "agent": "openhands-sdk",
+      "date": "2026-08",
+      "scores": {
+        "overall": {
+          "solved": 58,
+          "total": 100
+        },
+        "python": {
+          "solved": 18,
+          "total": 25
+        },
+        "ruby": {
+          "solved": 11,
+          "total": 20
+        },
+        "php": {
+          "solved": 15,
+          "total": 27
+        },
+        "node": {
+          "solved": 14,
+          "total": 28
+        }
+      }
+    },
+    {
+      "model": "DeepSeek-V4-Flash-0731",
+      "agent": "openhands-sdk",
+      "date": "2026-08",
+      "scores": {
+        "overall": {
+          "solved": 57,
+          "total": 100
+        },
+        "python": {
+          "solved": 16,
+          "total": 25
+        },
+        "ruby": {
+          "solved": 16,
+          "total": 20
+        },
+        "php": {
+          "solved": 16,
+          "total": 27
+        },
+        "node": {
+          "solved": 9,
+          "total": 28
+        }
+      }
+    },
+    {
+      "model": "gpt-5.4",
+      "agent": "openhands-sdk",
+      "date": "2026-08",
+      "scores": {
+        "overall": {
+          "solved": 52,
+          "total": 100
+        },
+        "python": {
+          "solved": 17,
+          "total": 25
+        },
+        "ruby": {
+          "solved": 8,
+          "total": 20
+        },
+        "php": {
+          "solved": 17,
+          "total": 27
+        },
+        "node": {
+          "solved": 10,
+          "total": 28
+        }
+      }
+    },
+    {
+      "model": "Qwen3-Coder-480B-A35B",
+      "agent": "openhands-sdk",
+      "date": "2026-08",
+      "scores": {
+        "overall": {
+          "solved": 45,
+          "total": 100
+        },
+        "python": {
+          "solved": 13,
+          "total": 25
+        },
+        "ruby": {
+          "solved": 12,
+          "total": 20
+        },
+        "php": {
+          "solved": 14,
+          "total": 27
+        },
+        "node": {
+          "solved": 6,
+          "total": 28
+        }
+      }
+    },
+    {
+      "model": "Qwen3.5-35B",
+      "agent": "openhands-sdk",
+      "date": "2026-08",
+      "scores": {
+        "overall": {
+          "solved": 17,
+          "total": 100
+        },
+        "python": {
+          "solved": 4,
+          "total": 25
+        },
+        "ruby": {
+          "solved": 0,
+          "total": 20
+        },
+        "php": {
+          "solved": 11,
+          "total": 27
+        },
+        "node": {
+          "solved": 2,
+          "total": 28
+        }
+      }
+    }
+  ]
+};
