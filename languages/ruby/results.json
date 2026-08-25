@@ -10,5 +10,17 @@
         "total": 60
       }
     }
+  },
+  {
+    "model": "gpt-oss-120b",
+    "agent": "OpenCode",
+    "split": "Lite / Base Split",
+    "date": "2026-08-13",
+    "scores": {
+      "ruby": {
+        "solved": 6,
+        "total": 60
+      }
+    }
   }
 ]
