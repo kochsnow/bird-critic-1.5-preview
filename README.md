@@ -18,6 +18,7 @@ compact benchmark tables. Brand assets are reused from the
 | `/languages/python/` | Independent rolling Python track | Preliminary Base result published |
 | `/languages/node/` | Independent rolling Node.js track | Preliminary Base result published |
 | `/languages/ruby/` | Independent rolling Ruby track | Preliminary Base result published |
+| `/languages/ruby/db-behavior-audit/` | Five-case Ruby DB-behavior audit pilot | Published case-study module |
 | `/languages/php/` | Independent rolling PHP track | Preliminary Base result published |
 
 Lite, Full, and the four language tracks are separate products:

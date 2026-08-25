@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Five evidence-linked database behavior audits selected from the original Bird-Critic 1.5 Ruby-60 task pool.">
+  <meta name="theme-color" content="#e1eacd">
+  <meta property="og:title" content="Ruby DB-Behavior Audit Pilot · Bird-Critic 1.5">
+  <meta property="og:description" content="Five Ruby-60 cases traced from expected database behavior to real-agent patch outcomes.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../../../assets/og-family.png">
+  <title>Ruby DB-Behavior Audit Pilot · Bird-Critic 1.5</title>
+  <link rel="icon" href="../../../assets/favicon.png" type="image/png">
+  <link rel="stylesheet" href="../../../assets/styles.css?v=20260825">
+  <script defer src="../../../assets/app.js?v=20260812"></script>
+</head>
+<body class="inner audit-page" data-page="ruby-audit" data-depth="3">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="../../../" aria-label="Bird-Critic 1.5 home">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span></span>
+      <span>BIRD—CRITIC</span><b>1.5</b>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span><span class="sr-only">Menu</span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+      <a href="#overview">Overview</a>
+      <a href="#pipeline">Evidence pipeline</a>
+      <a href="#outcomes">Outcomes</a>
+      <a href="#cases">Case studies</a>
+      <a class="nav-cta" href="../">Ruby track</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero audit-hero">
+      <div class="reveal">
+        <div class="page-eyebrow">Benchmark validation · Audited case studies</div>
+        <h1>Five Ruby tasks,<br>traced to database behavior.</h1>
+      </div>
+      <div class="reveal">
+        <p class="page-intro">Five rigorously audited instances selected from the original Ruby-60 task pool—not five additional tasks. The pilot connects task evidence, executable database checks, controls, and real-agent workspace patches.</p>
+        <span class="page-status">5-task audit pilot · August 2026</span>
+      </div>
+    </section>
+
+    <section class="metric-grid audit-metrics reveal" aria-label="Ruby audit pilot metrics">
+      <div class="metric"><strong>5 / 60</strong><span>Audited instances</span></div>
+      <div class="metric"><strong>5 / 5</strong><span>Valid patch groundings</span></div>
+      <div class="metric"><strong>1</strong><span>Valid positive case</span></div>
+      <div class="metric"><strong>4</strong><span>Explained semantic or partial failures</span></div>
+    </section>
+
+    <section class="results-section audit-overview" id="overview">
+      <div class="results-head reveal">
+        <div><span class="kicker">Audit overview</span><h2>From binary reward to grounded diagnosis</h2></div>
+        <p>The pilot asks which database behaviors a patch actually repairs, not only whether the task receives a final 0 or 1.</p>
+      </div>
+      <div class="audit-overview-grid">
+        <article class="audit-intro-card reveal">
+          <span class="audit-card-label">What was audited</span>
+          <p>Each case starts with evidence-linked expected database behaviors, adds an executable verifier, validates it against oracle and nop controls, then runs that verifier on a real agent workspace patch.</p>
+        </article>
+        <aside class="grounding-definition reveal">
+          <span class="audit-card-label">Key definition</span>
+          <h3>Valid patch grounding ≠ fully correct patch</h3>
+          <p><code>valid_agent_patch_grounding=true</code> means the verifier executed cleanly and the observed PASS/FAIL outcomes can be attributed to the intended agent patch.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="results-section" id="pipeline">
+      <div class="results-head reveal">
+        <div><span class="kicker">Evidence pipeline</span><h2>One traceable chain of evidence</h2></div>
+        <p>Every case follows the same behavior-level audit method before it enters the public case study set.</p>
+      </div>
+      <ol class="audit-pipeline reveal" aria-label="Ruby database behavior audit pipeline">
+        <li><span>01</span><strong>Task artifacts</strong></li>
+        <li><span>02</span><strong>Expected DB behaviors</strong></li>
+        <li><span>03</span><strong>Executable verifier</strong></li>
+        <li><span>04</span><strong>Oracle / nop controls</strong></li>
+        <li><span>05</span><strong>Real agent patch</strong></li>
+        <li><span>06</span><strong>Per-DBB result</strong></li>
+        <li><span>07</span><strong>Audited case card</strong></li>
+      </ol>
+    </section>
+
+    <section class="results-section audit-outcomes" id="outcomes">
+      <div class="results-head reveal">
+        <div><span class="kicker">Five-case outcome matrix</span><h2>Patch correctness, behavior by behavior</h2></div>
+        <p>All five patches are validly grounded. Their DBB pass ratios describe patch correctness—not whether the audit run itself is valid.</p>
+      </div>
+      <div class="audit-legend reveal" aria-label="Outcome legend">
+        <span><i class="legend-dot pass"></i> DB behavior passed</span>
+        <span><i class="legend-dot fail"></i> DB behavior failed</span>
+        <span><i class="legend-dot grounded"></i> Valid patch grounding</span>
+      </div>
+      <div class="audit-matrix-wrap reveal">
+        <table class="audit-matrix">
+          <thead>
+            <tr><th>Original task</th><th>Surface</th><th>DBB result</th><th>Task reward</th><th>Grounding</th><th>Grounded diagnosis</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="#case-312"><strong>PR #312</strong></a><small>data-explorer</small></td>
+              <td>Query parameter lookup</td>
+              <td><span class="ratio-block"><b style="--pass:50%">1 / 2</b><small>passed</small></span></td>
+              <td><span class="reward reward-zero">0.0</span></td>
+              <td><span class="status-badge status-grounded">Valid</span></td>
+              <td>Wrong-layer repair; source lookup remained broken</td>
+            </tr>
+            <tr>
+              <td><a href="#case-37063"><strong>PR #37063</strong></a><small>discourse</small></td>
+              <td>Upload-reference lifecycle</td>
+              <td><span class="ratio-block"><b style="--pass:100%">5 / 5</b><small>passed</small></span></td>
+              <td><span class="reward reward-one">1.0</span></td>
+              <td><span class="status-badge status-positive">Valid positive</span></td>
+              <td>Semantically correct timeout workspace patch</td>
+            </tr>
+            <tr>
+              <td><a href="#case-592"><strong>PR #592</strong></a><small>discourse-assign</small></td>
+              <td>Destroy-time cleanup</td>
+              <td><span class="ratio-block"><b style="--pass:66.67%">2 / 3</b><small>passed</small></span></td>
+              <td><span class="reward reward-zero">0.0</span></td>
+              <td><span class="status-badge status-grounded">Valid partial</span></td>
+              <td>Assignment cleanup passed; notification cleanup lagged</td>
+            </tr>
+            <tr>
+              <td><a href="#case-617"><strong>PR #617</strong></a><small>discourse-assign</small></td>
+              <td>Visibility-aware counts</td>
+              <td><span class="ratio-block"><b style="--pass:50%">1 / 2</b><small>passed</small></span></td>
+              <td><span class="reward reward-zero">0.0</span></td>
+              <td><span class="status-badge status-grounded">Valid replay</span></td>
+              <td>Title symptom changed; reusable query remained wrong</td>
+            </tr>
+            <tr>
+              <td><a href="#case-36878"><strong>PR #36878</strong></a><small>discourse</small></td>
+              <td>Schema and runtime lookup</td>
+              <td><span class="ratio-block"><b style="--pass:66.67%">2 / 3</b><small>passed</small></span></td>
+              <td><span class="reward reward-zero">0.0</span></td>
+              <td><span class="status-badge status-grounded">Valid replay</span></td>
+              <td>Schema fixed; target-aware runtime lookup omitted</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="matrix-caption reveal">Agent evaluation: OpenCode with <code>nvidia/z-ai/glm-5.2</code>. PR #617 and PR #36878 use verified exact workspace-patch replays for final grounding.</p>
+    </section>
+
+    <section class="results-section audit-cases" id="cases">
+      <div class="results-head reveal">
+        <div><span class="kicker">Five audited case cards</span><h2>What changed—and what the database showed</h2></div>
+        <p>Each card summarizes the public evidence without reproducing full trajectories or raw logs.</p>
+      </div>
+
+      <article class="case-card reveal" id="case-312">
+        <header class="case-card-head">
+          <div><span class="case-number">01 / 05</span><span class="status-badge status-failure">Semantic failure</span></div>
+          <div><span class="kicker">discourse / discourse-data-explorer</span><h3>PR #312 · User-ID query validation</h3></div>
+          <div class="case-score"><strong>1 / 2</strong><span>DB behaviors passed</span></div>
+        </header>
+        <div class="case-card-body">
+          <section>
+            <h4>Expected DB behaviors</h4>
+            <ul class="dbb-list">
+              <li><span class="dbb-id">DBB-312-1</span><span>Valid lookup returns the persisted user ID.</span><b class="dbb-result pass">PASS</b></li>
+              <li><span class="dbb-id">DBB-312-2</span><span>Missing lookup raises <code>ValidationError</code>, not a nil dereference.</span><b class="dbb-result fail">FAIL</b></li>
+            </ul>
+          </section>
+          <section class="case-summary">
+            <div><h4>Agent patch</h4><p>Added a guard in an admin groups controller and a controller spec. The actual Data Explorer lookup in <code>parameter.rb</code> was untouched.</p></div>
+            <div><h4>Observed database state</h4><p>Valid lookup persisted ID: <strong>PASS</strong>. Missing lookup produced <code>NoMethodError</code> instead of the required validation error.</p></div>
+            <div><h4>Grounded diagnosis</h4><p>The agent interpreted “query” as an HTTP query parameter and repaired the wrong software layer. The verifier ran cleanly, so the failure is attributable to patch semantics.</p></div>
+          </section>
+        </div>
+        <footer class="case-card-links">
+          <a href="https://github.com/discourse/discourse-data-explorer/pull/312" target="_blank" rel="noreferrer">Original PR ↗</a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/datasets/birdcritic15_lite_ruby_DB_behavior_audit_5/discourse-discourse-data-explorer-pr-312/db_behavior_audit.json" target="_blank" rel="noreferrer">DB behavior audit ↗</a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md#case-card-1-discourse-discourse-data-explorer-pr-312" target="_blank" rel="noreferrer">Grounding evidence ↗</a>
+        </footer>
+      </article>
+
+      <article class="case-card reveal" id="case-37063">
+        <header class="case-card-head">
+          <div><span class="case-number">02 / 05</span><span class="status-badge status-positive">Valid positive</span></div>
+          <div><span class="kicker">discourse / discourse</span><h3>PR #37063 · Upload-reference lifecycle</h3></div>
+          <div class="case-score"><strong>5 / 5</strong><span>DB assertions passed</span></div>
+        </header>
+        <div class="case-card-body">
+          <section>
+            <h4>Expected DB behaviors</h4>
+            <ul class="dbb-list">
+              <li><span class="dbb-id">DBB-37063-1</span><span>Site settings create upload references from URL-valued objects.</span><b class="dbb-result pass">PASS</b></li>
+              <li><span class="dbb-id">DBB-37063-2</span><span>Partial and full SiteSetting cleanup removes stale references.</span><b class="dbb-result pass">PASS</b></li>
+              <li><span class="dbb-id">DBB-37063-3</span><span>Theme settings create and fully clean upload references.</span><b class="dbb-result pass">PASS</b></li>
+            </ul>
+          </section>
+          <section class="case-summary">
+            <div><h4>Agent patch</h4><p>Converted upload URLs to IDs before creating references across SiteSetting and theme-setting models, with lifecycle tests across the affected surfaces.</p></div>
+            <div><h4>Observed database state</h4><p>Reference creation passed. SiteSetting cleanup moved <strong>2 → 1 → 0</strong>; ThemeSetting cleanup reached <strong>0</strong>. All five assertions passed.</p></div>
+            <div><h4>Grounded diagnosis</h4><p>The workspace patch was semantically correct even though the agent timed out during final verification before submit. The verifier evaluated the retained edits directly.</p></div>
+          </section>
+        </div>
+        <footer class="case-card-links">
+          <a href="https://github.com/discourse/discourse/pull/37063" target="_blank" rel="noreferrer">Original PR ↗</a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/datasets/birdcritic15_lite_ruby_DB_behavior_audit_5/discourse-pr-37063/db_behavior_audit.json" target="_blank" rel="noreferrer">DB behavior audit ↗</a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md#case-card-2-discourse-pr-37063" target="_blank" rel="noreferrer">Grounding evidence ↗</a>
+        </footer>
+      </article>
+
+      <article class="case-card reveal" id="case-592">
+        <header class="case-card-head">
+          <div><span class="case-number">03 / 05</span><span class="status-badge status-partial">Valid partial</span></div>
+          <div><span class="kicker">discourse / discourse-assign</span><h3>PR #592 · Group-destroy cleanup</h3></div>
+          <div class="case-score"><strong>2 / 3</strong><span>DB behaviors passed</span></div>
+        </header>
+        <div class="case-card-body">
+          <section>
+            <h4>Expected DB behaviors</h4>
+            <ul class="dbb-list">
+              <li><span class="dbb-id">DBB-592-1</span><span>Destroying a group deletes its assignment rows.</span><b class="dbb-result pass">PASS</b></li>
+              <li><span class="dbb-id">DBB-592-2</span><span>Destroying a group synchronously removes related notifications.</span><b class="dbb-result fail">FAIL</b></li>
+              <li><span class="dbb-id">DBB-592-3</span><span>A control group’s assignments and notifications remain unchanged.</span><b class="dbb-result pass">PASS</b></li>
+            </ul>
+          </section>
+          <section class="case-summary">
+            <div><h4>Agent patch</h4><p>Added a <code>before_destroy</code> callback that scheduled an asynchronous notification cleanup job.</p></div>
+            <div><h4>Observed database state</h4><p>Target assignment rows reached <strong>0</strong>, but notification rows remained at <strong>2</strong> when checked synchronously. Control-group rows persisted.</p></div>
+            <div><h4>Grounded diagnosis</h4><p>The patch was partially correct: assignment deletion worked, isolation held, and only lifecycle timing prevented notification cleanup from being immediately visible.</p></div>
+          </section>
+        </div>
+        <footer class="case-card-links">
+          <a href="https://github.com/discourse/discourse-assign/pull/592" target="_blank" rel="noreferrer">Original PR ↗</a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/datasets/birdcritic15_lite_ruby_DB_behavior_audit_5/discourse-discourse-assign-pr-592/db_behavior_audit.json" target="_blank" rel="noreferrer">DB behavior audit ↗</a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md#case-card-3-discourse-discourse-assign-pr-592" target="_blank" rel="noreferrer">Grounding evidence ↗</a>
+        </footer>
+      </article>
+
+      <article class="case-card reveal" id="case-617">
+        <header class="case-card-head">
+          <div><span class="case-number">04 / 05</span><span class="status-badge status-partial">Valid exact replay</span></div>
+          <div><span class="kicker">discourse / discourse-assign</span><h3>PR #617 · Visibility-aware assignment count</h3></div>
+          <div class="case-score"><strong>1 / 2</strong><span>DB behaviors passed</span></div>
+        </header>
+        <div class="case-card-body">
+          <section>
+            <h4>Expected DB behaviors</h4>
+            <ul class="dbb-list">
+              <li><span class="dbb-id">DBB-617-1</span><span><code>assigned_count_for</code> returns only the visible assignment count.</span><b class="dbb-result fail">FAIL</b></li>
+              <li><span class="dbb-id">DBB-617-2</span><span>Counting remains read-only and preserves both persisted rows.</span><b class="dbb-result pass">PASS</b></li>
+            </ul>
+          </section>
+          <section class="case-summary">
+            <div><h4>Agent patch</h4><p>Recomputed the reminder title from visible topic arrays but left the reusable <code>assigned_count_for</code> query unchanged.</p></div>
+            <div><h4>Observed database state</h4><p>Visible count expected <strong>1</strong>, observed <strong>2</strong>. Both assignment rows survived the count path, confirming a non-destructive read.</p></div>
+            <div><h4>Grounded diagnosis</h4><p>Exact patch replay shows a presentation-level symptom repair without a root-cause query repair. Local tests covered the edited output, not the underlying contract.</p></div>
+          </section>
+        </div>
+        <footer class="case-card-links">
+          <a href="https://github.com/discourse/discourse-assign/pull/617" target="_blank" rel="noreferrer">Original PR ↗</a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/datasets/birdcritic15_lite_ruby_DB_behavior_audit_5/discourse-discourse-assign-pr-617/db_behavior_audit.json" target="_blank" rel="noreferrer">DB behavior audit ↗</a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md#case-card-4-discourse-discourse-assign-pr-617" target="_blank" rel="noreferrer">Exact-replay evidence ↗</a>
+        </footer>
+      </article>
+
+      <article class="case-card reveal" id="case-36878">
+        <header class="case-card-head">
+          <div><span class="case-number">05 / 05</span><span class="status-badge status-partial">Valid exact replay</span></div>
+          <div><span class="kicker">discourse / discourse</span><h3>PR #36878 · Schema and target lookup</h3></div>
+          <div class="case-score"><strong>2 / 3</strong><span>DB behaviors passed</span></div>
+        </header>
+        <div class="case-card-body">
+          <section>
+            <h4>Expected DB behaviors</h4>
+            <ul class="dbb-list">
+              <li><span class="dbb-id">DBB-36878-1</span><span>Migration eliminates persisted <code>target IS NULL</code> state.</span><b class="dbb-result pass">PASS</b></li>
+              <li><span class="dbb-id">DBB-36878-2</span><span>The target column is NOT NULL and rejects NULL inserts.</span><b class="dbb-result pass">PASS</b></li>
+              <li><span class="dbb-id">DBB-36878-3</span><span>Dismiss resets the tracker matching both identifier and target.</span><b class="dbb-result fail">FAIL</b></li>
+            </ul>
+          </section>
+          <section class="case-summary">
+            <div><h4>Agent patch</h4><p>Normalized legacy NULL targets, added a NOT NULL constraint, and introduced model normalization. Runtime dismissal still searched by identifier only.</p></div>
+            <div><h4>Observed database state</h4><p>Legacy NULL rows reached <strong>0</strong>; the constraint rejected a new NULL insert. Target-specific dismissal still selected the wrong tracker.</p></div>
+            <div><h4>Grounded diagnosis</h4><p>Exact patch replay separates correct migration/schema work from the missing application-level <code>(identifier, target)</code> lookup semantics.</p></div>
+          </section>
+        </div>
+        <footer class="case-card-links">
+          <a href="https://github.com/discourse/discourse/pull/36878" target="_blank" rel="noreferrer">Original PR ↗</a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/datasets/birdcritic15_lite_ruby_DB_behavior_audit_5/discourse-pr-36878/db_behavior_audit.json" target="_blank" rel="noreferrer">DB behavior audit ↗</a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md#case-card-5-discourse-pr-36878" target="_blank" rel="noreferrer">Exact-replay evidence ↗</a>
+        </footer>
+      </article>
+    </section>
+
+    <section class="audit-findings-section" id="findings">
+      <div class="audit-findings-inner">
+        <div class="audit-findings-intro reveal">
+          <span class="kicker kicker-light">Pilot findings</span>
+          <h2>What behavior-level evidence made visible</h2>
+          <p>In five behavior-level audited Ruby pilot cases, we observed partial database correctness, wrong-layer repairs, asynchronous lifecycle errors, and schema/runtime misalignment.</p>
+        </div>
+        <ol class="finding-list">
+          <li class="reveal"><span>01</span><div><h3>Binary reward can hide partial correctness.</h3><p>Three unsuccessful patches still satisfied one or more observable database behaviors.</p></div></li>
+          <li class="reveal"><span>02</span><div><h3>Agents may repair the wrong software layer.</h3><p>A passing local test at the edited layer did not guarantee that the underlying data behavior changed.</p></div></li>
+          <li class="reveal"><span>03</span><div><h3>Lifecycle timing is part of semantics.</h3><p>Asynchronous cleanup was not equivalent to synchronously visible database state after the triggering action.</p></div></li>
+          <li class="reveal"><span>04</span><div><h3>Fixes can stop between application layers.</h3><p>Presentation, callback, query, migration, and runtime lookup layers did not always carry the same repair semantics.</p></div></li>
+          <li class="reveal"><span>05</span><div><h3>Schema correctness does not guarantee lookup correctness.</h3><p>A sound constraint and migration can coexist with an incomplete runtime selection predicate.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="results-section audit-scope" id="scope">
+      <div class="results-head reveal">
+        <div><span class="kicker">Scope and limitations</span><h2>A focused pilot, not a population claim</h2></div>
+        <p>The audit adds depth to five Ruby-60 tasks. It does not estimate how often these failure modes occur elsewhere.</p>
+      </div>
+      <div class="scope-grid">
+        <article class="reveal"><strong>5-task pilot</strong><p>The cases are a rigorously audited subset of the original Ruby-60 task pool—not additional benchmark instances.</p></article>
+        <article class="reveal"><strong>Case-level evidence</strong><p>Findings describe these five observed cases only and should not be generalized to all Ruby tasks.</p></article>
+        <article class="reveal"><strong>Separate from leaderboard</strong><p>This module validates tasks, verifiers, and patch semantics; it is not a second Ruby model ranking.</p></article>
+        <article class="reveal"><strong>Grounding vs. correctness</strong><p>A valid grounding may contain PASS and FAIL results. Validity means the result is attributable to the real patch.</p></article>
+      </div>
+    </section>
+
+    <section class="results-section audit-artifacts" id="artifacts">
+      <div class="artifact-panel reveal">
+        <div>
+          <span class="kicker">Artifacts and methodology</span>
+          <h2>Follow the evidence to source</h2>
+          <p>The detailed case cards, pilot closure, audited dataset snapshot, and Ruby DB-behavior audit method remain in the benchmark code repository.</p>
+        </div>
+        <div class="artifact-links">
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/README.md" target="_blank" rel="noreferrer"><span>01</span><strong>Pilot artifact index</strong><b>↗</b></a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/PILOT_CLOSURE.md" target="_blank" rel="noreferrer"><span>02</span><strong>Closure summary</strong><b>↗</b></a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md" target="_blank" rel="noreferrer"><span>03</span><strong>Audited case cards</strong><b>↗</b></a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/tree/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/datasets/birdcritic15_lite_ruby_DB_behavior_audit_5" target="_blank" rel="noreferrer"><span>04</span><strong>Audited dataset snapshot</strong><b>↗</b></a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/.agents/skills/audit-db-behavior-ruby/SKILL.md" target="_blank" rel="noreferrer"><span>05</span><strong>Audit methodology</strong><b>↗</b></a>
+        </div>
+      </div>
+      <a class="back-to-ruby reveal" href="../"><span>←</span><div><strong>Return to the Ruby track</strong><small>Leaderboard and all 60 published instances</small></div></a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="../../../">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span></span>
+      <span>BIRD—CRITIC</span><b>1.5</b>
+    </a>
+    <p>Ruby DB-Behavior Audit Pilot · Five evidence-linked case studies.</p>
+    <div><a href="../">Ruby track</a><a href="../../../report/">Report</a><a href="https://github.com/kochsnow/bird-critic-1.5-preview" target="_blank" rel="noreferrer">GitHub</a></div>
+    <small>© <span data-year></span> Bird-Critic Team</small>
+  </footer>
+</body>
+</html>
