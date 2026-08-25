@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Five evidence-linked database behavior audits selected from the original Bird-Critic 1.5 Ruby-60 task pool.">
+  <meta name="description" content="Five issue-audited Ruby-60 tasks traced from annotated descriptions to GLM-5.2 agent patch outcomes and executable database evidence.">
   <meta name="theme-color" content="#e1eacd">
   <meta property="og:title" content="Ruby DB-Behavior Audit Pilot · Bird-Critic 1.5">
-  <meta property="og:description" content="Five Ruby-60 cases traced from expected database behavior to real-agent patch outcomes.">
+  <meta property="og:description" content="Five issue-audited Ruby-60 cases traced from annotated descriptions to GLM-5.2 patch outcomes.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="../../../assets/og-family.png">
   <title>Ruby DB-Behavior Audit Pilot · Bird-Critic 1.5</title>
   <link rel="icon" href="../../../assets/favicon.png" type="image/png">
-  <link rel="stylesheet" href="../../../assets/styles.css?v=20260825">
+  <link rel="stylesheet" href="../../../assets/styles.css?v=20260825b">
   <script defer src="../../../assets/app.js?v=20260812"></script>
 </head>
 <body class="inner audit-page" data-page="ruby-audit" data-depth="3">
@@ -42,8 +42,8 @@
         <h1>Five Ruby tasks,<br>traced to database behavior.</h1>
       </div>
       <div class="reveal">
-        <p class="page-intro">Five rigorously audited instances selected from the original Ruby-60 task pool—not five additional tasks. The pilot connects task evidence, executable database checks, controls, and real-agent workspace patches.</p>
-        <span class="page-status">5-task audit pilot · August 2026</span>
+        <p class="page-intro">Five rigorously audited instances selected from the original Ruby-60 task pool—not five additional tasks. Each case connects an annotated issue description and executable database checks to a patch produced by the GLM-5.2 agent.</p>
+        <span class="page-status">Issue-audited tasks · GLM-5.2 patch grounding</span>
       </div>
     </section>
 
@@ -62,7 +62,12 @@
       <div class="audit-overview-grid">
         <article class="audit-intro-card reveal">
           <span class="audit-card-label">What was audited</span>
-          <p>Each case starts with evidence-linked expected database behaviors, adds an executable verifier, validates it against oracle and nop controls, then runs that verifier on a real agent workspace patch.</p>
+          <p>Each case starts from an official PR issue description that has already been audited and annotated into a clean task instruction. That issue-level evidence is then traced into expected database behaviors and an executable verifier.</p>
+        </article>
+        <article class="model-provenance reveal">
+          <span class="audit-card-label">Agent patch source</span>
+          <h3>GLM-5.2 × OpenCode</h3>
+          <p>All five evaluated workspaces originate from <code>nvidia/z-ai/glm-5.2</code> agent runs. PR #617 and PR #36878 use verified exact replays of those same workspace edits for final grounding.</p>
         </article>
         <aside class="grounding-definition reveal">
           <span class="audit-card-label">Key definition</span>
@@ -75,16 +80,17 @@
     <section class="results-section" id="pipeline">
       <div class="results-head reveal">
         <div><span class="kicker">Evidence pipeline</span><h2>One traceable chain of evidence</h2></div>
-        <p>Every case follows the same behavior-level audit method before it enters the public case study set.</p>
+        <p>The issue description is audited first for clarity, behavioral grounding, and solution leakage. Only then is it translated into executable database evidence.</p>
       </div>
       <ol class="audit-pipeline reveal" aria-label="Ruby database behavior audit pipeline">
-        <li><span>01</span><strong>Task artifacts</strong></li>
-        <li><span>02</span><strong>Expected DB behaviors</strong></li>
-        <li><span>03</span><strong>Executable verifier</strong></li>
-        <li><span>04</span><strong>Oracle / nop controls</strong></li>
-        <li><span>05</span><strong>Real agent patch</strong></li>
-        <li><span>06</span><strong>Per-DBB result</strong></li>
-        <li><span>07</span><strong>Audited case card</strong></li>
+        <li><span>01</span><strong>Task + PR artifacts</strong></li>
+        <li class="pipeline-emphasis"><span>02</span><strong>Issue-description audit</strong><small>Clarify · ground · remove leakage</small></li>
+        <li><span>03</span><strong>Expected DB behaviors</strong></li>
+        <li><span>04</span><strong>Executable verifier</strong></li>
+        <li><span>05</span><strong>Oracle / nop controls</strong></li>
+        <li class="pipeline-agent"><span>06</span><strong>GLM-5.2 workspace patch</strong></li>
+        <li><span>07</span><strong>Per-DBB result</strong></li>
+        <li><span>08</span><strong>Audited case card</strong></li>
       </ol>
     </section>
 
@@ -153,15 +159,20 @@
     <section class="results-section audit-cases" id="cases">
       <div class="results-head reveal">
         <div><span class="kicker">Five audited case cards</span><h2>What changed—and what the database showed</h2></div>
-        <p>Each card summarizes the public evidence without reproducing full trajectories or raw logs.</p>
+        <p>Each card begins with the audited issue description derived from the official PR, then shows how the GLM-5.2 patch behaved against the database criteria.</p>
       </div>
 
       <article class="case-card reveal" id="case-312">
         <header class="case-card-head">
           <div><span class="case-number">01 / 05</span><span class="status-badge status-failure">Semantic failure</span></div>
-          <div><span class="kicker">discourse / discourse-data-explorer</span><h3>PR #312 · User-ID query validation</h3></div>
+          <div><span class="kicker">discourse / discourse-data-explorer</span><h3>PR #312 · User-ID query validation</h3><span class="agent-model-tag">Agent patch · GLM-5.2 / OpenCode</span></div>
           <div class="case-score"><strong>1 / 2</strong><span>DB behaviors passed</span></div>
         </header>
+        <section class="issue-description">
+          <div class="issue-description-head"><span>Audited issue description</span><b>Issue audit complete</b></div>
+          <p>Validating a <code>user_id</code> parameter in a query throws a 500 error. The lookup method used does not raise a record-not-found exception for missing users but instead silently returns nil, which then causes a <code>NoMethodError</code> when the code tries to access the id attribute on the nil result.</p>
+          <small>Audited task instruction · derived from the official PR issue description</small>
+        </section>
         <div class="case-card-body">
           <section>
             <h4>Expected DB behaviors</h4>
@@ -171,13 +182,14 @@
             </ul>
           </section>
           <section class="case-summary">
-            <div><h4>Agent patch</h4><p>Added a guard in an admin groups controller and a controller spec. The actual Data Explorer lookup in <code>parameter.rb</code> was untouched.</p></div>
+            <div><h4>GLM-5.2 agent patch</h4><p>Added a guard in an admin groups controller and a controller spec. The actual Data Explorer lookup in <code>parameter.rb</code> was untouched.</p></div>
             <div><h4>Observed database state</h4><p>Valid lookup persisted ID: <strong>PASS</strong>. Missing lookup produced <code>NoMethodError</code> instead of the required validation error.</p></div>
             <div><h4>Grounded diagnosis</h4><p>The agent interpreted “query” as an HTTP query parameter and repaired the wrong software layer. The verifier ran cleanly, so the failure is attributable to patch semantics.</p></div>
           </section>
         </div>
         <footer class="case-card-links">
           <a href="https://github.com/discourse/discourse-data-explorer/pull/312" target="_blank" rel="noreferrer">Original PR ↗</a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/datasets/birdcritic15_lite_ruby_DB_behavior_audit_5/discourse-discourse-data-explorer-pr-312/instruction.md" target="_blank" rel="noreferrer">Audited issue artifact ↗</a>
           <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/datasets/birdcritic15_lite_ruby_DB_behavior_audit_5/discourse-discourse-data-explorer-pr-312/db_behavior_audit.json" target="_blank" rel="noreferrer">DB behavior audit ↗</a>
           <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md#case-card-1-discourse-discourse-data-explorer-pr-312" target="_blank" rel="noreferrer">Grounding evidence ↗</a>
         </footer>
@@ -186,9 +198,16 @@
       <article class="case-card reveal" id="case-37063">
         <header class="case-card-head">
           <div><span class="case-number">02 / 05</span><span class="status-badge status-positive">Valid positive</span></div>
-          <div><span class="kicker">discourse / discourse</span><h3>PR #37063 · Upload-reference lifecycle</h3></div>
+          <div><span class="kicker">discourse / discourse</span><h3>PR #37063 · Upload-reference lifecycle</h3><span class="agent-model-tag">Agent patch · GLM-5.2 / OpenCode</span></div>
           <div class="case-score"><strong>5 / 5</strong><span>DB assertions passed</span></div>
         </header>
+        <section class="issue-description">
+          <div class="issue-description-head"><span>Audited issue description</span><b>Human-approved annotation</b></div>
+          <h4>Object Settings Should Preserve Upload References</h4>
+          <p>Upload references should be created for uploads stored inside object-type site settings and theme settings. These settings may store upload values as URLs in their serialized data, while upload-reference creation expects upload identifiers, so the save hooks need to resolve object upload values before maintaining references.</p>
+          <p>Continue to support existing upload and uploaded-image-list settings. For object schemas, find upload fields nested in the setting value, resolve their stored URLs to the corresponding uploads when possible, and keep upload references in sync so cleanup jobs do not remove uploads that are still used by settings.</p>
+          <small>Human-approved audited task instruction · derived from the official PR issue description</small>
+        </section>
         <div class="case-card-body">
           <section>
             <h4>Expected DB behaviors</h4>
@@ -199,13 +218,14 @@
             </ul>
           </section>
           <section class="case-summary">
-            <div><h4>Agent patch</h4><p>Converted upload URLs to IDs before creating references across SiteSetting and theme-setting models, with lifecycle tests across the affected surfaces.</p></div>
+            <div><h4>GLM-5.2 agent patch</h4><p>Converted upload URLs to IDs before creating references across SiteSetting and theme-setting models, with lifecycle tests across the affected surfaces.</p></div>
             <div><h4>Observed database state</h4><p>Reference creation passed. SiteSetting cleanup moved <strong>2 → 1 → 0</strong>; ThemeSetting cleanup reached <strong>0</strong>. All five assertions passed.</p></div>
             <div><h4>Grounded diagnosis</h4><p>The workspace patch was semantically correct even though the agent timed out during final verification before submit. The verifier evaluated the retained edits directly.</p></div>
           </section>
         </div>
         <footer class="case-card-links">
           <a href="https://github.com/discourse/discourse/pull/37063" target="_blank" rel="noreferrer">Original PR ↗</a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/datasets/birdcritic15_lite_ruby_DB_behavior_audit_5/discourse-pr-37063/instruction.md" target="_blank" rel="noreferrer">Audited issue artifact ↗</a>
           <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/datasets/birdcritic15_lite_ruby_DB_behavior_audit_5/discourse-pr-37063/db_behavior_audit.json" target="_blank" rel="noreferrer">DB behavior audit ↗</a>
           <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md#case-card-2-discourse-pr-37063" target="_blank" rel="noreferrer">Grounding evidence ↗</a>
         </footer>
@@ -214,9 +234,34 @@
       <article class="case-card reveal" id="case-592">
         <header class="case-card-head">
           <div><span class="case-number">03 / 05</span><span class="status-badge status-partial">Valid partial</span></div>
-          <div><span class="kicker">discourse / discourse-assign</span><h3>PR #592 · Group-destroy cleanup</h3></div>
+          <div><span class="kicker">discourse / discourse-assign</span><h3>PR #592 · Group-destroy cleanup</h3><span class="agent-model-tag">Agent patch · GLM-5.2 / OpenCode</span></div>
           <div class="case-score"><strong>2 / 3</strong><span>DB behaviors passed</span></div>
         </header>
+        <section class="issue-description">
+          <div class="issue-description-head"><span>Audited issue description</span><b>Issue audit complete</b></div>
+          <p>When a group is deleted from the system, any topic assignments that were made to that group's members remain in place. There is no way to un-assign those users from the original group assignment after the group no longer exists.</p>
+          <div class="issue-behavior-grid">
+            <div>
+              <h4>Observed behavior</h4>
+              <ul class="issue-list">
+                <li>A group is created and members are assigned to topics through a group assignment.</li>
+                <li>The group is later deleted.</li>
+                <li>The topic assignments persist for all former group members.</li>
+                <li>There is no mechanism to remove or clean up these orphaned assignments.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Expected behavior</h4>
+              <ul class="issue-list">
+                <li>When a group is deleted, any assignments associated with that group should be cleaned up.</li>
+                <li>Users should not retain assignments from groups that no longer exist.</li>
+                <li>The system should not leave orphaned assignment records that cannot be managed.</li>
+              </ul>
+            </div>
+          </div>
+          <p class="issue-task-line"><strong>Your task:</strong> Fix the issue so that deleting a group properly handles any existing assignments made through that group.</p>
+          <small>Audited task instruction · derived from the official PR issue description</small>
+        </section>
         <div class="case-card-body">
           <section>
             <h4>Expected DB behaviors</h4>
@@ -227,13 +272,14 @@
             </ul>
           </section>
           <section class="case-summary">
-            <div><h4>Agent patch</h4><p>Added a <code>before_destroy</code> callback that scheduled an asynchronous notification cleanup job.</p></div>
+            <div><h4>GLM-5.2 agent patch</h4><p>Added a <code>before_destroy</code> callback that scheduled an asynchronous notification cleanup job.</p></div>
             <div><h4>Observed database state</h4><p>Target assignment rows reached <strong>0</strong>, but notification rows remained at <strong>2</strong> when checked synchronously. Control-group rows persisted.</p></div>
             <div><h4>Grounded diagnosis</h4><p>The patch was partially correct: assignment deletion worked, isolation held, and only lifecycle timing prevented notification cleanup from being immediately visible.</p></div>
           </section>
         </div>
         <footer class="case-card-links">
           <a href="https://github.com/discourse/discourse-assign/pull/592" target="_blank" rel="noreferrer">Original PR ↗</a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/datasets/birdcritic15_lite_ruby_DB_behavior_audit_5/discourse-discourse-assign-pr-592/instruction.md" target="_blank" rel="noreferrer">Audited issue artifact ↗</a>
           <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/datasets/birdcritic15_lite_ruby_DB_behavior_audit_5/discourse-discourse-assign-pr-592/db_behavior_audit.json" target="_blank" rel="noreferrer">DB behavior audit ↗</a>
           <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md#case-card-3-discourse-discourse-assign-pr-592" target="_blank" rel="noreferrer">Grounding evidence ↗</a>
         </footer>
@@ -242,9 +288,14 @@
       <article class="case-card reveal" id="case-617">
         <header class="case-card-head">
           <div><span class="case-number">04 / 05</span><span class="status-badge status-partial">Valid exact replay</span></div>
-          <div><span class="kicker">discourse / discourse-assign</span><h3>PR #617 · Visibility-aware assignment count</h3></div>
+          <div><span class="kicker">discourse / discourse-assign</span><h3>PR #617 · Visibility-aware assignment count</h3><span class="agent-model-tag">Agent patch · GLM-5.2 / OpenCode</span></div>
           <div class="case-score"><strong>1 / 2</strong><span>DB behaviors passed</span></div>
         </header>
+        <section class="issue-description">
+          <div class="issue-description-head"><span>Audited issue description</span><b>Issue audit complete</b></div>
+          <p>The pending assignments reminder message shows an incorrect count in its title. The title leaks the total number of assigned topics for the user, rather than showing only the count of assignments included in the reminder. The body of the reminder correctly limits the count, but the title does not match.</p>
+          <small>Audited task instruction · derived from the official PR issue description</small>
+        </section>
         <div class="case-card-body">
           <section>
             <h4>Expected DB behaviors</h4>
@@ -254,13 +305,14 @@
             </ul>
           </section>
           <section class="case-summary">
-            <div><h4>Agent patch</h4><p>Recomputed the reminder title from visible topic arrays but left the reusable <code>assigned_count_for</code> query unchanged.</p></div>
+            <div><h4>GLM-5.2 agent patch · exact replay</h4><p>Recomputed the reminder title from visible topic arrays but left the reusable <code>assigned_count_for</code> query unchanged.</p></div>
             <div><h4>Observed database state</h4><p>Visible count expected <strong>1</strong>, observed <strong>2</strong>. Both assignment rows survived the count path, confirming a non-destructive read.</p></div>
             <div><h4>Grounded diagnosis</h4><p>Exact patch replay shows a presentation-level symptom repair without a root-cause query repair. Local tests covered the edited output, not the underlying contract.</p></div>
           </section>
         </div>
         <footer class="case-card-links">
           <a href="https://github.com/discourse/discourse-assign/pull/617" target="_blank" rel="noreferrer">Original PR ↗</a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/datasets/birdcritic15_lite_ruby_DB_behavior_audit_5/discourse-discourse-assign-pr-617/instruction.md" target="_blank" rel="noreferrer">Audited issue artifact ↗</a>
           <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/datasets/birdcritic15_lite_ruby_DB_behavior_audit_5/discourse-discourse-assign-pr-617/db_behavior_audit.json" target="_blank" rel="noreferrer">DB behavior audit ↗</a>
           <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md#case-card-4-discourse-discourse-assign-pr-617" target="_blank" rel="noreferrer">Exact-replay evidence ↗</a>
         </footer>
@@ -269,9 +321,16 @@
       <article class="case-card reveal" id="case-36878">
         <header class="case-card-head">
           <div><span class="case-number">05 / 05</span><span class="status-badge status-partial">Valid exact replay</span></div>
-          <div><span class="kicker">discourse / discourse</span><h3>PR #36878 · Schema and target lookup</h3></div>
+          <div><span class="kicker">discourse / discourse</span><h3>PR #36878 · Schema and target lookup</h3><span class="agent-model-tag">Agent patch · GLM-5.2 / OpenCode</span></div>
           <div class="case-score"><strong>2 / 3</strong><span>DB behaviors passed</span></div>
         </header>
+        <section class="issue-description">
+          <div class="issue-description-head"><span>Audited issue description</span><b>Human-approved annotation</b></div>
+          <h4>Admin Notice Dismissal With Missing Tracker Targets</h4>
+          <p>When staff dismiss an admin notice that is backed by a problem-check tracker, dismissal should complete even if an older tracker row has an empty target value. Existing invalid tracker data must not cause a validation failure or return an unprocessable response while the notice is being dismissed.</p>
+          <p>The fix should also prevent the same invalid tracker state from being persisted for future problem-check tracking. Tracker records that represent checks without a concrete target should use the application's normal no-target representation consistently, and dismissing a notice should continue to reset or clear the associated tracker state as before.</p>
+          <small>Human-approved audited task instruction · derived from the official PR issue description</small>
+        </section>
         <div class="case-card-body">
           <section>
             <h4>Expected DB behaviors</h4>
@@ -282,13 +341,14 @@
             </ul>
           </section>
           <section class="case-summary">
-            <div><h4>Agent patch</h4><p>Normalized legacy NULL targets, added a NOT NULL constraint, and introduced model normalization. Runtime dismissal still searched by identifier only.</p></div>
+            <div><h4>GLM-5.2 agent patch · exact replay</h4><p>Normalized legacy NULL targets, added a NOT NULL constraint, and introduced model normalization. Runtime dismissal still searched by identifier only.</p></div>
             <div><h4>Observed database state</h4><p>Legacy NULL rows reached <strong>0</strong>; the constraint rejected a new NULL insert. Target-specific dismissal still selected the wrong tracker.</p></div>
             <div><h4>Grounded diagnosis</h4><p>Exact patch replay separates correct migration/schema work from the missing application-level <code>(identifier, target)</code> lookup semantics.</p></div>
           </section>
         </div>
         <footer class="case-card-links">
           <a href="https://github.com/discourse/discourse/pull/36878" target="_blank" rel="noreferrer">Original PR ↗</a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/datasets/birdcritic15_lite_ruby_DB_behavior_audit_5/discourse-pr-36878/instruction.md" target="_blank" rel="noreferrer">Audited issue artifact ↗</a>
           <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/datasets/birdcritic15_lite_ruby_DB_behavior_audit_5/discourse-pr-36878/db_behavior_audit.json" target="_blank" rel="noreferrer">DB behavior audit ↗</a>
           <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md#case-card-5-discourse-pr-36878" target="_blank" rel="noreferrer">Exact-replay evidence ↗</a>
         </footer>
@@ -330,14 +390,15 @@
         <div>
           <span class="kicker">Artifacts and methodology</span>
           <h2>Follow the evidence to source</h2>
-          <p>The detailed case cards, pilot closure, audited dataset snapshot, and Ruby DB-behavior audit method remain in the benchmark code repository.</p>
+          <p>The detailed case cards, audited issue descriptions, pilot closure, dataset snapshot, and both audit methods remain linked to their source artifacts.</p>
         </div>
         <div class="artifact-links">
           <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/README.md" target="_blank" rel="noreferrer"><span>01</span><strong>Pilot artifact index</strong><b>↗</b></a>
           <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/PILOT_CLOSURE.md" target="_blank" rel="noreferrer"><span>02</span><strong>Closure summary</strong><b>↗</b></a>
           <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md" target="_blank" rel="noreferrer"><span>03</span><strong>Audited case cards</strong><b>↗</b></a>
           <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/tree/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_5_pilot_closure/datasets/birdcritic15_lite_ruby_DB_behavior_audit_5" target="_blank" rel="noreferrer"><span>04</span><strong>Audited dataset snapshot</strong><b>↗</b></a>
-          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/.agents/skills/audit-db-behavior-ruby/SKILL.md" target="_blank" rel="noreferrer"><span>05</span><strong>Audit methodology</strong><b>↗</b></a>
+          <a href="https://github.com/BlackSoi1/critic15-review-skill/tree/main" target="_blank" rel="noreferrer"><span>05</span><strong>Issue-description audit method</strong><b>↗</b></a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/.agents/skills/audit-db-behavior-ruby/SKILL.md" target="_blank" rel="noreferrer"><span>06</span><strong>DB-behavior audit method</strong><b>↗</b></a>
         </div>
       </div>
       <a class="back-to-ruby reveal" href="../"><span>←</span><div><strong>Return to the Ruby track</strong><small>Leaderboard and all 60 published instances</small></div></a>
