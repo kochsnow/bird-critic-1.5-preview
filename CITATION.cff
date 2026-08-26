@@ -23,6 +23,8 @@ authors:
     given-names: Heng
   - family-names: Li
     given-names: JinYang
+  - family-names: Cheng
+    given-names: James
 preferred-citation:
   type: report
   title: "Bird-Critic 1.5: An Executable Benchmark for Repairing Database-Backed Applications"
@@ -43,6 +45,8 @@ preferred-citation:
       given-names: Heng
     - family-names: Li
       given-names: JinYang
+    - family-names: Cheng
+      given-names: James
   institution:
     name: "The Chinese University of Hong Kong and The University of Hong Kong and Tsinghua University"
   year: 2026
