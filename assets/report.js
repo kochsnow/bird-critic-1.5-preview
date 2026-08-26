@@ -15,6 +15,17 @@ if (reportContainer && reportToc) {
     return `../${cleaned.replace(/^\.\//, "")}`;
   };
 
+  const safeImageSource = (target) => {
+    const cleaned = target.trim();
+    if (!cleaned || /[\u0000-\u001f\u007f]/.test(cleaned)) return "";
+    if (/^https?:\/\//i.test(cleaned)) return cleaned;
+    if (/^(?:[a-z][a-z0-9+.-]*:|\/\/|\/)/i.test(cleaned)) return "";
+
+    const relative = cleaned.replace(/^\.\//, "");
+    if (relative.split("/").includes("..")) return "";
+    return `../${relative}`;
+  };
+
   const inline = (value) => {
     const code = [];
     let rendered = value.replace(/`([^`]+)`/g, (_, content) => {
@@ -126,6 +137,29 @@ if (reportContainer && reportToc) {
         const id = slugify(label);
         output.push(`<h${level} id="${id}">${inline(label)}${level > 1 ? ` <a class="heading-anchor" href="#${id}" aria-label="Link to this section">#</a>` : ""}</h${level}>`);
         if (level === 2 || level === 3) toc.push({ level, label, id });
+        continue;
+      }
+
+      const image = line.match(/^!\[([^\]]*)\]\(\s*(?:<([^>]+)>|([^\s)]+))(?:\s+(?:"[^"]*"|'[^']*'))?\s*\)\s*$/);
+      if (image) {
+        flushParagraph();
+        closeList();
+        const alt = image[1].trim();
+        const source = safeImageSource(image[2] || image[3]);
+        if (!source) {
+          output.push(`<p>${escapeHtml(line)}</p>`);
+          continue;
+        }
+
+        let caption = "";
+        const captionIndex = lines[index + 1]?.trim() ? index + 1 : index + 2;
+        const captionMatch = lines[captionIndex]?.match(/^\*\*(Figure\s+\d+\.)\*\*\s+(.+)$/i);
+        if (captionMatch) {
+          caption = `<figcaption><strong>${escapeHtml(captionMatch[1])}</strong> ${inline(captionMatch[2])}</figcaption>`;
+          index = captionIndex;
+        }
+
+        output.push(`<figure class="report-figure"><img src="${escapeHtml(source)}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async">${caption}</figure>`);
         continue;
       }
 

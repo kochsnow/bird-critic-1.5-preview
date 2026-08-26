@@ -125,6 +125,12 @@ The distributions are intentionally not balanced in Full 300. They reflect the t
 
 Full 300 spans 25 repositories in application ecosystems including Frappe applications, Apache Superset and Airflow, NetBox, Taiga, Strapi, Cal.com, Chatwoot, Mastodon, Discourse, GraphQL-Ruby, Solidus, Spree, Decidim, Shopware, and Sylius-related projects and plugins.
 
+To make this coverage concrete, Figure 1 organizes the Full 300 repositories by their primary application-data domain and connects them to the four implementation-language ecosystems. The visualization is a coverage map rather than a mutually exclusive taxonomy: several repositories span multiple data-management concerns, while each task is assigned to one primary domain for presentation.
+
+![Bird-Critic 1.5 Full Data-Management Coverage Atlas showing 300 tasks across four languages, 25 repositories and plugins, and nine primary application-data domains.](assets/report/bird-critic-1.5-full-data-management-coverage-atlas.png)
+
+**Figure 1.** Bird-Critic 1.5 Full coverage atlas. Full 300 contains 300 executable repair tasks across four languages and 25 repositories or plugins. For presentation, repositories are grouped into nine primary application-data domains; some systems span multiple domains, and repository families are grouped for readability.
+
 This map matters because database-backed behavior appears through different framework conventions. Python tasks may use Frappe document models or SQLAlchemy-based applications; Ruby tasks may involve Rails models, callbacks, services, or background processing; PHP tasks may exercise Shopware or Sylius extension points; and Node.js tasks may involve application services, APIs, and ORM-backed state. Bird-Critic 1.5 does not normalize these repositories into a single artificial schema. It preserves repository context as part of the repair problem.
 
 The complete instance-level provenance, including repository and source pull-request information, is published in the dataset manifests and the website's instance views. This supports inspection and reproducibility, while also making it necessary to disclose the benchmark to evaluated models and to treat possible public-data contamination as a limitation.
