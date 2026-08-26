@@ -4,10 +4,12 @@
 
 **Technical Report Draft v0.1 · August 2026**  
 
-**Authors:** Yongfeng Huang<sup>1,\*,†</sup>, Xiaolong Li<sup>2,\*</sup>, Zixi Xu<sup>2</sup>, Ziyue Luo<sup>2</sup>, Yue Wu<sup>2</sup>, Binshang Chen<sup>2</sup>, JinYang Li<sup>2,†</sup>  
+**Authors:** Yongfeng Huang<sup>1,\*,†</sup>, Xiaolong Li<sup>2,\*</sup>, Zixi Xu<sup>2</sup>, Ziyue Luo<sup>2</sup>, Yue Wu<sup>2</sup>, Binshang Chen<sup>2</sup>, Heng Chang<sup>3</sup>, JinYang Li<sup>2,†</sup>
 
 <sup>1</sup> The Chinese University of Hong Kong (CUHK)  
 <sup>2</sup> The University of Hong Kong (HKU)  
+<sup>3</sup> Tsinghua University
+
 <sup>\*</sup> Equal contribution. Author order reflects the listed order.  
 <sup>†</sup> Project leads.  
 
