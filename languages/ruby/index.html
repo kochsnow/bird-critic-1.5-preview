@@ -11,7 +11,7 @@
   <meta property="og:image" content="../../assets/og-family.png">
   <title>Bird-Critic 1.5 Ruby Track</title>
   <link rel="icon" href="../../assets/favicon.png" type="image/png">
-  <link rel="stylesheet" href="../../assets/styles.css?v=20260825">
+  <link rel="stylesheet" href="../../assets/styles.css?v=20260829a">
   <script defer src="../../assets/app.js?v=20260812"></script>
 </head>
 <body class="inner" data-page="ruby" data-depth="2" data-language="Ruby" data-show-dataset="true" data-result-view="ruby" data-results="results.json" data-instances="tasks.json">
@@ -77,16 +77,16 @@
       <div class="audit-teaser-main reveal">
         <div>
           <span class="kicker">Benchmark validation · Audited case studies</span>
-          <h2>Ruby DB-Behavior Audit Pilot</h2>
-          <p>Five rigorously audited instances selected from the original Ruby-60 task pool. Each case links an audited issue description and expected database behaviors to an executable verifier and a GLM-5.2 agent workspace patch.</p>
+          <h2>Ruby DB-Behavior Audit</h2>
+          <p>Twenty distinct instances across two non-overlapping pilots selected from the original Ruby-60 task pool. Each case links an audited issue description and expected database behaviors to an executable verifier and an attributable GLM-5.2 workspace patch.</p>
         </div>
         <a class="button button-primary" href="db-behavior-audit/">Explore the audit <span>→</span></a>
       </div>
-      <div class="audit-teaser-stats reveal" aria-label="Ruby audit pilot summary">
-        <div><strong>5 / 60</strong><span>Audited instances</span></div>
-        <div><strong>5 / 5</strong><span>Valid patch groundings</span></div>
-        <div><strong>1</strong><span>Valid positive case</span></div>
-        <div><strong>4</strong><span>Explained semantic or partial failures</span></div>
+      <div class="audit-teaser-stats reveal" aria-label="Ruby audit program summary">
+        <div><strong>20 / 60</strong><span>Distinct audited instances</span></div>
+        <div><strong>2</strong><span>Non-overlapping pilots</span></div>
+        <div><strong>15 / 15</strong><span>Valid DBB grounding in expanded pilot</span></div>
+        <div><strong>50 / 71</strong><span>Expanded-pilot DBBs passed</span></div>
       </div>
       <p class="audit-teaser-note reveal"><strong>Interpretation:</strong> valid patch grounding means the verifier can attribute PASS/FAIL outcomes to the real agent workspace patch. It does not mean the patch is fully correct or that reward must equal 1.0.</p>
     </section>

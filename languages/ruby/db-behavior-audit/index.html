@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Five issue-audited Ruby-60 tasks traced from annotated descriptions to GLM-5.2 agent patch outcomes and executable database evidence.">
+  <meta name="description" content="Twenty distinct Ruby-60 tasks across two audited pilots, traced from annotated issue descriptions to GLM-5.2 agent patch outcomes and executable database evidence.">
   <meta name="theme-color" content="#e1eacd">
-  <meta property="og:title" content="Ruby DB-Behavior Audit Pilot · Bird-Critic 1.5">
-  <meta property="og:description" content="Five issue-audited Ruby-60 cases traced from annotated descriptions to GLM-5.2 patch outcomes.">
+  <meta property="og:title" content="Ruby DB-Behavior Audit · Bird-Critic 1.5">
+  <meta property="og:description" content="Twenty non-overlapping Ruby-60 cases across two audited pilots, traced to attributable GLM-5.2 patch outcomes.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="../../../assets/og-family.png">
-  <title>Ruby DB-Behavior Audit Pilot · Bird-Critic 1.5</title>
+  <title>Ruby DB-Behavior Audit · Bird-Critic 1.5</title>
   <link rel="icon" href="../../../assets/favicon.png" type="image/png">
-  <link rel="stylesheet" href="../../../assets/styles.css?v=20260825b">
+  <link rel="stylesheet" href="../../../assets/styles.css?v=20260829a">
   <script defer src="../../../assets/app.js?v=20260812"></script>
 </head>
 <body class="inner audit-page" data-page="ruby-audit" data-depth="3">
@@ -27,10 +27,10 @@
       <span></span><span></span><span></span><span class="sr-only">Menu</span>
     </button>
     <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-      <a href="#overview">Overview</a>
+      <a href="#pilots">Two pilots</a>
       <a href="#pipeline">Evidence pipeline</a>
-      <a href="#outcomes">Outcomes</a>
-      <a href="#cases">Case studies</a>
+      <a href="#outcomes">Original 5</a>
+      <a href="15-pilot/">Expanded 15</a>
       <a class="nav-cta" href="../">Ruby track</a>
     </nav>
   </header>
@@ -39,25 +39,49 @@
     <section class="page-hero audit-hero">
       <div class="reveal">
         <div class="page-eyebrow">Benchmark validation · Audited case studies</div>
-        <h1>Five Ruby tasks,<br>traced to database behavior.</h1>
+        <h1>Twenty Ruby tasks,<br>traced to database behavior.</h1>
       </div>
       <div class="reveal">
-        <p class="page-intro">Five rigorously audited instances selected from the original Ruby-60 task pool—not five additional tasks. Each case connects an annotated issue description and executable database checks to a patch produced by the GLM-5.2 agent.</p>
-        <span class="page-status">Issue-audited tasks · GLM-5.2 patch grounding</span>
+        <p class="page-intro">Two non-overlapping pilots cover 20 rigorously audited instances selected from the original Ruby-60 task pool—not additional benchmark tasks. Each case connects an audited issue description and executable database checks to an attributable GLM-5.2 agent workspace patch.</p>
+        <span class="page-status">Two audited pilots · GLM-5.2 × OpenCode grounding</span>
       </div>
     </section>
 
-    <section class="metric-grid audit-metrics reveal" aria-label="Ruby audit pilot metrics">
-      <div class="metric"><strong>5 / 60</strong><span>Audited instances</span></div>
-      <div class="metric"><strong>5 / 5</strong><span>Valid patch groundings</span></div>
-      <div class="metric"><strong>1</strong><span>Valid positive case</span></div>
-      <div class="metric"><strong>4</strong><span>Explained semantic or partial failures</span></div>
+    <section class="metric-grid audit-metrics reveal" aria-label="Ruby audit program metrics">
+      <div class="metric"><strong>20 / 60</strong><span>Distinct audited instances</span></div>
+      <div class="metric"><strong>2</strong><span>Non-overlapping pilots</span></div>
+      <div class="metric"><strong>20 / 20</strong><span>Attributable patch outcomes</span></div>
+      <div class="metric"><strong>GLM-5.2</strong><span>Agent patches via OpenCode</span></div>
+    </section>
+
+    <section class="results-section audit-pilots" id="pilots">
+      <div class="results-head reveal">
+        <div><span class="kicker">Audit program</span><h2>One methodology, two evidence cohorts</h2></div>
+        <p>The expanded 15-case pilot adds new tasks without replacing or overlapping the original five-case study.</p>
+      </div>
+      <div class="pilot-cohort-grid">
+        <article class="pilot-cohort-card pilot-cohort-original reveal">
+          <div class="pilot-cohort-top"><span>Original pilot</span><b>05</b></div>
+          <h3>Five high-signal case studies</h3>
+          <p>Five GLM-5.2 workspaces grounded against issue-audited task descriptions and executable DB behaviors.</p>
+          <dl><div><dt>Grounding</dt><dd>5 / 5 valid</dd></div><div><dt>Outcome</dt><dd>1 positive · 4 partial or semantic failures</dd></div></dl>
+          <a class="text-link" href="#outcomes">Explore the original five <span>↓</span></a>
+        </article>
+        <article class="pilot-cohort-card pilot-cohort-expanded reveal">
+          <div class="pilot-cohort-top"><span>Expanded pilot · Aug. 29, 2026</span><b>15</b></div>
+          <h3>Fifteen additional audited cases</h3>
+          <p>Seven attributable NVIDIA-backed trials and eight Z.ai direct replacements, all evaluated as GLM-5.2 × OpenCode workspaces.</p>
+          <dl><div><dt>Grounding</dt><dd>15 / 15 valid DBB grounding</dd></div><div><dt>Outcome</dt><dd>8 PASS · 7 FAIL · 50 / 71 DBBs passed</dd></div></dl>
+          <a class="button button-primary" href="15-pilot/">Open the 15-case pilot <span>→</span></a>
+        </article>
+      </div>
+      <p class="audit-program-note reveal"><strong>Scope:</strong> these are purposively selected audited cases. Their findings validate the audit process and describe observed case-level behavior; they do not estimate the Ruby-60 population.</p>
     </section>
 
     <section class="results-section audit-overview" id="overview">
       <div class="results-head reveal">
         <div><span class="kicker">Audit overview</span><h2>From binary reward to grounded diagnosis</h2></div>
-        <p>The pilot asks which database behaviors a patch actually repairs, not only whether the task receives a final 0 or 1.</p>
+        <p>Across both pilots, the audit asks which database behaviors a patch actually repairs—not only whether a task receives a final 0 or 1.</p>
       </div>
       <div class="audit-overview-grid">
         <article class="audit-intro-card reveal">
@@ -67,7 +91,7 @@
         <article class="model-provenance reveal">
           <span class="audit-card-label">Agent patch source</span>
           <h3>GLM-5.2 × OpenCode</h3>
-          <p>All five evaluated workspaces originate from <code>nvidia/z-ai/glm-5.2</code> agent runs. PR #617 and PR #36878 use verified exact replays of those same workspace edits for final grounding.</p>
+          <p>The original five use <code>nvidia/z-ai/glm-5.2</code>. The expanded pilot preserves seven attributable NVIDIA-backed trials and eight <code>zai-coding/glm-5.2</code> direct replacements; exact replays retain patch fidelity where documented.</p>
         </article>
         <aside class="grounding-definition reveal">
           <span class="audit-card-label">Key definition</span>
@@ -96,7 +120,7 @@
 
     <section class="results-section audit-outcomes" id="outcomes">
       <div class="results-head reveal">
-        <div><span class="kicker">Five-case outcome matrix</span><h2>Patch correctness, behavior by behavior</h2></div>
+        <div><span class="kicker">Original five-case pilot</span><h2>Patch correctness, behavior by behavior</h2></div>
         <p>All five patches are validly grounded. Their DBB pass ratios describe patch correctness—not whether the audit run itself is valid.</p>
       </div>
       <div class="audit-legend reveal" aria-label="Outcome legend">
@@ -358,7 +382,7 @@
     <section class="audit-findings-section" id="findings">
       <div class="audit-findings-inner">
         <div class="audit-findings-intro reveal">
-          <span class="kicker kicker-light">Pilot findings</span>
+          <span class="kicker kicker-light">Original 5-pilot findings</span>
           <h2>What behavior-level evidence made visible</h2>
           <p>In five behavior-level audited Ruby pilot cases, we observed partial database correctness, wrong-layer repairs, asynchronous lifecycle errors, and schema/runtime misalignment.</p>
         </div>
@@ -374,12 +398,12 @@
 
     <section class="results-section audit-scope" id="scope">
       <div class="results-head reveal">
-        <div><span class="kicker">Scope and limitations</span><h2>A focused pilot, not a population claim</h2></div>
-        <p>The audit adds depth to five Ruby-60 tasks. It does not estimate how often these failure modes occur elsewhere.</p>
+        <div><span class="kicker">Scope and limitations</span><h2>Audited pilots, not a population claim</h2></div>
+        <p>The program now adds depth to 20 distinct Ruby-60 tasks. It does not estimate how often these failure modes occur elsewhere.</p>
       </div>
       <div class="scope-grid">
-        <article class="reveal"><strong>5-task pilot</strong><p>The cases are a rigorously audited subset of the original Ruby-60 task pool—not additional benchmark instances.</p></article>
-        <article class="reveal"><strong>Case-level evidence</strong><p>Findings describe these five observed cases only and should not be generalized to all Ruby tasks.</p></article>
+        <article class="reveal"><strong>Two scoped pilots</strong><p>The 5- and 15-case cohorts are non-overlapping subsets of the original Ruby-60—not additional benchmark instances.</p></article>
+        <article class="reveal"><strong>Case-level evidence</strong><p>Findings describe the 20 observed cases only and should not be generalized to all Ruby tasks.</p></article>
         <article class="reveal"><strong>Separate from leaderboard</strong><p>This module validates tasks, verifiers, and patch semantics; it is not a second Ruby model ranking.</p></article>
         <article class="reveal"><strong>Grounding vs. correctness</strong><p>A valid grounding may contain PASS and FAIL results. Validity means the result is attributable to the real patch.</p></article>
       </div>
@@ -410,7 +434,7 @@
       <span class="brand-mark" aria-hidden="true"><span></span><span></span></span>
       <span>BIRD—CRITIC</span><b>1.5</b>
     </a>
-    <p>Ruby DB-Behavior Audit Pilot · Five evidence-linked case studies.</p>
+    <p>Ruby DB-Behavior Audit · Twenty evidence-linked cases across two pilots.</p>
     <div><a href="../">Ruby track</a><a href="../../../report/">Report</a><a href="https://github.com/kochsnow/bird-critic-1.5-preview" target="_blank" rel="noreferrer">GitHub</a></div>
     <small>© <span data-year></span> Bird-Critic Team</small>
   </footer>

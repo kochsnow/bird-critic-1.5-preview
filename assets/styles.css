@@ -364,6 +364,37 @@ code, pre { font-family: var(--mono); }
 .audit-hero { background: linear-gradient(112deg, var(--bird-green) 0 73%, #d6e2bf 73%); }
 .audit-page main > section[id] { scroll-margin-top: 72px; }
 .audit-metrics { margin-top: 24px; }
+.pilot-cohort-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 16px; }
+.pilot-cohort-card { min-height: 330px; padding: 28px; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 5px; }
+.pilot-cohort-original { background: white; }
+.pilot-cohort-expanded { color: white; background: var(--bird-blue); border-color: var(--bird-blue); }
+.pilot-cohort-top { display: flex; align-items: start; justify-content: space-between; gap: 20px; }
+.pilot-cohort-top span { font-size: 9px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.pilot-cohort-original .pilot-cohort-top span { color: var(--bird-teal); }
+.pilot-cohort-expanded .pilot-cohort-top span { color: #b9e1ff; }
+.pilot-cohort-top b { color: var(--bird-purple); font-size: 42px; line-height: .85; }
+.pilot-cohort-expanded .pilot-cohort-top b { color: var(--bird-green); }
+.pilot-cohort-card h3 { margin: 30px 0 9px; color: var(--bird-blue); font-size: 25px; }
+.pilot-cohort-expanded h3 { color: white; }
+.pilot-cohort-card > p { margin: 0; color: var(--muted); font-size: 12px; }
+.pilot-cohort-expanded > p { color: #cce2f1; }
+.pilot-cohort-card dl { margin: 25px 0; display: grid; gap: 8px; }
+.pilot-cohort-card dl div { padding-top: 9px; display: grid; grid-template-columns: 90px 1fr; gap: 12px; border-top: 1px solid var(--line); }
+.pilot-cohort-expanded dl div { border-color: rgba(255,255,255,.2); }
+.pilot-cohort-card dt { color: var(--muted); font-size: 8px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
+.pilot-cohort-card dd { margin: 0; color: var(--bird-blue-dark); font-size: 11px; font-weight: 700; }
+.pilot-cohort-expanded dt { color: #a8c7dc; }
+.pilot-cohort-expanded dd { color: white; }
+.pilot-cohort-card > a { margin-top: auto; align-self: start; }
+.audit-program-note { margin: 12px 0 0; padding: 14px 18px; color: var(--muted); background: var(--bird-cream); border: 1px solid #e5dfc4; border-radius: 5px; font-size: 11px; }
+.audit-program-note strong { color: var(--bird-blue-dark); }
+.audit-15-hero { background: linear-gradient(112deg, var(--bird-green) 0 61%, #d6e2bf 61%); }
+.pilot-cohort-facts { margin-top: 16px; display: grid; grid-template-columns: repeat(4, 1fr); background: white; border: 1px solid var(--line); border-radius: 5px; }
+.pilot-cohort-facts div { min-height: 105px; padding: 19px; border-right: 1px solid var(--line); }
+.pilot-cohort-facts div:last-child { border-right: 0; }
+.pilot-cohort-facts strong { display: block; color: var(--bird-blue); font-size: 23px; }
+.pilot-cohort-facts span { display: block; margin-top: 8px; color: var(--muted); font-size: 8px; letter-spacing: .05em; text-transform: uppercase; }
+.audit-15-matrix { min-width: 1040px; }
 .audit-overview-grid { display: grid; grid-template-columns: 1.05fr .75fr .95fr; gap: 16px; }
 .audit-intro-card, .model-provenance, .grounding-definition { min-height: 225px; padding: 26px; border-radius: 5px; }
 .audit-intro-card { color: white; background: var(--bird-blue); }
@@ -469,6 +500,15 @@ code, pre { font-family: var(--mono); }
 .case-summary code, .dbb-list code { padding: 1px 3px; background: var(--bird-cream); font-size: 9px; }
 .case-card-links { padding: 11px 22px; display: flex; flex-wrap: wrap; gap: 20px; background: var(--bird-cream); border-top: 1px solid #e5dfc4; }
 .case-card-links a { font-size: 10px; font-weight: 700; }
+.compact-case { overflow: visible; }
+.compact-case > summary { cursor: pointer; list-style: none; }
+.compact-case > summary::-webkit-details-marker { display: none; }
+.compact-case > summary::after { content: "+"; width: 26px; height: 26px; position: absolute; right: 16px; top: 16px; display: grid; place-items: center; color: white; background: var(--bird-purple); border-radius: 50%; font-size: 18px; line-height: 1; }
+.compact-case[open] > summary::after { content: "−"; }
+.compact-case-summary { position: relative; padding-right: 56px; }
+.compact-case:not([open]) .compact-case-summary { border-bottom: 0; border-radius: 5px; }
+.compact-case:not([open]) { overflow: hidden; }
+.compact-case[open] { overflow: hidden; }
 
 .audit-findings-section { margin-top: 25px; color: white; background: var(--bird-blue-dark); }
 .audit-findings-inner { max-width: 1180px; margin: auto; padding: 62px 24px; display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; }
@@ -673,6 +713,10 @@ code, pre { font-family: var(--mono); }
   .audit-teaser-stats { grid-template-columns: repeat(2, 1fr); }
   .audit-teaser-stats div:nth-child(2) { border-right: 0; }
   .audit-overview-grid { grid-template-columns: 1fr; }
+  .pilot-cohort-grid { grid-template-columns: 1fr; }
+  .pilot-cohort-facts { grid-template-columns: repeat(2, 1fr); }
+  .pilot-cohort-facts div:nth-child(2) { border-right: 0; }
+  .pilot-cohort-facts div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
   .audit-pipeline { grid-template-columns: repeat(4, 1fr); }
   .audit-pipeline li { border-bottom: 1px solid var(--line); }
   .case-card-head { grid-template-columns: 110px 1fr; }
@@ -721,6 +765,8 @@ code, pre { font-family: var(--mono); }
   .audit-teaser-stats strong { font-size: 21px; }
   .audit-hero { background: var(--bird-green); }
   .audit-intro-card, .model-provenance, .grounding-definition { min-height: 0; padding: 22px; }
+  .pilot-cohort-card { min-height: 0; padding: 22px; }
+  .pilot-cohort-facts div { min-height: 94px; padding: 15px; }
   .audit-intro-card p { font-size: 16px; }
   .audit-pipeline { grid-template-columns: 1fr; }
   .audit-pipeline li { min-height: 78px; padding: 14px 18px; border-right: 0; }
@@ -728,6 +774,7 @@ code, pre { font-family: var(--mono); }
   .audit-pipeline span { margin-bottom: 8px; }
   .audit-legend { gap: 9px 14px; }
   .case-card-head { padding: 18px; grid-template-columns: 1fr; gap: 15px; }
+  .compact-case-summary { padding-right: 56px; }
   .case-card-head > div:first-child { min-height: 30px; flex-direction: row; align-items: center; }
   .case-card-head h3 { font-size: 20px; }
   .issue-description { padding: 16px 18px; }

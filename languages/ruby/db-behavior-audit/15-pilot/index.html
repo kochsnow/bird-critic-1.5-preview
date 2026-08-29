@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Fifteen additional Ruby-60 tasks audited from issue descriptions through executable DB behaviors and attributable GLM-5.2 OpenCode workspace patches.">
+  <meta name="theme-color" content="#e1eacd">
+  <meta property="og:title" content="Ruby DB-Behavior Audit · Expanded 15-Pilot">
+  <meta property="og:description" content="15 attributable GLM-5.2 patches, 71 executable database behaviors, and evidence-linked case diagnoses.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../../../../assets/og-family.png">
+  <title>Ruby DB-Behavior Audit · Expanded 15-Pilot</title>
+  <link rel="icon" href="../../../../assets/favicon.png" type="image/png">
+  <link rel="stylesheet" href="../../../../assets/styles.css?v=20260829a">
+  <script defer src="../../../../assets/app.js?v=20260812"></script>
+</head>
+<body class="inner audit-page audit-15-page" data-page="ruby-audit-15" data-depth="4">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="../../../../" aria-label="Bird-Critic 1.5 home">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span></span>
+      <span>BIRD—CRITIC</span><b>1.5</b>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span><span class="sr-only">Menu</span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+      <a href="#overview">Overview</a>
+      <a href="#outcomes">Outcomes</a>
+      <a href="#cases">Case cards</a>
+      <a href="#scope">Scope</a>
+      <a class="nav-cta" href="../">All Ruby audits</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero audit-hero audit-15-hero">
+      <div class="reveal">
+        <div class="page-eyebrow">Expanded pilot · Closure finalized Aug. 29, 2026</div>
+        <h1>Fifteen more cases,<br>one attributable result each.</h1>
+      </div>
+      <div class="reveal">
+        <p class="page-intro">Fifteen additional, non-overlapping instances selected from the original Ruby-60 task pool. Every case links an audited issue description and executable database behaviors to a preserved GLM-5.2 × OpenCode workspace patch.</p>
+        <span class="page-status">15 / 15 valid DBB grounding · 8 PASS / 7 FAIL</span>
+      </div>
+    </section>
+
+    <section class="metric-grid audit-metrics reveal" aria-label="Expanded Ruby audit pilot metrics">
+      <div class="metric"><strong>15 / 60</strong><span>Additional audited instances</span></div>
+      <div class="metric"><strong>15 / 15</strong><span>Valid DBB grounding</span></div>
+      <div class="metric"><strong>50 / 71</strong><span>DB behaviors passed</span></div>
+      <div class="metric"><strong>8 / 15</strong><span>Task-level PASS</span></div>
+    </section>
+
+    <section class="results-section audit-overview" id="overview">
+      <div class="results-head reveal">
+        <div><span class="kicker">Audit overview</span><h2>A larger cohort with preserved provenance</h2></div>
+        <p>The closure reports one final attributable result per task and keeps superseded or diagnostic runs out of the pass-rate denominator.</p>
+      </div>
+      <div class="audit-overview-grid">
+        <article class="audit-intro-card reveal">
+          <span class="audit-card-label">What was audited</span>
+          <p>Fifteen issue-audited tasks were translated into 71 executable database behaviors, then evaluated against real GLM-5.2 workspace patches.</p>
+        </article>
+        <article class="model-provenance reveal">
+          <span class="audit-card-label">Two provider cohorts</span>
+          <h3>GLM-5.2 × OpenCode</h3>
+          <p>Seven final trials use attributable <code>nvidia/z-ai/glm-5.2</code> workspaces. Eight previously invalid no-patch trials were replaced by preserved <code>zai-coding/glm-5.2</code> direct runs.</p>
+        </article>
+        <aside class="grounding-definition reveal">
+          <span class="audit-card-label">Control interpretation</span>
+          <h3>No-patch runs are not model failures</h3>
+          <p>The eight original NVIDIA no-patch trials are excluded from final outcomes. PR #36416 uses an exact historical patch replay after a verifier-only repair.</p>
+        </aside>
+      </div>
+      <div class="pilot-cohort-facts reveal" aria-label="Expanded pilot provenance summary">
+        <div><strong>7</strong><span>NVIDIA-backed attributable trials</span></div>
+        <div><strong>8</strong><span>Z.ai direct replacements</span></div>
+        <div><strong>14 / 15</strong><span>Clean complete F2P grounding</span></div>
+        <div><strong>1</strong><span>Qualified browser F2P caveat</span></div>
+      </div>
+    </section>
+
+    <section class="results-section audit-outcomes" id="outcomes">
+      <div class="results-head reveal">
+        <div><span class="kicker">Fifteen-case outcome matrix</span><h2>Task reward and DB behavior evidence</h2></div>
+        <p>All 15 outcomes are attributable to evaluated agent workspaces. DBB ratios reveal partial correctness inside several task-level failures.</p>
+      </div>
+      <div class="audit-legend reveal" aria-label="Outcome legend">
+        <span><i class="legend-dot pass"></i> Task-level PASS</span>
+        <span><i class="legend-dot fail"></i> Task-level FAIL</span>
+        <span><i class="legend-dot grounded"></i> Valid DBB grounding</span>
+      </div>
+      <div class="audit-matrix-wrap reveal">
+        <table class="audit-matrix audit-15-matrix">
+          <thead><tr><th>Task</th><th>Database surface</th><th>DBB result</th><th>Reward</th><th>Cohort</th><th>Grounded diagnosis</th></tr></thead>
+          <tbody>
+            <tr><td><a href="#case-688"><strong>PR #688</strong></a><small>calendar</small></td><td>Destroy callback</td><td><span class="ratio-block"><b style="--pass:100%">2 / 2</b><small>passed</small></span></td><td><span class="reward reward-one">1.0</span></td><td>NVIDIA</td><td>Orphan holiday event cleanup fully repaired</td></tr>
+            <tr><td><a href="#case-372"><strong>PR #372</strong></a><small>solved</small></td><td>Reporting-period refresh</td><td><span class="ratio-block"><b style="--pass:100%">3 / 3</b><small>passed</small></span></td><td><span class="reward reward-one">1.0</span></td><td>Z.ai</td><td>Zero counts and period isolation correct</td></tr>
+            <tr><td><a href="#case-36610"><strong>PR #36610</strong></a><small>discourse</small></td><td>Scoped ranking queries</td><td><span class="ratio-block"><b style="--pass:100%">6 / 6</b><small>passed</small></span></td><td><span class="reward reward-one">1.0</span></td><td>NVIDIA</td><td>Mute and ignore exclusions fully grounded</td></tr>
+            <tr><td><a href="#case-37004"><strong>PR #37004</strong></a><small>discourse</small></td><td>Tag-group scoping</td><td><span class="ratio-block"><b style="--pass:66.67%">2 / 3</b><small>passed</small></span></td><td><span class="reward reward-zero">0.0</span></td><td>NVIDIA</td><td>No production fix remained; target bug persisted</td></tr>
+            <tr><td><a href="#case-37989"><strong>PR #37989</strong></a><small>discourse</small></td><td>Revision lifecycle</td><td><span class="ratio-block"><b style="--pass:100%">4 / 4</b><small>passed</small></span></td><td><span class="reward reward-one">1.0</span></td><td>NVIDIA</td><td>No-op and real tag updates distinguished correctly</td></tr>
+            <tr><td><a href="#case-620"><strong>PR #620</strong></a><small>assign</small></td><td>Silent-assignment persistence</td><td><span class="ratio-block"><b style="--pass:0%">0 / 5</b><small>passed</small></span></td><td><span class="reward reward-zero">0.0</span></td><td>Z.ai</td><td>Alternate design omitted required table and lifecycle</td></tr>
+            <tr><td><a href="#case-36242"><strong>PR #36242</strong></a><small>discourse</small></td><td>Security artifact purge</td><td><span class="ratio-block"><b style="--pass:100%">6 / 6</b><small>passed</small></span></td><td><span class="reward reward-one">1.0</span></td><td>Z.ai</td><td>Cross-table account-erasure cleanup complete</td></tr>
+            <tr><td><a href="#case-36255"><strong>PR #36255</strong></a><small>discourse</small></td><td>Recurring-event lifecycle</td><td><span class="ratio-block"><b style="--pass:40%">2 / 5</b><small>passed</small></span></td><td><span class="reward reward-zero">0.0</span></td><td>NVIDIA</td><td>Notifications stopped; stored dates still mutated</td></tr>
+            <tr><td><a href="#case-36277"><strong>PR #36277</strong></a><small>discourse</small></td><td>Runtime + migration cleanup</td><td><span class="ratio-block"><b style="--pass:100%">4 / 4</b><small>passed</small></span></td><td><span class="reward reward-one">1.0</span></td><td>NVIDIA</td><td>Target and legacy orphan claims cleaned safely</td></tr>
+            <tr><td><a href="#case-36528"><strong>PR #36528</strong></a><small>discourse</small></td><td>DM membership lifecycle</td><td><span class="ratio-block"><b style="--pass:60%">3 / 5</b><small>passed</small></span></td><td><span class="reward reward-zero">0.0</span></td><td>NVIDIA</td><td>One rejoin path fixed; create/reuse paths incomplete</td></tr>
+            <tr><td><a href="#case-203"><strong>PR #203</strong></a><small>activity-pub</small></td><td>Domain availability update</td><td><span class="ratio-block"><b style="--pass:80%">4 / 5</b><small>passed</small></span></td><td><span class="reward reward-zero">0.0</span></td><td>Z.ai</td><td>Success guard left two same-domain rows stale</td></tr>
+            <tr><td><a href="#case-35356"><strong>PR #35356</strong></a><small>discourse</small></td><td>Restore + post-migration seed</td><td><span class="ratio-block"><b style="--pass:60%">3 / 5</b><small>passed</small></span></td><td><span class="reward reward-zero">0.0</span></td><td>Z.ai</td><td>SQL filtering and persisted seed remained incomplete</td></tr>
+            <tr><td><a href="#case-36416"><strong>PR #36416</strong></a><small>discourse</small></td><td>Transactional vote transfer</td><td><span class="ratio-block"><b style="--pass:100%">7 / 7</b><small>passed</small></span></td><td><span class="reward reward-one">1.0</span></td><td>Z.ai replay</td><td>Exact historical patch passed repaired verifier</td></tr>
+            <tr><td><a href="#case-37037"><strong>PR #37037</strong></a><small>discourse</small></td><td>PostgreSQL schema isolation</td><td><span class="ratio-block"><b style="--pass:100%">4 / 4</b><small>passed</small></span></td><td><span class="reward reward-one">1.0</span></td><td>Z.ai</td><td>Readonly checks scoped to intended relation</td></tr>
+            <tr><td><a href="#case-37891"><strong>PR #37891</strong></a><small>discourse</small></td><td>AI secret bindings</td><td><span class="ratio-block"><b style="--pass:0%">0 / 7</b><small>passed</small></span></td><td><span class="reward reward-zero">0.0</span></td><td>Z.ai</td><td>Core schema, model, and runtime contract absent</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="matrix-caption reveal">Final task-level result: 8 PASS / 7 FAIL (53.33%). DB behavior result: 50 PASS / 71 total (70.42%). Reward alone is not used to infer individual assertions.</p>
+    </section>
+
+    <section class="results-section audit-cases" id="cases">
+      <div class="results-head reveal">
+        <div><span class="kicker">Audited case cards</span><h2>Fifteen evidence-linked diagnoses</h2></div>
+        <p>Case cards connect the audited task instruction, per-DBB outcomes, observed state, and patch-level diagnosis without reproducing raw logs.</p>
+      </div>
+      <!-- CASE CARDS START -->
+
+      <details class="case-card compact-case reveal" id="case-688" open>
+        <summary class="case-card-head compact-case-summary">
+          <div><span class="case-number">01 / 15</span><span class="status-badge status-positive">Valid positive</span></div>
+          <div><span class="kicker">discourse / discourse-calendar</span><h3>PR #688 · Orphan holiday-event cleanup</h3><span class="agent-model-tag">NVIDIA-backed · GLM-5.2 / OpenCode</span></div>
+          <div class="case-score"><strong>2 / 2</strong><span>DB behaviors passed</span></div>
+        </summary>
+        <section class="issue-description"><div class="issue-description-head"><span>Audited issue description</span><b>Issue audit complete</b></div><p>Periodic holiday-event cleanup fails when its owner has already been destroyed: the after-destroy hook references the deleted user and raises, preventing cleanup from completing.</p><small>Audited task instruction · batch 1</small></section>
+        <div class="case-card-body">
+          <section><h4>Per-DBB outcome</h4><ul class="dbb-list">
+            <li><span class="dbb-id">DBB-688-1</span><span>Destroying the owning user no longer raises.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-688-2</span><span>Orphaned holiday-event rows are removed.</span><b class="dbb-result pass">PASS</b></li>
+          </ul></section>
+          <section class="case-summary"><div><h4>Agent patch summary</h4><p>The submitted workspace repaired the callback path and passed plugin self-tests.</p></div><div><h4>Observed database state</h4><p>The cleanup completed without exception and the target event row disappeared.</p></div><div><h4>Grounded diagnosis</h4><p>Direct evaluated workspace; reward, F2P, and both DBBs agree on a valid positive result.</p></div></section>
+        </div>
+        <footer class="case-card-links"><a href="https://github.com/discourse/discourse-calendar/pull/688" target="_blank" rel="noreferrer">Original PR ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch1/discourse-discourse-calendar-pr-688/instruction.md" target="_blank" rel="noreferrer">Audited issue ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch1/discourse-discourse-calendar-pr-688/db_behavior_audit.json" target="_blank" rel="noreferrer">DB audit ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md#case-card-1-discourse-discourse-calendar-pr-688" target="_blank" rel="noreferrer">Grounding evidence ↗</a></footer>
+      </details>
+
+      <details class="case-card compact-case reveal" id="case-372">
+        <summary class="case-card-head compact-case-summary">
+          <div><span class="case-number">02 / 15</span><span class="status-badge status-positive">Valid positive</span></div>
+          <div><span class="kicker">discourse / discourse-solved</span><h3>PR #372 · Reporting-period solution counts</h3><span class="agent-model-tag">Z.ai direct · GLM-5.2 / OpenCode</span></div>
+          <div class="case-score"><strong>3 / 3</strong><span>DB behaviors passed</span></div>
+        </summary>
+        <section class="issue-description"><div class="issue-description-head"><span>Audited issue description</span><b>Issue audit complete</b></div><p>When a new reporting period contains no solutions, the user directory can retain the prior period's nonzero value because the refresh query omits users whose count dropped to zero.</p><small>Audited task instruction · batch 1</small></section>
+        <div class="case-card-body">
+          <section><h4>Per-DBB outcome</h4><ul class="dbb-list">
+            <li><span class="dbb-id">DBB-372-1</span><span>Target reporting-period count resets to zero.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-372-2</span><span>Users with solutions retain the correct count.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-372-3</span><span>Non-target period rows remain isolated.</span><b class="dbb-result pass">PASS</b></li>
+          </ul></section>
+          <section class="case-summary"><div><h4>Agent patch summary</h4><p>The direct Z.ai workspace repaired the directory refresh path and completed formal verification cleanly.</p></div><div><h4>Observed database state</h4><p>The target row reached zero while positive users and non-target periods retained their expected values.</p></div><div><h4>Grounded diagnosis</h4><p>All F2P and DBB examples passed with no confound.</p></div></section>
+        </div>
+        <footer class="case-card-links"><a href="https://github.com/discourse/discourse-solved/pull/372" target="_blank" rel="noreferrer">Original PR ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch1/discourse-discourse-solved-pr-372/instruction.md" target="_blank" rel="noreferrer">Audited issue ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch1/discourse-discourse-solved-pr-372/db_behavior_audit.json" target="_blank" rel="noreferrer">DB audit ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md#case-card-2-discourse-discourse-solved-pr-372" target="_blank" rel="noreferrer">Grounding evidence ↗</a></footer>
+      </details>
+
+      <details class="case-card compact-case reveal" id="case-36610">
+        <summary class="case-card-head compact-case-summary">
+          <div><span class="case-number">03 / 15</span><span class="status-badge status-positive">Valid positive</span></div>
+          <div><span class="kicker">discourse / discourse</span><h3>PR #36610 · Best-friend query exclusions</h3><span class="agent-model-tag">NVIDIA-backed · GLM-5.2 / OpenCode</span></div>
+          <div class="case-score"><strong>6 / 6</strong><span>DB behaviors passed</span></div>
+        </summary>
+        <section class="issue-description"><div class="issue-description-head"><span>Audited issue description</span><b>Issue audit complete</b></div><p>Rewind best-friend scoring must exclude users muted or ignored by the report owner in both post- and like-based rankings, while preserving eligible candidates and unrelated activity calculations.</p><small>Audited task instruction · batch 1</small></section>
+        <div class="case-card-body">
+          <section><h4>Per-DBB outcome</h4><ul class="dbb-list">
+            <li><span class="dbb-id">DBB-36610-1</span><span>Muted users are excluded from the post query.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-36610-2</span><span>Ignored users are excluded from the post query.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-36610-3</span><span>Muted users are excluded from the like query.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-36610-4</span><span>Ignored users are excluded from the like query.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-36610-5</span><span>Unrelated mute relationships do not affect results.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-36610-6</span><span>Eligible negative-control rows remain.</span><b class="dbb-result pass">PASS</b></li>
+          </ul></section>
+          <section class="case-summary"><div><h4>Agent patch summary</h4><p>The preserved workspace updated both ranking query paths; agent self-tests passed.</p></div><div><h4>Observed database state</h4><p>All owner-scoped relationship exclusions and both isolation controls returned the expected result sets.</p></div><div><h4>Grounded diagnosis</h4><p>The patch repaired the shared database semantics without over-filtering unrelated relationships.</p></div></section>
+        </div>
+        <footer class="case-card-links"><a href="https://github.com/discourse/discourse/pull/36610" target="_blank" rel="noreferrer">Original PR ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch1/discourse-pr-36610/instruction.md" target="_blank" rel="noreferrer">Audited issue ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch1/discourse-pr-36610/db_behavior_audit.json" target="_blank" rel="noreferrer">DB audit ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md#case-card-3-discourse-pr-36610" target="_blank" rel="noreferrer">Grounding evidence ↗</a></footer>
+      </details>
+
+      <details class="case-card compact-case reveal" id="case-37004">
+        <summary class="case-card-head compact-case-summary">
+          <div><span class="case-number">04 / 15</span><span class="status-badge status-failure">Semantic failure</span></div>
+          <div><span class="kicker">discourse / discourse</span><h3>PR #37004 · Allowed tag-group scoping</h3><span class="agent-model-tag">NVIDIA-backed · GLM-5.2 / OpenCode</span></div>
+          <div class="case-score"><strong>2 / 3</strong><span>DB behaviors passed</span></div>
+        </summary>
+        <section class="issue-description"><div class="issue-description-head"><span>Audited issue description</span><b>Issue audit complete</b></div><p>One-per-topic constraints should come only from tag groups allowed in the current category; a shared tag's membership in an outside group must not filter or reject otherwise allowed tags.</p><small>Audited task instruction · batch 1</small></section>
+        <div class="case-card-body">
+          <section><h4>Per-DBB outcome</h4><ul class="dbb-list">
+            <li><span class="dbb-id">DBB-37004-1</span><span>Baseline tag-selection control remains correct.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-37004-2</span><span>Allowed shared tag remains selectable.</span><b class="dbb-result fail">FAIL</b></li>
+            <li><span class="dbb-id">DBB-37004-3</span><span>Non-interference control remains correct.</span><b class="dbb-result pass">PASS</b></li>
+          </ul></section>
+          <section class="case-summary"><div><h4>Agent patch summary</h4><p>The timeout workspace retained temporary reproductions but no production fix.</p></div><div><h4>Observed database state</h4><p>The target query returned an empty collection instead of the allowed shared tag; controls passed.</p></div><div><h4>Grounded diagnosis</h4><p>The original tag-group scoping bug remained. The clean verifier attributes that semantic failure to the preserved workspace.</p></div></section>
+        </div>
+        <footer class="case-card-links"><a href="https://github.com/discourse/discourse/pull/37004" target="_blank" rel="noreferrer">Original PR ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch1/discourse-pr-37004/instruction.md" target="_blank" rel="noreferrer">Audited issue ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch1/discourse-pr-37004/db_behavior_audit.json" target="_blank" rel="noreferrer">DB audit ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md#case-card-4-discourse-pr-37004" target="_blank" rel="noreferrer">Grounding evidence ↗</a></footer>
+      </details>
+
+      <details class="case-card compact-case reveal" id="case-37989">
+        <summary class="case-card-head compact-case-summary">
+          <div><span class="case-number">05 / 15</span><span class="status-badge status-positive">Valid positive</span></div>
+          <div><span class="kicker">discourse / discourse</span><h3>PR #37989 · No-op tag revision control</h3><span class="agent-model-tag">NVIDIA-backed · GLM-5.2 / OpenCode</span></div>
+          <div class="case-score"><strong>4 / 4</strong><span>DB behaviors passed</span></div>
+        </summary>
+        <section class="issue-description"><div class="issue-description-head"><span>Audited issue description</span><b>Issue audit complete</b></div><p>Submitting an empty tag list for an already untagged topic must be treated as no change, while real additions, removals, and replacements still update join rows and record revisions normally.</p><small>Audited task instruction · batch 1</small></section>
+        <div class="case-card-body">
+          <section><h4>Per-DBB outcome</h4><ul class="dbb-list">
+            <li><span class="dbb-id">DBB-37989-1</span><span>Empty tag no-op creates no revision.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-37989-2</span><span>Real removal deletes topic-tag join rows.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-37989-3</span><span>Real removal records the expected revision/version.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-37989-4</span><span>Unrelated raw edits remain preserved.</span><b class="dbb-result pass">PASS</b></li>
+          </ul></section>
+          <section class="case-summary"><div><h4>Agent patch summary</h4><p>The submitted patch normalized empty tag updates across controller and post-revision paths.</p></div><div><h4>Observed database state</h4><p>No-op input left revision state unchanged; real removal deleted joins and wrote the expected revision.</p></div><div><h4>Grounded diagnosis</h4><p>The patch correctly separates “no database change” from a real persisted tag mutation.</p></div></section>
+        </div>
+        <footer class="case-card-links"><a href="https://github.com/discourse/discourse/pull/37989" target="_blank" rel="noreferrer">Original PR ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch1/discourse-pr-37989/instruction.md" target="_blank" rel="noreferrer">Audited issue ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch1/discourse-pr-37989/db_behavior_audit.json" target="_blank" rel="noreferrer">DB audit ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md#case-card-5-discourse-pr-37989" target="_blank" rel="noreferrer">Grounding evidence ↗</a></footer>
+      </details>
+
+      <details class="case-card compact-case reveal" id="case-620">
+        <summary class="case-card-head compact-case-summary">
+          <div><span class="case-number">06 / 15</span><span class="status-badge status-failure">Semantic failure</span></div>
+          <div><span class="kicker">discourse / discourse-assign</span><h3>PR #620 · Silent-assignment persistence</h3><span class="agent-model-tag">Z.ai direct · GLM-5.2 / OpenCode</span></div>
+          <div class="case-score"><strong>0 / 5</strong><span>DB behaviors passed</span></div>
+        </summary>
+        <section class="issue-description"><div class="issue-description-head"><span>Audited issue description</span><b>Issue audit complete</b></div><p>An assignment created with notifications disabled must persist that silent state so later notification jobs and membership changes cannot send notifications for it.</p><small>Audited task instruction · batch 2</small></section>
+        <div class="case-card-body">
+          <section><h4>Per-DBB outcome</h4><ul class="dbb-list">
+            <li><span class="dbb-id">DBB-620-1</span><span>Required silenced-assignment row is created.</span><b class="dbb-result fail">FAIL</b></li>
+            <li><span class="dbb-id">DBB-620-2</span><span>Downstream notification suppression is preserved.</span><b class="dbb-result fail">FAIL</b></li>
+            <li><span class="dbb-id">DBB-620-3</span><span>Membership changes remain notification-silent.</span><b class="dbb-result fail">FAIL</b></li>
+            <li><span class="dbb-id">DBB-620-4</span><span>Normal and silent lifecycles remain distinct.</span><b class="dbb-result fail">FAIL</b></li>
+            <li><span class="dbb-id">DBB-620-5</span><span>Required table and migration exist.</span><b class="dbb-result fail">FAIL</b></li>
+          </ul></section>
+          <section class="case-summary"><div><h4>Agent patch summary</h4><p>The agent introduced <code>assignments.should_notify</code>, an alternate persistence design.</p></div><div><h4>Observed database state</h4><p>The required silenced-assignment model, table, and downstream lifecycle contract were absent.</p></div><div><h4>Grounded diagnosis</h4><p>The patch addressed the symptom with a different data model that did not satisfy any audited behavior.</p></div></section>
+        </div>
+        <footer class="case-card-links"><a href="https://github.com/discourse/discourse-assign/pull/620" target="_blank" rel="noreferrer">Original PR ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch2/discourse-discourse-assign-pr-620/instruction.md" target="_blank" rel="noreferrer">Audited issue ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch2/discourse-discourse-assign-pr-620/db_behavior_audit.json" target="_blank" rel="noreferrer">DB audit ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md#case-card-6-discourse-discourse-assign-pr-620" target="_blank" rel="noreferrer">Grounding evidence ↗</a></footer>
+      </details>
+
+      <details class="case-card compact-case reveal" id="case-36242">
+        <summary class="case-card-head compact-case-summary">
+          <div><span class="case-number">07 / 15</span><span class="status-badge status-positive">Valid positive</span></div>
+          <div><span class="kicker">discourse / discourse</span><h3>PR #36242 · Account-erasure security cleanup</h3><span class="agent-model-tag">Z.ai direct · GLM-5.2 / OpenCode</span></div>
+          <div class="case-score"><strong>6 / 6</strong><span>DB behaviors passed</span></div>
+        </summary>
+        <section class="issue-description"><div class="issue-description-head"><span>Audited issue description</span><b>Issue audit complete</b></div><p>Destroying or anonymizing an account must remove authentication and notification artifacts that could keep it identifiable or usable, without disturbing other users or the main erasure flow.</p><small>Audited task instruction · batch 2</small></section>
+        <div class="case-card-body">
+          <section><h4>Per-DBB outcome</h4><ul class="dbb-list">
+            <li><span class="dbb-id">DBB-36242-1</span><span>Main anonymization control completes.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-36242-2</span><span>Second-factor and security-key rows are removed.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-36242-3</span><span>Push-subscription rows are removed.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-36242-4</span><span>Authentication token and log rows are removed.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-36242-5</span><span>Reply keys and IP-history rows are removed.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-36242-6</span><span>Immediate-job path and other-user controls pass.</span><b class="dbb-result pass">PASS</b></li>
+          </ul></section>
+          <section class="case-summary"><div><h4>Agent patch summary</h4><p>The patch extended account erasure across the required security and notification tables.</p></div><div><h4>Observed database state</h4><p>All target-user artifacts were removed while other-user controls stayed intact.</p></div><div><h4>Grounded diagnosis</h4><p>Clean F2P and DBB execution establishes a fully attributable cross-table cleanup repair.</p></div></section>
+        </div>
+        <footer class="case-card-links"><a href="https://github.com/discourse/discourse/pull/36242" target="_blank" rel="noreferrer">Original PR ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch2/discourse-pr-36242/instruction.md" target="_blank" rel="noreferrer">Audited issue ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch2/discourse-pr-36242/db_behavior_audit.json" target="_blank" rel="noreferrer">DB audit ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md#case-card-7-discourse-pr-36242" target="_blank" rel="noreferrer">Grounding evidence ↗</a></footer>
+      </details>
+
+      <details class="case-card compact-case reveal" id="case-36255">
+        <summary class="case-card-head compact-case-summary">
+          <div><span class="case-number">08 / 15</span><span class="status-badge status-partial">Valid partial</span></div>
+          <div><span class="kicker">discourse / discourse</span><h3>PR #36255 · Closed recurring-event lifecycle</h3><span class="agent-model-tag">NVIDIA timeout workspace · GLM-5.2 / OpenCode</span></div>
+          <div class="case-score"><strong>2 / 5</strong><span>DB behaviors passed</span></div>
+        </summary>
+        <section class="issue-description"><div class="issue-description-head"><span>Audited issue description</span><b>Issue audit complete</b></div><p>Closing a recurring event must stop future instance generation and pre-event notifications while preserving historical instances and avoiding later mutations to the stored closed-event dates.</p><small>Audited task instruction · batch 2</small></section>
+        <div class="case-card-body">
+          <section><h4>Per-DBB outcome</h4><ul class="dbb-list">
+            <li><span class="dbb-id">DBB-36255-1</span><span>Closed event date is not mutated.</span><b class="dbb-result fail">FAIL</b></li>
+            <li><span class="dbb-id">DBB-36255-2</span><span>Closing recurrence preserves stored dates.</span><b class="dbb-result fail">FAIL</b></li>
+            <li><span class="dbb-id">DBB-36255-3</span><span>Monitor leaves closed-event dates unchanged.</span><b class="dbb-result fail">FAIL</b></li>
+            <li><span class="dbb-id">DBB-36255-4</span><span>No reminders are enqueued for a closed event.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-36255-5</span><span>Open-event control still advances.</span><b class="dbb-result pass">PASS</b></li>
+          </ul></section>
+          <section class="case-summary"><div><h4>Agent patch summary</h4><p>The preserved timeout workspace blocked reminder behavior but did not fully stabilize persisted dates.</p></div><div><h4>Observed database state</h4><p>No reminder was enqueued, yet closed events gained <code>finished_at</code> mutations through close and monitor paths.</p></div><div><h4>Grounded diagnosis</h4><p>The patch repaired the external symptom while leaving three database lifecycle behaviors incorrect.</p></div></section>
+        </div>
+        <footer class="case-card-links"><a href="https://github.com/discourse/discourse/pull/36255" target="_blank" rel="noreferrer">Original PR ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch2/discourse-pr-36255/instruction.md" target="_blank" rel="noreferrer">Audited issue ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch2/discourse-pr-36255/db_behavior_audit.json" target="_blank" rel="noreferrer">DB audit ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md#case-card-8-discourse-pr-36255" target="_blank" rel="noreferrer">Grounding evidence ↗</a></footer>
+      </details>
+
+      <details class="case-card compact-case reveal" id="case-36277">
+        <summary class="case-card-head compact-case-summary">
+          <div><span class="case-number">09 / 15</span><span class="status-badge status-positive">Valid positive</span></div>
+          <div><span class="kicker">discourse / discourse</span><h3>PR #36277 · Orphan reviewable claims</h3><span class="agent-model-tag">NVIDIA-backed · GLM-5.2 / OpenCode</span></div>
+          <div class="case-score"><strong>4 / 4</strong><span>DB behaviors passed</span></div>
+        </summary>
+        <section class="issue-description"><div class="issue-description-head"><span>Audited issue description</span><b>Issue audit complete</b></div><p>User destruction must unclaim that user's reviewables, and an upgrade migration must remove legacy claims whose users no longer exist while preserving valid claims.</p><small>Audited task instruction · batch 2</small></section>
+        <div class="case-card-body">
+          <section><h4>Per-DBB outcome</h4><ul class="dbb-list">
+            <li><span class="dbb-id">DBB-36277-1</span><span>Runtime destroy removes the target claim.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-36277-2</span><span>Another user's claim survives.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-36277-3</span><span>The real migration removes a legacy orphan.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-36277-4</span><span>A valid claim survives migration.</span><b class="dbb-result pass">PASS</b></li>
+          </ul></section>
+          <section class="case-summary"><div><h4>Agent patch summary</h4><p>The workspace covered both the runtime destroy path and historical cleanup migration.</p></div><div><h4>Observed database state</h4><p>Target and orphan rows disappeared; valid and other-user rows remained.</p></div><div><h4>Grounded diagnosis</h4><p>The patch propagated the cleanup contract consistently across runtime and migration layers.</p></div></section>
+        </div>
+        <footer class="case-card-links"><a href="https://github.com/discourse/discourse/pull/36277" target="_blank" rel="noreferrer">Original PR ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch2/discourse-pr-36277/instruction.md" target="_blank" rel="noreferrer">Audited issue ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch2/discourse-pr-36277/db_behavior_audit.json" target="_blank" rel="noreferrer">DB audit ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md#case-card-9-discourse-pr-36277" target="_blank" rel="noreferrer">Grounding evidence ↗</a></footer>
+      </details>
+
+      <details class="case-card compact-case reveal" id="case-36528">
+        <summary class="case-card-head compact-case-summary">
+          <div><span class="case-number">10 / 15</span><span class="status-badge status-partial">Valid partial</span></div>
+          <div><span class="kicker">discourse / discourse</span><h3>PR #36528 · Direct-message memberships</h3><span class="agent-model-tag">NVIDIA-backed · GLM-5.2 / OpenCode</span></div>
+          <div class="case-score"><strong>3 / 5</strong><span>DB behaviors passed</span></div>
+        </summary>
+        <section class="issue-description"><div class="issue-description-head"><span>Audited issue description</span><b>Issue audit complete</b></div><p>Rejoining a direct-message channel should insert only missing memberships and preserve existing members' follow, unread, mute, and push-notification preferences.</p><small>Audited task instruction · batch 2</small></section>
+        <div class="case-card-body">
+          <section><h4>Per-DBB outcome</h4><ul class="dbb-list">
+            <li><span class="dbb-id">DBB-36528-1</span><span>Existing rejoin membership is preserved.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-36528-2</span><span>Add-users path preserves preferences.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-36528-3</span><span>New DM membership uses correct following default.</span><b class="dbb-result fail">FAIL</b></li>
+            <li><span class="dbb-id">DBB-36528-4</span><span>Reused channel preserves mute and notification settings.</span><b class="dbb-result fail">FAIL</b></li>
+            <li><span class="dbb-id">DBB-36528-5</span><span>Unrelated membership remains isolated.</span><b class="dbb-result pass">PASS</b></li>
+          </ul></section>
+          <section class="case-summary"><div><h4>Agent patch summary</h4><p>The patch repaired the add-users rejoin path but not every direct-message create/reuse path.</p></div><div><h4>Observed database state</h4><p>Some existing preferences survived, but one new default was false and reused channels overwrote notification settings.</p></div><div><h4>Grounded diagnosis</h4><p>The fix failed to propagate across equivalent membership-creation surfaces.</p></div></section>
+        </div>
+        <footer class="case-card-links"><a href="https://github.com/discourse/discourse/pull/36528" target="_blank" rel="noreferrer">Original PR ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch2/discourse-pr-36528/instruction.md" target="_blank" rel="noreferrer">Audited issue ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch2/discourse-pr-36528/db_behavior_audit.json" target="_blank" rel="noreferrer">DB audit ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md#case-card-10-discourse-pr-36528" target="_blank" rel="noreferrer">Grounding evidence ↗</a></footer>
+      </details>
+
+      <details class="case-card compact-case reveal" id="case-203">
+        <summary class="case-card-head compact-case-summary">
+          <div><span class="case-number">11 / 15</span><span class="status-badge status-partial">Valid partial</span></div>
+          <div><span class="kicker">discourse / discourse-activity-pub</span><h3>PR #203 · Domain availability updates</h3><span class="agent-model-tag">Z.ai direct · GLM-5.2 / OpenCode</span></div>
+          <div class="case-score"><strong>4 / 5</strong><span>DB behaviors passed</span></div>
+        </summary>
+        <section class="issue-description"><div class="issue-description-head"><span>Audited issue description</span><b>Issue audit complete</b></div><p>Concurrent ActivityPub delivery and domain-availability operations must avoid database contention while keeping delivery outcomes and all actors for the affected domain synchronized.</p><small>Audited task instruction · batch 3</small></section>
+        <div class="case-card-body">
+          <section><h4>Per-DBB outcome</h4><ul class="dbb-list">
+            <li><span class="dbb-id">DBB-203-1</span><span>Success path updates every same-domain actor.</span><b class="dbb-result fail">FAIL</b></li>
+            <li><span class="dbb-id">DBB-203-2</span><span>Failure path updates same-domain availability.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-203-3</span><span>Other-domain actors remain isolated.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-203-4</span><span>Bulk domain-update control succeeds.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-203-5</span><span>Delivery-success control succeeds.</span><b class="dbb-result pass">PASS</b></li>
+          </ul></section>
+          <section class="case-summary"><div><h4>Agent patch summary</h4><p>The agent reworked delivery tracking and domain update guards.</p></div><div><h4>Observed database state</h4><p>Only one of three same-domain actors became available on success; failure and isolation paths were correct.</p></div><div><h4>Grounded diagnosis</h4><p>The guard treated one available actor as proof that the whole domain was already synchronized.</p></div></section>
+        </div>
+        <footer class="case-card-links"><a href="https://github.com/discourse/discourse-activity-pub/pull/203" target="_blank" rel="noreferrer">Original PR ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch3/discourse-discourse-activity-pub-pr-203/instruction.md" target="_blank" rel="noreferrer">Audited issue ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch3/discourse-discourse-activity-pub-pr-203/db_behavior_audit.json" target="_blank" rel="noreferrer">DB audit ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md#case-card-11-discourse-discourse-activity-pub-pr-203" target="_blank" rel="noreferrer">Grounding evidence ↗</a></footer>
+      </details>
+
+      <details class="case-card compact-case reveal" id="case-35356">
+        <summary class="case-card-head compact-case-summary">
+          <div><span class="case-number">12 / 15</span><span class="status-badge status-partial">Valid partial</span></div>
+          <div><span class="kicker">discourse / discourse</span><h3>PR #35356 · Resilient backup restore</h3><span class="agent-model-tag">Z.ai direct · GLM-5.2 / OpenCode</span></div>
+          <div class="case-score"><strong>3 / 5</strong><span>DB behaviors passed</span></div>
+        </summary>
+        <section class="issue-description"><div class="issue-description-head"><span>Audited issue description</span><b>Issue audit complete</b></div><p>Restore must filter unsupported newer PostgreSQL dump directives, preserve all-or-nothing failure behavior, then reload settings after migration and reconnect before seeding content or uploads.</p><small>Audited task instruction · batch 3</small></section>
+        <div class="case-card-body">
+          <section><h4>Per-DBB outcome</h4><ul class="dbb-list">
+            <li><span class="dbb-id">DBB-35356-1</span><span>Unsupported extension statements are filtered.</span><b class="dbb-result fail">FAIL</b></li>
+            <li><span class="dbb-id">DBB-35356-2</span><span>Supported SQL is preserved.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-35356-3</span><span>Restore errors remain failure/rollback paths.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-35356-4</span><span>Migration and seed ordering remains correct.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-35356-5</span><span>Post-reconnect seed recreates uploads -1 through -6.</span><b class="dbb-result fail">FAIL</b></li>
+          </ul></section>
+          <section class="case-summary"><div><h4>Agent patch summary</h4><p>The patch added restore filtering and seed-order changes, but two end-to-end outcomes remained incomplete.</p></div><div><h4>Observed database state</h4><p><code>CREATE EXTENSION</code> still reached filtered SQL and the expected seeded upload rows were not recreated.</p></div><div><h4>Grounded diagnosis</h4><p>Correct rollback and ordering controls coexist with incomplete SQL filtering and persisted post-restore state.</p></div></section>
+        </div>
+        <footer class="case-card-links"><a href="https://github.com/discourse/discourse/pull/35356" target="_blank" rel="noreferrer">Original PR ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch3/discourse-pr-35356/instruction.md" target="_blank" rel="noreferrer">Audited issue ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch3/discourse-pr-35356/db_behavior_audit.json" target="_blank" rel="noreferrer">DB audit ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md#case-card-12-discourse-pr-35356" target="_blank" rel="noreferrer">Grounding evidence ↗</a></footer>
+      </details>
+
+      <details class="case-card compact-case reveal" id="case-36416">
+        <summary class="case-card-head compact-case-summary">
+          <div><span class="case-number">13 / 15</span><span class="status-badge status-positive">Valid replay</span></div>
+          <div><span class="kicker">discourse / discourse</span><h3>PR #36416 · Transactional topic-vote transfer</h3><span class="agent-model-tag">Z.ai exact replay · GLM-5.2 / OpenCode</span></div>
+          <div class="case-score"><strong>7 / 7</strong><span>DB behaviors passed</span></div>
+        </summary>
+        <section class="issue-description"><div class="issue-description-head"><span>Audited issue description</span><b>Issue audit complete</b></div><p>Merging accounts must transfer unique topic votes, collapse duplicates, preserve archive metadata, recalculate materialized counts, and roll back all effects if the transaction fails.</p><small>Audited task instruction · batch 3</small></section>
+        <div class="case-card-body">
+          <section><h4>Per-DBB outcome</h4><ul class="dbb-list">
+            <li><span class="dbb-id">DBB-36416-1</span><span>Unique source votes transfer to the target.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-36416-2</span><span>Duplicate votes collapse to one target vote.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-36416-3</span><span>Archive flag and timestamp are preserved.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-36416-4</span><span>No source-account vote rows remain.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-36416-5</span><span>Materialized counts are recalculated.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-36416-6</span><span>Unrelated users and topics remain unchanged.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-36416-7</span><span>Forced failure rolls the transaction back fully.</span><b class="dbb-result pass">PASS</b></li>
+          </ul></section>
+          <section class="case-summary"><div><h4>Agent patch summary</h4><p>The two historical workspace operations were replayed exactly after repairing only the verifier harness.</p></div><div><h4>Observed database state</h4><p>Transfer, deduplication, metadata, counts, isolation, and rollback all passed.</p></div><div><h4>Grounded diagnosis</h4><p>The original load-time result was invalid; the verified same-patch replay establishes a valid positive without changing the agent patch.</p></div></section>
+        </div>
+        <footer class="case-card-links"><a href="https://github.com/discourse/discourse/pull/36416" target="_blank" rel="noreferrer">Original PR ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch3/discourse-pr-36416/instruction.md" target="_blank" rel="noreferrer">Audited issue ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch3/discourse-pr-36416/db_behavior_audit.json" target="_blank" rel="noreferrer">DB audit ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md#case-card-13-discourse-pr-36416" target="_blank" rel="noreferrer">Replay evidence ↗</a></footer>
+      </details>
+
+      <details class="case-card compact-case reveal" id="case-37037">
+        <summary class="case-card-head compact-case-summary">
+          <div><span class="case-number">14 / 15</span><span class="status-badge status-positive">Valid positive</span></div>
+          <div><span class="kicker">discourse / discourse</span><h3>PR #37037 · PostgreSQL schema isolation</h3><span class="agent-model-tag">Z.ai direct · GLM-5.2 / OpenCode</span></div>
+          <div class="case-score"><strong>4 / 4</strong><span>DB behaviors passed</span></div>
+        </summary>
+        <section class="issue-description"><div class="issue-description-head"><span>Audited issue description</span><b>Issue audit complete</b></div><p>A readonly-column preflight must inspect the intended application table, ignoring same-named tables in other PostgreSQL schemas while still rejecting a real default on the public relation.</p><small>Audited task instruction · batch 3</small></section>
+        <div class="case-card-body">
+          <section><h4>Per-DBB outcome</h4><ul class="dbb-list">
+            <li><span class="dbb-id">DBB-37037-1</span><span>Other-schema default does not block the public relation.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-37037-2</span><span>A real public default still rejects readonly marking.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-37037-3</span><span>Readonly trigger behavior remains unchanged.</span><b class="dbb-result pass">PASS</b></li>
+            <li><span class="dbb-id">DBB-37037-4</span><span>No schema, table, trigger, or function residue remains.</span><b class="dbb-result pass">PASS</b></li>
+          </ul></section>
+          <section class="case-summary"><div><h4>Agent patch summary</h4><p>The direct workspace scoped default checks to the intended relation and retained trigger behavior.</p></div><div><h4>Observed database state</h4><p>Cross-schema false positives disappeared, true public defaults still failed, and fixtures cleaned up fully.</p></div><div><h4>Grounded diagnosis</h4><p>The patch repaired schema identity semantics rather than merely changing query shape.</p></div></section>
+        </div>
+        <footer class="case-card-links"><a href="https://github.com/discourse/discourse/pull/37037" target="_blank" rel="noreferrer">Original PR ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch3/discourse-pr-37037/instruction.md" target="_blank" rel="noreferrer">Audited issue ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch3/discourse-pr-37037/db_behavior_audit.json" target="_blank" rel="noreferrer">DB audit ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md#case-card-14-discourse-pr-37037" target="_blank" rel="noreferrer">Grounding evidence ↗</a></footer>
+      </details>
+
+      <details class="case-card compact-case reveal" id="case-37891">
+        <summary class="case-card-head compact-case-summary">
+          <div><span class="case-number">15 / 15</span><span class="status-badge status-failure">Qualified failure</span></div>
+          <div><span class="kicker">discourse / discourse</span><h3>PR #37891 · Admin-managed AI secret bindings</h3><span class="agent-model-tag">Z.ai direct · GLM-5.2 / OpenCode</span></div>
+          <div class="case-score"><strong>0 / 7</strong><span>DB behaviors passed</span></div>
+        </summary>
+        <section class="issue-description"><div class="issue-description-head"><span>Audited issue description</span><b>Issue audit complete</b></div><p>Custom AI tools must declare credential aliases, bind them to persisted admin-managed secrets, resolve those bindings at runtime, and preserve referential integrity through edits, imports, exports, and deletion.</p><small>Audited task instruction · batch 3</small></section>
+        <div class="case-card-body">
+          <section><h4>Per-DBB outcome</h4><ul class="dbb-list">
+            <li><span class="dbb-id">DBB-37891-1</span><span>Secret-contract column and binding table exist.</span><b class="dbb-result fail">FAIL</b></li>
+            <li><span class="dbb-id">DBB-37891-2</span><span>Valid persisted binding contract works.</span><b class="dbb-result fail">FAIL</b></li>
+            <li><span class="dbb-id">DBB-37891-3</span><span>Invalid and dangling bindings are rejected.</span><b class="dbb-result fail">FAIL</b></li>
+            <li><span class="dbb-id">DBB-37891-4</span><span>Contract shrink prunes orphan bindings.</span><b class="dbb-result fail">FAIL</b></li>
+            <li><span class="dbb-id">DBB-37891-5</span><span>Runtime resolves the persisted secret.</span><b class="dbb-result fail">FAIL</b></li>
+            <li><span class="dbb-id">DBB-37891-6</span><span>Bound-secret in-use behavior is enforced.</span><b class="dbb-result fail">FAIL</b></li>
+            <li><span class="dbb-id">DBB-37891-7</span><span>Replacement failures roll back transactionally.</span><b class="dbb-result fail">FAIL</b></li>
+          </ul></section>
+          <section class="case-summary"><div><h4>Agent patch summary</h4><p>The completed workspace did not contain the required core schema, model, or runtime binding implementation.</p></div><div><h4>Observed database state</h4><p>All seven DBBs failed. Separately, 153 non-browser F2P examples ran; 91 passed and 62 failed semantically.</p></div><div><h4>Grounded diagnosis</h4><p>The missing Chromium binary blocked one browser system example only. That environment caveat is not attributed to the patch and does not invalidate DBB grounding.</p></div></section>
+        </div>
+        <footer class="case-card-links"><a href="https://github.com/discourse/discourse/pull/37891" target="_blank" rel="noreferrer">Original PR ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch3/discourse-pr-37891/instruction.md" target="_blank" rel="noreferrer">Audited issue ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/batch3/discourse-pr-37891/db_behavior_audit.json" target="_blank" rel="noreferrer">DB audit ↗</a><a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md#case-card-15-discourse-pr-37891" target="_blank" rel="noreferrer">Grounding evidence ↗</a></footer>
+      </details>
+
+      <!-- CASE CARDS END -->
+    </section>
+
+    <section class="audit-findings-section" id="findings">
+      <div class="audit-findings-inner">
+        <div class="audit-findings-intro reveal">
+          <span class="kicker kicker-light">Expanded-pilot findings</span>
+          <h2>Partial correctness becomes measurable</h2>
+          <p>In these 15 audited cases, task-level reward and behavior-level evidence often aligned—but the DBB matrix exposed where otherwise unsuccessful patches still repaired real database semantics.</p>
+        </div>
+        <ol class="finding-list">
+          <li class="reveal"><span>01</span><div><h3>Five of seven failed tasks passed at least one DB behavior.</h3><p>Tag scoping, recurring events, memberships, domain availability, and restores all contained grounded partial correctness.</p></div></li>
+          <li class="reveal"><span>02</span><div><h3>A repair can cover one application path and miss its siblings.</h3><p>PR #36528 preserved one rejoin path while direct-message create and reuse paths still wrote incorrect membership state.</p></div></li>
+          <li class="reveal"><span>03</span><div><h3>An alternate schema can miss the required persistence contract.</h3><p>PR #620 introduced a different notification flag but omitted the audited model, table, and downstream lifecycle.</p></div></li>
+          <li class="reveal"><span>04</span><div><h3>Exact replay can separate patch quality from verifier quality.</h3><p>PR #36416 passed all seven DBBs after a verifier-only repair replayed the original two patch operations exactly.</p></div></li>
+          <li class="reveal"><span>05</span><div><h3>Environment caveats must stay separate from semantics.</h3><p>PR #37891's missing Chromium affected one browser example, while all seven DBBs and 153 non-browser examples still grounded the patch diagnosis.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="results-section audit-scope" id="scope">
+      <div class="results-head reveal">
+        <div><span class="kicker">Scope and limitations</span><h2>Fifteen additional cases—not a Ruby-60 estimate</h2></div>
+        <p>This cohort extends the audit program with new evidence, but its purposive selection cannot establish population-level failure rates.</p>
+      </div>
+      <div class="scope-grid">
+        <article class="reveal"><strong>Non-overlapping cohort</strong><p>These 15 tasks exclude the original five pilot cases, bringing audited coverage to 20 distinct instances from Ruby-60.</p></article>
+        <article class="reveal"><strong>Two provider cohorts</strong><p>Seven final trials are NVIDIA-backed and eight are Z.ai direct replacements; all use GLM-5.2 with OpenCode.</p></article>
+        <article class="reveal"><strong>Control archive gap</strong><p>Historical oracle/nop conclusions remain frozen in audit JSON, but 28 raw control directories are absent from the source branch.</p></article>
+        <article class="reveal"><strong>Qualified F2P case</strong><p>PR #37891 has valid DBB grounding and 153 executed non-browser examples; one browser example lacked Chromium.</p></article>
+      </div>
+      <p class="audit-program-note reveal"><strong>Recommended interpretation:</strong> in these 15 behavior-level audited Ruby pilot cases, we observed both full and partial database correctness, cross-path propagation gaps, persistence-contract mismatches, and a clean separation between verifier environment caveats and patch semantics.</p>
+    </section>
+
+    <section class="results-section audit-artifacts" id="artifacts">
+      <div class="artifact-panel reveal">
+        <div><span class="kicker">Closure artifacts</span><h2>Follow the expanded pilot to source</h2><p>The closure bundle preserves the frozen tasks, final trials, unified case cards, integrity checks, and available control evidence.</p></div>
+        <div class="artifact-links">
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/tree/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure" target="_blank" rel="noreferrer"><span>01</span><strong>15-pilot artifact index</strong><b>↗</b></a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/PILOT_CLOSURE.md" target="_blank" rel="noreferrer"><span>02</span><strong>Closure summary</strong><b>↗</b></a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/jobs/glm-5.2/agent-patch-grounding-final/CASE_CARDS.md" target="_blank" rel="noreferrer"><span>03</span><strong>Unified audited case cards</strong><b>↗</b></a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/tree/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15" target="_blank" rel="noreferrer"><span>04</span><strong>Frozen 15-task dataset</strong><b>↗</b></a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/datasets/birdcritic15_lite_ruby_DB_15/RUBY_DB_15_SELECTION.md" target="_blank" rel="noreferrer"><span>05</span><strong>Selection provenance and 60-task ledger</strong><b>↗</b></a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/bird_critic_1_5_code/harbor-main/reports/ruby/ruby_audited_15_pilot_closure/validation/RESULTS.md" target="_blank" rel="noreferrer"><span>06</span><strong>Closure validation criteria</strong><b>↗</b></a>
+          <a href="https://github.com/BlackSoi1/critic15-review-skill/tree/main" target="_blank" rel="noreferrer"><span>07</span><strong>Issue-description audit method</strong><b>↗</b></a>
+          <a href="https://github.com/kochsnow/Terminal_Bench_BirdCritic_1.5/blob/hyf_analysis/.agents/skills/audit-db-behavior-ruby/SKILL.md" target="_blank" rel="noreferrer"><span>08</span><strong>DB-behavior audit method</strong><b>↗</b></a>
+        </div>
+      </div>
+      <a class="back-to-ruby reveal" href="../"><span>←</span><div><strong>Return to the Ruby audit overview</strong><small>Both non-overlapping pilots and the original five case studies</small></div></a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="../../../../"><span class="brand-mark" aria-hidden="true"><span></span><span></span></span><span>BIRD—CRITIC</span><b>1.5</b></a>
+    <p>Ruby DB-Behavior Audit · Expanded 15-case pilot.</p>
+    <div><a href="../">Audit overview</a><a href="../../">Ruby track</a><a href="../../../../report/">Report</a></div>
+    <small>© <span data-year></span> Bird-Critic Team</small>
+  </footer>
+</body>
+</html>
