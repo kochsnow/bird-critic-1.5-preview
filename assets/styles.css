@@ -423,6 +423,47 @@ code, pre { font-family: var(--mono); }
 .audit-pipeline .pipeline-agent { background: #efeeff; }
 .audit-pipeline .pipeline-agent::after { background: #efeeff; }
 .audit-pipeline .pipeline-agent strong { color: #4942b5; }
+.cross-failure-analysis { padding-top: 58px; padding-bottom: 58px; }
+.failure-analysis-summary { display: grid; grid-template-columns: .72fr 1.28fr; background: white; border: 1px solid var(--line); border-radius: 5px; overflow: hidden; }
+.failure-analysis-lead { padding: 28px; color: white; background: var(--bird-blue-dark); }
+.failure-analysis-lead .audit-card-label { margin-bottom: 18px; color: #aac9dd; }
+.failure-analysis-lead > strong { display: block; color: var(--bird-green); font-size: 50px; line-height: 1; }
+.failure-analysis-lead h3 { margin: 7px 0 22px; color: white; font-size: 18px; }
+.failure-analysis-lead p { margin: 0; color: #c7dbe7; font-size: 11px; line-height: 1.65; }
+.failure-analysis-metrics { display: grid; grid-template-columns: repeat(2, 1fr); }
+.failure-analysis-metrics div { min-height: 132px; padding: 22px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.failure-analysis-metrics div:nth-child(2n) { border-right: 0; }
+.failure-analysis-metrics div:nth-last-child(-n+2) { border-bottom: 0; }
+.failure-analysis-metrics strong { display: block; color: var(--bird-blue); font-size: 29px; }
+.failure-analysis-metrics span { display: block; margin-top: 10px; color: var(--muted); font-size: 8px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.failure-metric-note { margin: 0; padding: 13px 17px; color: var(--muted); background: var(--bird-cream); border: 1px solid #e5dfc4; border-top: 0; border-radius: 0 0 5px 5px; font-size: 10px; }
+.failure-metric-note strong { color: var(--bird-blue-dark); }
+.failure-taxonomy { margin-top: 20px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+.failure-mode { min-height: 250px; padding: 21px; display: flex; flex-direction: column; background: white; border: 1px solid var(--line); border-top: 4px solid var(--bird-coral); border-radius: 5px; }
+.failure-mode:nth-child(-n+3) { grid-column: span 2; }
+.failure-mode:nth-child(n+4) { grid-column: span 3; }
+.failure-mode-lifecycle { border-top-color: #e2aa47; }
+.failure-mode-paths { border-top-color: var(--bird-purple); }
+.failure-mode-contract { border-top-color: var(--bird-blue); }
+.failure-mode-scope { border-top-color: var(--bird-teal); }
+.failure-mode-head { display: grid; grid-template-columns: 30px 1fr; gap: 10px; align-items: start; }
+.failure-mode-head span { color: var(--bird-purple); font: 700 10px var(--mono); }
+.failure-mode-head h3 { margin: 0; color: var(--bird-blue-dark); font-size: 17px; line-height: 1.25; }
+.failure-mode > p { margin: 18px 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
+.failure-case-tags { margin: auto 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 5px; list-style: none; }
+.failure-case-tags li { padding: 4px 7px; color: #514aba; background: #ecebff; border-radius: 999px; font: 700 8px var(--mono); }
+.semantic-propagation { margin-top: 20px; padding: 26px; display: grid; grid-template-columns: 1.25fr .75fr; gap: 32px; align-items: center; color: white; background: var(--bird-purple); border-radius: 5px; }
+.semantic-propagation > div { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.semantic-propagation span { padding: 8px 10px; color: white; background: rgba(255,255,255,.12); border-radius: 4px; font-size: 9px; font-weight: 900; text-align: center; }
+.semantic-propagation i { color: var(--bird-green); font-style: normal; font-weight: 900; }
+.semantic-propagation p { margin: 0; color: #e8e7ff; font-size: 11px; line-height: 1.6; }
+.semantic-propagation p strong { color: white; }
+.failure-analysis-conclusions { margin-top: 10px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.failure-analysis-conclusions article { min-height: 168px; padding: 20px; background: white; border: 1px solid var(--line); border-radius: 5px; }
+.failure-analysis-conclusions span { color: var(--bird-teal); font-size: 8px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.failure-analysis-conclusions h3 { margin: 15px 0 6px; color: var(--bird-blue); font-size: 16px; }
+.failure-analysis-conclusions p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.6; }
+.failure-scope-note { border-color: #e5dfc4; }
 .audit-outcomes { padding-top: 55px; }
 .audit-legend { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 12px; color: var(--muted); font-size: 10px; }
 .audit-legend span { display: inline-flex; align-items: center; gap: 6px; }
@@ -719,6 +760,10 @@ code, pre { font-family: var(--mono); }
   .pilot-cohort-facts div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
   .audit-pipeline { grid-template-columns: repeat(4, 1fr); }
   .audit-pipeline li { border-bottom: 1px solid var(--line); }
+  .failure-taxonomy { grid-template-columns: repeat(2, 1fr); }
+  .failure-mode:nth-child(n) { grid-column: span 1; }
+  .failure-mode:last-child { grid-column: 1 / -1; }
+  .semantic-propagation { grid-template-columns: 1fr; }
   .case-card-head { grid-template-columns: 110px 1fr; }
   .case-score { grid-column: 2; padding-left: 0; border-left: 0; }
   .case-card-body { grid-template-columns: 1fr; }
@@ -772,6 +817,14 @@ code, pre { font-family: var(--mono); }
   .audit-pipeline li { min-height: 78px; padding: 14px 18px; border-right: 0; }
   .audit-pipeline li:not(:last-child)::after { content: "↓"; right: 18px; top: auto; bottom: -11px; }
   .audit-pipeline span { margin-bottom: 8px; }
+  .failure-analysis-summary { grid-template-columns: 1fr; }
+  .failure-analysis-metrics div { min-height: 112px; padding: 17px; }
+  .failure-taxonomy { grid-template-columns: 1fr; }
+  .failure-mode:nth-child(n) { min-height: 0; grid-column: auto; }
+  .semantic-propagation { padding: 21px; }
+  .semantic-propagation > div { flex-wrap: wrap; justify-content: flex-start; }
+  .failure-analysis-conclusions { grid-template-columns: 1fr; }
+  .failure-analysis-conclusions article { min-height: 0; }
   .audit-legend { gap: 9px 14px; }
   .case-card-head { padding: 18px; grid-template-columns: 1fr; gap: 15px; }
   .compact-case-summary { padding-right: 56px; }

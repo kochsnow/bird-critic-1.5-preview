@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Twenty distinct Ruby-60 tasks across two audited pilots, traced from annotated issue descriptions to GLM-5.2 agent patch outcomes and executable database evidence.">
+  <meta name="description" content="Twenty distinct Ruby-60 tasks across two audited pilots, with attributable GLM-5.2 patch outcomes and five evidence-grounded failure patterns.">
   <meta name="theme-color" content="#e1eacd">
   <meta property="og:title" content="Ruby DB-Behavior Audit · Bird-Critic 1.5">
-  <meta property="og:description" content="Twenty non-overlapping Ruby-60 cases across two audited pilots, traced to attributable GLM-5.2 patch outcomes.">
+  <meta property="og:description" content="Twenty non-overlapping Ruby-60 cases traced to attributable GLM-5.2 outcomes, partial correctness, and five grounded failure patterns.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="../../../assets/og-family.png">
   <title>Ruby DB-Behavior Audit · Bird-Critic 1.5</title>
   <link rel="icon" href="../../../assets/favicon.png" type="image/png">
-  <link rel="stylesheet" href="../../../assets/styles.css?v=20260829a">
+  <link rel="stylesheet" href="../../../assets/styles.css?v=20260829b">
   <script defer src="../../../assets/app.js?v=20260812"></script>
 </head>
 <body class="inner audit-page" data-page="ruby-audit" data-depth="3">
@@ -28,7 +28,7 @@
     </button>
     <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
       <a href="#pilots">Two pilots</a>
-      <a href="#pipeline">Evidence pipeline</a>
+      <a href="#failure-analysis">Failure analysis</a>
       <a href="#outcomes">Original 5</a>
       <a href="15-pilot/">Expanded 15</a>
       <a class="nav-cta" href="../">Ruby track</a>
@@ -116,6 +116,72 @@
         <li><span>07</span><strong>Per-DBB result</strong></li>
         <li><span>08</span><strong>Audited case card</strong></li>
       </ol>
+    </section>
+
+    <section class="results-section cross-failure-analysis" id="failure-analysis">
+      <div class="results-head reveal">
+        <div><span class="kicker">Cross-pilot failure analysis</span><h2>Where repair semantics break</h2></div>
+        <p>Across these 20 audited cases, all 11 task-level failures are attributable to real GLM-5.2 workspaces. Their DBB results locate five recurring failure boundaries.</p>
+      </div>
+
+      <div class="failure-analysis-summary reveal">
+        <article class="failure-analysis-lead">
+          <span class="audit-card-label">Descriptive audit-set result</span>
+          <strong>9 / 20</strong>
+          <h3>task-level PASS</h3>
+          <p>This is a description of two purposively selected cohorts—not an estimate of GLM-5.2 performance on Ruby-60 or Ruby tasks generally.</p>
+        </article>
+        <div class="failure-analysis-metrics" aria-label="Cross-pilot failure analysis metrics">
+          <div><strong>11</strong><span>Grounded task-level failures</span></div>
+          <div><strong>9 / 11</strong><span>Failed cases with ≥1 DBB PASS</span></div>
+          <div><strong>20 / 45</strong><span>DBBs passed inside failed cases</span></div>
+          <div><strong>5</strong><span>Grounded failure patterns</span></div>
+        </div>
+      </div>
+      <p class="failure-metric-note reveal"><strong>How to read 20 / 45:</strong> some passing DBBs are negative controls or paths that already worked, so this ratio is evidence of partial correctness—not a “44% complete” patch score.</p>
+
+      <div class="failure-taxonomy" aria-label="Five grounded failure patterns">
+        <article class="failure-mode failure-mode-layer reveal">
+          <div class="failure-mode-head"><span>01</span><h3>Wrong layer or root cause</h3></div>
+          <p>The patch changed a controller, presentation surface, test, or reproduction while the lookup/query production path remained wrong.</p>
+          <ul class="failure-case-tags"><li>PR #312</li><li>PR #617</li><li>PR #37004</li></ul>
+        </article>
+        <article class="failure-mode failure-mode-lifecycle reveal">
+          <div class="failure-mode-head"><span>02</span><h3>Lifecycle and timing semantics</h3></div>
+          <p>The end state looked close, but asynchronous visibility or an over-eager persisted transition violated the required lifecycle.</p>
+          <ul class="failure-case-tags"><li>PR #592</li><li>PR #36255</li></ul>
+        </article>
+        <article class="failure-mode failure-mode-paths reveal">
+          <div class="failure-mode-head"><span>03</span><h3>Incomplete paths or stages</h3></div>
+          <p>One layer or entry point passed while another caller, restore stage, migration/runtime boundary, or reuse path remained incorrect.</p>
+          <ul class="failure-case-tags"><li>PR #36878</li><li>PR #36528</li><li>PR #35356</li></ul>
+        </article>
+        <article class="failure-mode failure-mode-contract reveal">
+          <div class="failure-mode-head"><span>04</span><h3>Data-model or feature-contract drift</h3></div>
+          <p>The workspace chose a different persistence architecture or omitted the schema, model, binding, and runtime contract required by the task.</p>
+          <ul class="failure-case-tags"><li>PR #620</li><li>PR #37891</li></ul>
+        </article>
+        <article class="failure-mode failure-mode-scope reveal">
+          <div class="failure-mode-head"><span>05</span><h3>Scope, cardinality, and isolation</h3></div>
+          <p>A locally correct row was mistaken for a correct set: one available actor did not mean every actor in the domain was synchronized.</p>
+          <ul class="failure-case-tags"><li>PR #203</li></ul>
+        </article>
+      </div>
+
+      <div class="semantic-propagation reveal">
+        <div>
+          <span>Schema</span><i>→</i><span>Model</span><i>→</i><span>Service</span><i>→</i><span>Callback / Job</span><i>→</i><span>Runtime lookup</span>
+        </div>
+        <p><strong>The harder problem was semantic propagation, not patch size.</strong> Large transactional and multi-table repairs could pass, while smaller fixes failed when the intended behavior stopped at one layer or one invocation path.</p>
+      </div>
+
+      <div class="failure-analysis-conclusions">
+        <article class="reveal"><span>Self-tests</span><h3>Local PASS ≠ task completion</h3><p>Edited-path specs can pass while independent F2P and DBB checks still expose missing end-to-end semantics.</p></article>
+        <article class="reveal"><span>Binary reward</span><h3>Partial correctness stays hidden</h3><p>Nine of 11 failed cases still passed at least one database behavior assertion.</p></article>
+        <article class="reveal"><span>DBB value</span><h3>Locate the failure boundary</h3><p>DBBs distinguish schema PASS/runtime FAIL, main-path PASS/reuse-path FAIL, and target-row PASS/scope FAIL.</p></article>
+      </div>
+
+      <p class="audit-program-note failure-scope-note reveal"><strong>Interpretation boundary:</strong> these five patterns are reproducible observations from 20 audited cases across NVIDIA-backed and Z.ai direct GLM-5.2 cohorts. They must not be presented as the frequency or overall distribution of GLM-5.2 failures on Ruby-60.</p>
     </section>
 
     <section class="results-section audit-outcomes" id="outcomes">
