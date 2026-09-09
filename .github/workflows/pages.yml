@@ -2,7 +2,7 @@ name: Deploy Bird-Critic 1.5 to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "design/birdcritic-1-style"]
   workflow_dispatch:
 
 permissions:

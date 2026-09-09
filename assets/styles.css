@@ -578,6 +578,16 @@ code, pre { font-family: var(--mono); }
 .back-to-ruby > span { color: var(--bird-coral); font-size: 20px; }
 .back-to-ruby strong, .back-to-ruby small { display: block; }
 .back-to-ruby small { color: var(--muted); font-size: 9px; }
+
+/* Full-300 cross-language DB-behavior pilot */
+.full-pilot-hero { background: linear-gradient(112deg, var(--bird-green) 0 66%, #d6e2bf 66%); }
+.full-dbb-audit-page .audit-matrix td:first-child { max-width: 205px; }
+.full-dbb-audit-page .audit-matrix td:first-child small { overflow-wrap: anywhere; }
+.full-dbb-audit-page .trajectory-summary { margin: 0 -8px; padding: 12px 8px; background: #f3f1ff; border: 1px solid #dedbf8; border-radius: 4px; }
+.full-dbb-audit-page .artifact-panel h3 { margin: 5px 0 10px; color: white; font-size: 25px; }
+.full-dbb-audit-page .artifact-panel .audit-card-label { color: #b9e1ff; }
+.full-dbb-audit-page .handoff-grid { margin-bottom: 16px; }
+.audit-data-error { padding: 24px; color: #8d2d3c; background: #ffe5e7; border: 1px solid #f2b8c0; border-radius: 5px; }
 .leaderboard-shell {
   overflow-x: auto; background: white; border: 1px solid var(--line);
   border-radius: 5px; box-shadow: 0 2px 7px rgba(31,51,69,.04);

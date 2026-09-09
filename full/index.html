@@ -11,7 +11,7 @@
   <meta property="og:image" content="../assets/og-family.png">
   <title>Bird-Critic 1.5 Full — 300-instance evaluation</title>
   <link rel="icon" href="../assets/favicon.png" type="image/png">
-  <link rel="stylesheet" href="../assets/styles.css?v=20260820">
+  <link rel="stylesheet" href="../assets/styles.css?v=20260909a">
   <script defer src="../assets/app.js?v=20260809"></script>
 </head>
 <body class="inner" data-page="full" data-depth="1" data-results="../data/full-results.json" data-extension-results="../data/full-extension-results.json" data-instances="../data/full-instances.json">
@@ -29,6 +29,7 @@
     <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
       <a href="../lite/">Lite</a>
       <a href="../full/" aria-current="page">Full</a>
+      <a href="db-behavior-audit/">DB audit</a>
       <a href="#leaderboard">Leaderboard</a>
       <a href="#instances">Instances</a>
       <a href="https://github.com/kochsnow/bird-critic-1.5-preview" target="_blank" rel="noreferrer">GitHub</a>
@@ -67,6 +68,24 @@
         </div>
         <span class="coming-number" aria-hidden="true">300</span>
       </div>
+    </section>
+
+    <section class="results-section audit-teaser" id="db-behavior-audit">
+      <div class="audit-teaser-main reveal">
+        <div>
+          <span class="kicker">Cross-language pilot study</span>
+          <h2>Database behavior beyond the scalar reward.</h2>
+          <p>Twelve tasks across all six Full artifact profiles now connect issue claims to 60 project-native persisted-state behaviors, control-validated agent workspaces, compact case cards, and DB-specific trajectory analysis.</p>
+        </div>
+        <a class="button button-primary" href="db-behavior-audit/">Explore the 12-pilot audit <span>→</span></a>
+      </div>
+      <div class="audit-teaser-stats reveal">
+        <div><strong>12 / 12</strong><span>Closed audit cases</span></div>
+        <div><strong>38 / 60</strong><span>DB behaviors passed</span></div>
+        <div><strong>5 / 12</strong><span>Task-level full pass</span></div>
+        <div><strong>6 · 4</strong><span>Profiles · languages</span></div>
+      </div>
+      <p class="audit-teaser-note reveal"><strong>Study boundary:</strong> this purposive sample validates the audit and external-replication protocol; it is not a Full-300 model-performance estimate.</p>
     </section>
 
     <section class="results-section" id="leaderboard">
@@ -163,7 +182,7 @@
       <span>BIRD—CRITIC</span><b>1.5</b>
     </a>
     <p>Full edition · 100 Lite + 200 Extension.</p>
-    <div><a href="https://huggingface.co/datasets/kochsnow/bird-critic-1.5-full-300" target="_blank" rel="noreferrer">Dataset</a><a href="../lite/">Lite</a><a href="#instances">Instances</a></div>
+    <div><a href="https://huggingface.co/datasets/kochsnow/bird-critic-1.5-full-300" target="_blank" rel="noreferrer">Dataset</a><a href="db-behavior-audit/">DB audit</a><a href="#instances">Instances</a></div>
     <small>© <span data-year></span> Bird-Critic Team</small>
   </footer>
 </body>
