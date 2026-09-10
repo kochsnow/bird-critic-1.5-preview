@@ -451,7 +451,8 @@ code, pre { font-family: var(--mono); }
 .failure-mode-head h3 { margin: 0; color: var(--bird-blue-dark); font-size: 17px; line-height: 1.25; }
 .failure-mode > p { margin: 18px 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
 .failure-case-tags { margin: auto 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 5px; list-style: none; }
-.failure-case-tags li { padding: 4px 7px; color: #514aba; background: #ecebff; border-radius: 999px; font: 700 8px var(--mono); }
+.failure-case-tags li { padding: 0; color: #514aba; background: #ecebff; border-radius: 999px; font: 700 8px var(--mono); }
+.failure-case-tags a { padding: 4px 7px; display: block; color: inherit; }
 .semantic-propagation { margin-top: 20px; padding: 26px; display: grid; grid-template-columns: 1.25fr .75fr; gap: 32px; align-items: center; color: white; background: var(--bird-purple); border-radius: 5px; }
 .semantic-propagation > div { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .semantic-propagation span { padding: 8px 10px; color: white; background: rgba(255,255,255,.12); border-radius: 4px; font-size: 9px; font-weight: 900; text-align: center; }
@@ -584,6 +585,39 @@ code, pre { font-family: var(--mono); }
 .full-dbb-audit-page .audit-matrix td:first-child { max-width: 205px; }
 .full-dbb-audit-page .audit-matrix td:first-child small { overflow-wrap: anywhere; }
 .full-dbb-audit-page .trajectory-summary { margin: 0 -8px; padding: 12px 8px; background: #f3f1ff; border: 1px solid #dedbf8; border-radius: 4px; }
+.trajectory-analysis { padding-top: 58px; }
+.trajectory-evidence-contract { display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; background: white; border: 1px solid var(--line); border-radius: 5px; }
+.trajectory-evidence-contract article { min-height: 190px; padding: 26px; }
+.trajectory-evidence-contract article + article { color: white; background: var(--bird-blue-dark); }
+.trajectory-evidence-contract span { display: block; margin-bottom: 30px; color: var(--bird-teal); font-size: 9px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.trajectory-evidence-contract article + article span { color: var(--bird-green); }
+.trajectory-evidence-contract h3 { margin: 0 0 10px; color: var(--bird-blue); font-size: 21px; }
+.trajectory-evidence-contract article + article h3 { color: white; }
+.trajectory-evidence-contract code { padding: 3px 6px; color: inherit; background: var(--bird-cream); font-size: 16px; }
+.trajectory-evidence-contract article + article code { background: rgba(255,255,255,.12); }
+.trajectory-evidence-contract p { margin: 0; max-width: 520px; color: var(--muted); font-size: 11px; line-height: 1.65; }
+.trajectory-evidence-contract article + article p { color: #c7dbe7; }
+.trajectory-findings { margin: 16px 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.trajectory-findings article { min-height: 190px; padding: 22px; background: white; border: 1px solid var(--line); border-top: 4px solid var(--bird-purple); border-radius: 5px; }
+.trajectory-findings article:nth-child(2) { border-top-color: var(--bird-teal); }
+.trajectory-findings article:nth-child(3) { border-top-color: var(--bird-coral); }
+.trajectory-findings article:nth-child(4) { border-top-color: #e2aa47; }
+.trajectory-findings span { color: var(--bird-purple); font: 700 9px var(--mono); text-transform: uppercase; }
+.trajectory-findings h3 { margin: 18px 0 8px; color: var(--bird-blue); font-size: 17px; }
+.trajectory-findings p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.65; }
+.trajectory-matrix { min-width: 1120px; }
+.trajectory-matrix th:nth-child(1) { width: 12%; }
+.trajectory-matrix th:nth-child(2) { width: 11%; }
+.trajectory-matrix th:nth-child(3) { width: 19%; }
+.trajectory-matrix th:nth-child(4) { width: 18%; }
+.trajectory-matrix td { line-height: 1.5; }
+.trajectory-observation { margin: 0 5px 3px 0; padding: 3px 6px; display: inline-block; border-radius: 999px; font: 700 8px var(--mono); text-transform: uppercase; }
+.observation-limited { color: #835218; background: #fff0cf; }
+.observation-moderate { color: #443bb2; background: #e9e7ff; }
+.observation-direct, .observation-strong { color: #176344; background: #dcf4e8; }
+.observation-self { color: #8d2d3c; background: #ffe5e7; }
+.trajectory-metric-note { margin: 10px 0 0; padding: 14px 18px; color: var(--muted); background: var(--bird-cream); border: 1px solid #e5dfc4; border-radius: 5px; font-size: 10px; line-height: 1.55; }
+.trajectory-metric-note strong { color: var(--bird-blue-dark); }
 .full-dbb-audit-page .artifact-panel h3 { margin: 5px 0 10px; color: white; font-size: 25px; }
 .full-dbb-audit-page .artifact-panel .audit-card-label { color: #b9e1ff; }
 .full-dbb-audit-page .handoff-grid { margin-bottom: 16px; }
@@ -764,6 +798,8 @@ code, pre { font-family: var(--mono); }
   .audit-teaser-stats { grid-template-columns: repeat(2, 1fr); }
   .audit-teaser-stats div:nth-child(2) { border-right: 0; }
   .audit-overview-grid { grid-template-columns: 1fr; }
+  .trajectory-evidence-contract { grid-template-columns: 1fr; }
+  .trajectory-findings { grid-template-columns: 1fr; }
   .pilot-cohort-grid { grid-template-columns: 1fr; }
   .pilot-cohort-facts { grid-template-columns: repeat(2, 1fr); }
   .pilot-cohort-facts div:nth-child(2) { border-right: 0; }
@@ -835,6 +871,8 @@ code, pre { font-family: var(--mono); }
   .semantic-propagation > div { flex-wrap: wrap; justify-content: flex-start; }
   .failure-analysis-conclusions { grid-template-columns: 1fr; }
   .failure-analysis-conclusions article { min-height: 0; }
+  .trajectory-evidence-contract article { min-height: 0; padding: 22px; }
+  .trajectory-findings article { min-height: 0; }
   .audit-legend { gap: 9px 14px; }
   .case-card-head { padding: 18px; grid-template-columns: 1fr; gap: 15px; }
   .compact-case-summary { padding-right: 56px; }
